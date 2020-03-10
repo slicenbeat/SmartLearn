@@ -36,9 +36,10 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(238, 45);
+            this.button1.Location = new System.Drawing.Point(317, 55);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 58);
+            this.button1.Size = new System.Drawing.Size(197, 71);
             this.button1.TabIndex = 0;
             this.button1.Text = "Добавить колоду";
             this.button1.UseVisualStyleBackColor = true;
@@ -47,9 +48,10 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(238, 109);
+            this.button2.Location = new System.Drawing.Point(317, 134);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 58);
+            this.button2.Size = new System.Drawing.Size(197, 71);
             this.button2.TabIndex = 1;
             this.button2.Text = "Добавить карточку";
             this.button2.UseVisualStyleBackColor = true;
@@ -58,23 +60,24 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(238, 173);
+            this.button3.Location = new System.Drawing.Point(317, 213);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 58);
+            this.button3.Size = new System.Drawing.Size(197, 71);
             this.button3.TabIndex = 2;
             this.button3.Text = "Список колод";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // SmartLearn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 281);
+            this.ClientSize = new System.Drawing.Size(829, 336);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.MaximumSize = new System.Drawing.Size(640, 320);
-            this.MinimumSize = new System.Drawing.Size(640, 320);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(847, 383);
             this.Name = "SmartLearn";
             this.Text = "SmartLearn";
             this.Load += new System.EventHandler(this.SmartLearn_Load);
