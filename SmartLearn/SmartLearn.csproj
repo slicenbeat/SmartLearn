@@ -49,6 +49,12 @@
   <ItemGroup>
     <Compile Include="Card.cs" />
     <Compile Include="CardList.cs" />
+    <Compile Include="EditDeck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDeck.Designer.cs">
+      <DependentUpon>EditDeck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EditDeck.resx">
+      <DependentUpon>EditDeck.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>

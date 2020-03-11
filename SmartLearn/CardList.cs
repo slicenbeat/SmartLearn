@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SmartLearn 
+namespace SmartLearn
 {
     class CardList
     {

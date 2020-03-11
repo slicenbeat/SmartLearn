@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartLearn.Properties {
+namespace SmartLearner.Properties {
     using System;
     
     

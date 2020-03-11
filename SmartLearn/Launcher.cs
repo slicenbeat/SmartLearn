@@ -17,17 +17,24 @@ namespace SmartLearn
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void add_deck_Click(object sender, EventArgs e)
         {
+            EditDeck editdeck = new EditDeck();
+            editdeck.Show();
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void add_card_Click(object sender, EventArgs e)
         {
 
         }
 
         private void SmartLearn_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void view_deck_Click(object sender, EventArgs e)
         {
 
         }
