@@ -66,5 +66,10 @@ namespace SmartLearn
         {
 
         }
+
+        private void txtAnswer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

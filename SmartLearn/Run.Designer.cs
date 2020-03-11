@@ -48,13 +48,14 @@
             // txtAnswer
             // 
             this.txtAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAnswer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer.Font = new System.Drawing.Font("Arial", 14.25F);
             this.txtAnswer.Location = new System.Drawing.Point(12, 117);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(600, 96);
             this.txtAnswer.TabIndex = 0;
             this.txtAnswer.Text = "";
             this.txtAnswer.Visible = false;
+            this.txtAnswer.TextChanged += new System.EventHandler(this.txtAnswer_TextChanged);
             // 
             // btnAnswer
             // 
