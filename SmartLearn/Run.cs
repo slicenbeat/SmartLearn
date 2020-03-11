@@ -22,7 +22,7 @@ namespace SmartLearn
 
         private void Run_Load(object sender, EventArgs e)
         {
-            using (StreamReader reader = new StreamReader("questions.txt"))
+            using (StreamReader reader = new StreamReader("questions.txt", Encoding.GetEncoding("windows-1251")))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
