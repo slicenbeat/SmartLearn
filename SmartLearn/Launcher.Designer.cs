@@ -31,12 +31,13 @@
             this.add_deck = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // add_deck
             // 
             this.add_deck.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.add_deck.Location = new System.Drawing.Point(238, 45);
+            this.add_deck.Location = new System.Drawing.Point(239, 69);
             this.add_deck.Name = "add_deck";
             this.add_deck.Size = new System.Drawing.Size(148, 58);
             this.add_deck.TabIndex = 0;
@@ -47,7 +48,7 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(238, 109);
+            this.button2.Location = new System.Drawing.Point(239, 133);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 58);
             this.button2.TabIndex = 1;
@@ -58,7 +59,7 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(238, 173);
+            this.button3.Location = new System.Drawing.Point(239, 197);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(148, 58);
             this.button3.TabIndex = 2;
@@ -66,15 +67,28 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.view_deck_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Location = new System.Drawing.Point(239, 261);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 58);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Тест";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SmartLearn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 280);
+            this.ClientSize = new System.Drawing.Size(624, 401);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.add_deck);
-            this.MinimumSize = new System.Drawing.Size(639, 319);
+            this.MaximumSize = new System.Drawing.Size(640, 440);
+            this.MinimumSize = new System.Drawing.Size(640, 440);
             this.Name = "SmartLearn";
             this.Text = "SmartLearn";
             this.Load += new System.EventHandler(this.SmartLearn_Load);
@@ -87,6 +101,7 @@
         private System.Windows.Forms.Button add_deck;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -38,5 +38,11 @@ namespace SmartLearn
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Run runner = new Run();
+            runner.Show();
+        }
     }
 }
