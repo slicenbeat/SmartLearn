@@ -48,7 +48,7 @@ namespace SmartLearn
         {
             txtAnswer.Visible = false;
 
-            if (currentQuestion >= questionsAnswers.Count - 1)
+            if ((currentQuestion > questionsAnswers.Count-2)||(currentQuestion == questionsAnswers.Count-2))
             {
                 currentQuestion = 0;
             }
