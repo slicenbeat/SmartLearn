@@ -22,18 +22,7 @@ namespace SmartLearn
 
         private void Run_Load(object sender, EventArgs e)
         {
-            using (StreamReader reader = new StreamReader("questions.txt", Encoding.GetEncoding("windows-1251")))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    string[] questionAnswer = line.Split('-');
-                    questionsAnswers.Add(questionAnswer);
-                }
-            }
-
-            txtQuestion.Text += questionsAnswers[0][0] + "\r\n";
-            txtAnswer.Text += questionsAnswers[0][1] + "\r\n";
+            
         }
 
         private void btnAnswer_Click(object sender, EventArgs e)
@@ -48,7 +37,7 @@ namespace SmartLearn
         {
             txtAnswer.Visible = false;
 
-            if ((currentQuestion > questionsAnswers.Count-2)||(currentQuestion == questionsAnswers.Count-2))
+            if ((currentQuestion > questionsAnswers.Count-1)||(currentQuestion == questionsAnswers.Count-1))
             {
                 currentQuestion = 0;
             }
@@ -68,6 +57,31 @@ namespace SmartLearn
         }
 
         private void txtAnswer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string path;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                path = openFileDialog1.FileName;
+
+            using (StreamReader reader = new StreamReader("questions.txt", Encoding.GetEncoding("windows-1251")))//System.IO.File.ReadAllText(fileName путь к файлу )
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] questionAnswer = line.Split('-');
+                    questionsAnswers.Add(questionAnswer);
+                }
+            }
+
+            txtQuestion.Text += questionsAnswers[0][0] + "\r\n";
+            txtAnswer.Text += questionsAnswers[0][1] + "\r\n";
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
