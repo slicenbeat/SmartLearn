@@ -69,22 +69,20 @@ namespace SmartLearn
                 path = openFileDialog1.FileName;
                 btnNext.Enabled = true;
                 btnAnswer.Enabled = true;
+                using (StreamReader reader = new StreamReader(path, Encoding.GetEncoding("windows-1251")))//System.IO.File.ReadAllText(fileName путь к файлу )
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] questionAnswer = line.Split('-');
+                        questionsAnswers.Add(questionAnswer);
+                    }
+                }
+
+                txtQuestion.Text += questionsAnswers[0][0] + "\r\n";
+                txtAnswer.Text += questionsAnswers[0][1] + "\r\n";
             }
             
-       
-
-            using (StreamReader reader = new StreamReader(path, Encoding.GetEncoding("windows-1251")))//System.IO.File.ReadAllText(fileName путь к файлу )
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    string[] questionAnswer = line.Split('-');
-                    questionsAnswers.Add(questionAnswer);
-                }
-            }
-
-            txtQuestion.Text += questionsAnswers[0][0] + "\r\n";
-            txtAnswer.Text += questionsAnswers[0][1] + "\r\n";
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
