@@ -62,6 +62,7 @@
             // btnAnswer
             // 
             this.btnAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAnswer.Enabled = false;
             this.btnAnswer.Location = new System.Drawing.Point(12, 234);
             this.btnAnswer.Name = "btnAnswer";
             this.btnAnswer.Size = new System.Drawing.Size(75, 23);
@@ -73,6 +74,7 @@
             // btnNext
             // 
             this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNext.Enabled = false;
             this.btnNext.Location = new System.Drawing.Point(537, 234);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
@@ -95,6 +97,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "\"Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*\"";
             // 
             // Run
             // 

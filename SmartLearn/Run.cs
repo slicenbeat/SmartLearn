@@ -63,11 +63,17 @@ namespace SmartLearn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string path;
+            string path = "thequestions.txt"; ;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
                 path = openFileDialog1.FileName;
+                btnNext.Enabled = true;
+                btnAnswer.Enabled = true;
+            }
+            
+       
 
-            using (StreamReader reader = new StreamReader("questions.txt", Encoding.GetEncoding("windows-1251")))//System.IO.File.ReadAllText(fileName путь к файлу )
+            using (StreamReader reader = new StreamReader(path, Encoding.GetEncoding("windows-1251")))//System.IO.File.ReadAllText(fileName путь к файлу )
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
