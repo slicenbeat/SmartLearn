@@ -37,17 +37,21 @@ namespace SmartLearn
         {
             txtAnswer.Visible = false;
 
-            if ((currentQuestion > questionsAnswers.Count-1)||(currentQuestion == questionsAnswers.Count-1))
+            if ((currentQuestion > questionsAnswers.Count)||(currentQuestion == questionsAnswers.Count))
             {
                 currentQuestion = 0;
             }
             else
             {
                 currentQuestion++;
+                if ((currentQuestion > questionsAnswers.Count) || (currentQuestion == questionsAnswers.Count))
+                {
+                    currentQuestion = 0;
+                }
             }
-
             txtQuestion.Text = questionsAnswers[currentQuestion][0] + "\r\n";
             txtAnswer.Text = questionsAnswers[currentQuestion][1] + "\r\n";
+
 
         }
 

@@ -47,8 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Card.cs" />
-    <Compile Include="CardList.cs" />
     <Compile Include="EditDeck.cs">
       <SubType>Form</SubType>
     </Compile>
