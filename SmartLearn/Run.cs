@@ -78,7 +78,7 @@ namespace SmartLearn
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] questionAnswer = line.Split('-');
+                        string[] questionAnswer = line.Split('—');
                         questionsAnswers.Add(questionAnswer);
                     }
                 }
