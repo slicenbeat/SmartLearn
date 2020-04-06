@@ -40,7 +40,7 @@
             // 
             this.txtQuestion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtQuestion.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuestion.Location = new System.Drawing.Point(16, 78);
+            this.txtQuestion.Location = new System.Drawing.Point(23, 78);
             this.txtQuestion.Margin = new System.Windows.Forms.Padding(4);
             this.txtQuestion.Name = "txtQuestion";
             this.txtQuestion.Size = new System.Drawing.Size(799, 117);
@@ -52,7 +52,7 @@
             // 
             this.txtAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAnswer.Font = new System.Drawing.Font("Arial", 14.25F);
-            this.txtAnswer.Location = new System.Drawing.Point(16, 203);
+            this.txtAnswer.Location = new System.Drawing.Point(23, 203);
             this.txtAnswer.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(799, 117);
@@ -72,7 +72,7 @@
             this.btnAnswer.Enabled = false;
             this.btnAnswer.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnAnswer.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnAnswer.Location = new System.Drawing.Point(16, 337);
+            this.btnAnswer.Location = new System.Drawing.Point(23, 337);
             this.btnAnswer.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnswer.Name = "btnAnswer";
             this.btnAnswer.Size = new System.Drawing.Size(100, 28);
@@ -86,7 +86,7 @@
             this.metroButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroButton2.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton2.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.metroButton2.Location = new System.Drawing.Point(318, 337);
+            this.metroButton2.Location = new System.Drawing.Point(332, 337);
             this.metroButton2.Margin = new System.Windows.Forms.Padding(4);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(167, 28);
@@ -101,7 +101,7 @@
             this.btnNext.Enabled = false;
             this.btnNext.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnNext.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnNext.Location = new System.Drawing.Point(715, 337);
+            this.btnNext.Location = new System.Drawing.Point(722, 337);
             this.btnNext.Margin = new System.Windows.Forms.Padding(4);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(100, 28);
