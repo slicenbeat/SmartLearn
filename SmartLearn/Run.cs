@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using MetroFramework.Forms;
+using MetroFramework.Components;
 
 namespace SmartLearn
 {
-    public partial class Run : Form
+    public partial class Run : MetroForm
     {
         List<string[]> questionsAnswers = new List<string[]>();
         int currentQuestion = 0;

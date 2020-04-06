@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
+using MetroFramework.Components;
 
 namespace SmartLearn
 {
-    public partial class EditDeck : Form
+    public partial class EditDeck : MetroForm
     {
 
         public EditDeck()

@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
+using MetroFramework.Components;
 
 namespace SmartLearn
 {
-    public partial class SmartLearn : Form
+    public partial class SmartLearn : MetroForm
     {
         public SmartLearn()
         {
             InitializeComponent();
+            this.StyleManager = metroStyleManager1;
         }
 
         private void add_deck_Click(object sender, EventArgs e)
@@ -48,6 +51,19 @@ namespace SmartLearn
         private void button4_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void mbTheme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (mbTheme.SelectedIndex)
+            {
+                case 0:
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
+                    break;
+                case 1:
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                    break;
+            }
         }
     }
 }
