@@ -12,12 +12,12 @@ using MetroFramework.Components;
 
 namespace SmartLearn
 {
-    public partial class Run : MetroForm
+    public partial class Test : MetroForm
     {
         List<string[]> questionsAnswers = new List<string[]>();
         int currentQuestion = 0;
 
-        public Run()
+        public Test()
         {
             InitializeComponent();
         }
@@ -70,11 +70,11 @@ namespace SmartLearn
         private void button1_Click(object sender, EventArgs e)
         {
             string path = "thequestions.txt"; ;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (OpenCards.ShowDialog() == DialogResult.OK)
             {
-                path = openFileDialog1.FileName;
-                btnNext.Enabled = true;
-                btnAnswer.Enabled = true;
+                path = OpenCards.FileName;
+                ShowNext.Enabled = true;
+                ShowAnswer.Enabled = true;
                 using (StreamReader reader = new StreamReader(path, Encoding.GetEncoding("windows-1251")))//System.IO.File.ReadAllText(fileName путь к файлу )
                 {
                     string line;
@@ -84,7 +84,6 @@ namespace SmartLearn
                         questionsAnswers.Add(questionAnswer);
                     }
                 }
-
                 txtQuestion.Text += questionsAnswers[0][0] + "\r\n";
                 txtAnswer.Text += questionsAnswers[0][1] + "\r\n";
             }
@@ -94,6 +93,29 @@ namespace SmartLearn
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            string path = ""; ;
+            if (SaveCards.ShowDialog() == DialogResult.OK)
+            {
+                path = SaveCards.FileName;
+                string buff ="";
+                using (StreamWriter writer = new StreamWriter(path, false, Encoding.GetEncoding(1251)))
+                {
+                    for (int i = 0; i < questionsAnswers.Count; i++)
+                    {
+                        buff += questionsAnswers[i][0];
+                        buff += " — ";
+                        buff += questionsAnswers[i][1];
+                        writer.WriteLine(buff);
+                        buff = "";
+                    }
+                }
+
+                
+            }
         }
     }
 }

@@ -17,53 +17,40 @@ namespace SmartLearn
         public SmartLearn()
         {
             InitializeComponent();
-            this.StyleManager = metroStyleManager1;
+            this.StyleManager = MainStyle;
         }
 
         private void add_deck_Click(object sender, EventArgs e)
         {
             EditDeck editdeck = new EditDeck();
             editdeck.Show();
-
         }
-
-        private void add_card_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void SmartLearn_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void view_deck_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            Run runner = new Run();
+            Test runner = new Test();
+            runner.StyleManager = this.StyleManager;
             runner.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            
+            if (CheckTheme.Checked)
+            {
+                MainStyle.Theme = MetroFramework.MetroThemeStyle.Dark;
+            }
+            else MainStyle.Theme = MetroFramework.MetroThemeStyle.Light;
         }
 
-        private void mbTheme_SelectedIndexChanged(object sender, EventArgs e)
+        private void Logo_Click(object sender, EventArgs e)
         {
-            switch (mbTheme.SelectedIndex)
-            {
-                case 0:
-                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
-                    break;
-                case 1:
-                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                    break;
-            }
+
         }
     }
 }
