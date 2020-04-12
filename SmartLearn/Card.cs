@@ -6,7 +6,6 @@ namespace SmartLearn
     {
         public string Question { get; set; }
         public string Answer;
-        public string Type;
         public string[] Options { get; private set; }
         public int ID;
 
@@ -15,7 +14,6 @@ namespace SmartLearn
             Options = new string[4];
             Question = "";
             Answer = "";
-            Type = "flashcard";
             ID = 0;
         }
 
@@ -24,7 +22,6 @@ namespace SmartLearn
             Options = new string[4];
             Question = ques;
             Answer = ans;
-            Type = "flashcard";
             ID = 0;
         }
 
