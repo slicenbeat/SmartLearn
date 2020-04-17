@@ -120,4 +120,56 @@
   <metadata name="AboutAppStyleManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Logo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="TextAboutApp.Text" xml:space="preserve">
+    <value>SmartLearn — это программа для улучшения запоминания информации,
+снованная на методе интервальных повторений.
+Бесплатная и с открытым исходным кодом.
+Над приложением работали:
+Иваев Дамир
+Шеренков Данил
+Альгашев Алексей
+Прудовская Вероника</value>
+  </data>
 </root>

@@ -24,7 +24,7 @@ namespace SmartLearn
 
         private void Run_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void btnAnswer_Click(object sender, EventArgs e)

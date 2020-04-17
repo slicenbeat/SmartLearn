@@ -64,6 +64,7 @@
             this.txtAnswer.Text = "";
             this.txtAnswer.Visible = false;
             this.txtAnswer.TextChanged += new System.EventHandler(this.txtAnswer_TextChanged);
+            
             // 
             // OpenCards
             // 

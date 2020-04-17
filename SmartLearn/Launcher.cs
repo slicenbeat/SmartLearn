@@ -48,16 +48,9 @@ namespace SmartLearn
 
         private void ButtonHelp_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Это приложение для изучения и повторения материала. Хотите получить более подробную информацию?","О приложении", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                Form ifrm = new AboutApp();
-                ifrm.Show(); 
-            }
-            else
-            {
-                
-            }
+            AboutApp ifrm = new AboutApp();
+            ifrm.StyleManager = this.StyleManager;
+            ifrm.Show(); 
         }
     }
 }
