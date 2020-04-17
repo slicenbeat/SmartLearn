@@ -20,13 +20,6 @@ namespace SmartLearn
             this.StyleManager = MainStyle;
         }
 
-        private void add_deck_Click(object sender, EventArgs e)
-        {
-            EditDeck editdeck = new EditDeck();
-            editdeck.Show();
-        }
-      
-
         private void SmartLearn_Load(object sender, EventArgs e)
         {
 
@@ -51,6 +44,20 @@ namespace SmartLearn
         private void Logo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ButtonHelp_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Это приложение для изучения и повторения материала. Хотите получить более подробную информацию?","О приложении", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Form ifrm = new AboutApp();
+                ifrm.Show(); 
+            }
+            else
+            {
+                
+            }
         }
     }
 }
