@@ -37,6 +37,7 @@
             // 
             // LeShowAnswer
             // 
+            this.LeShowAnswer.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.LeShowAnswer.Location = new System.Drawing.Point(344, 484);
             this.LeShowAnswer.Name = "LeShowAnswer";
             this.LeShowAnswer.Size = new System.Drawing.Size(148, 44);
@@ -46,6 +47,7 @@
             // 
             // LeNextQuestion
             // 
+            this.LeNextQuestion.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.LeNextQuestion.Location = new System.Drawing.Point(522, 484);
             this.LeNextQuestion.Name = "LeNextQuestion";
             this.LeNextQuestion.Size = new System.Drawing.Size(148, 44);
@@ -55,6 +57,7 @@
             // 
             // LePrevQuestion
             // 
+            this.LePrevQuestion.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.LePrevQuestion.Location = new System.Drawing.Point(166, 484);
             this.LePrevQuestion.Name = "LePrevQuestion";
             this.LePrevQuestion.Size = new System.Drawing.Size(148, 44);
@@ -64,6 +67,7 @@
             // 
             // LeOpenCards
             // 
+            this.LeOpenCards.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.LeOpenCards.Location = new System.Drawing.Point(344, 13);
             this.LeOpenCards.Name = "LeOpenCards";
             this.LeOpenCards.Size = new System.Drawing.Size(148, 44);
@@ -77,9 +81,9 @@
             // 
             // 
             this.LeViewer.CustomButton.Image = null;
-            this.LeViewer.CustomButton.Location = new System.Drawing.Point(400, 1);
+            this.LeViewer.CustomButton.Location = new System.Drawing.Point(106, 2);
             this.LeViewer.CustomButton.Name = "";
-            this.LeViewer.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.LeViewer.CustomButton.Size = new System.Drawing.Size(395, 395);
             this.LeViewer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.LeViewer.CustomButton.TabIndex = 1;
             this.LeViewer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -112,6 +116,9 @@
             this.Controls.Add(this.LeNextQuestion);
             this.Controls.Add(this.LeShowAnswer);
             this.Controls.Add(this.LeOpenCards);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(832, 582);
+            this.MinimumSize = new System.Drawing.Size(832, 582);
             this.Name = "LearningForm";
             this.Text = "Обучение";
             this.Load += new System.EventHandler(this.LearningForm_Load);
