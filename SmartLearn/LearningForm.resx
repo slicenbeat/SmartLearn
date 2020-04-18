@@ -117,12 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="AboutAppStyleManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="TextAboutApp.Text" xml:space="preserve">
-    <value>SmartLearn — это программа для улучшения запоминания информации, основанная на методе интервальных повторений. Бесплатная и с открытым исходным кодом.
-
-Над приложением работали: Дамир Иваев, Данил Шеренков, Алексей Альгашев, Вероника Прудовская</value>
-  </data>
 </root>

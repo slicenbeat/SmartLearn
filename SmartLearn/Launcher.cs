@@ -55,5 +55,12 @@ namespace SmartLearn
             ifrm.StyleManager = this.StyleManager;
             ifrm.Show(); 
         }
+
+        private void LearningButton_Click(object sender, EventArgs e)
+        {
+            LearningForm learning = new LearningForm();
+            learning.StyleManager = this.StyleManager;
+            learning.Show();
+        }
     }
 }
