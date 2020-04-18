@@ -25,14 +25,14 @@ namespace SmartLearn
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             Test runner = new Test();
             runner.StyleManager = this.StyleManager;
             runner.Show();
         }
 
-        private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void MetroCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (CheckTheme.Checked)
             {

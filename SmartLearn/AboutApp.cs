@@ -31,17 +31,17 @@ namespace SmartLearn
             
         }
 
-        private void htmlLabel1_Click(object sender, EventArgs e)
+        private void HtmlLabel1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void RichTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void metroTextBox1_Click(object sender, EventArgs e)
+        private void MetroTextBox1_Click(object sender, EventArgs e)
         {
 
         }

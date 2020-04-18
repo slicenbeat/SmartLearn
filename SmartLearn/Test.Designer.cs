@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Test));
-            this.txtQuestion = new System.Windows.Forms.RichTextBox();
-            this.txtAnswer = new System.Windows.Forms.RichTextBox();
             this.OpenCards = new System.Windows.Forms.OpenFileDialog();
             this.ShowAnswer = new MetroFramework.Controls.MetroButton();
             this.OpenFile = new MetroFramework.Controls.MetroButton();
@@ -39,32 +37,10 @@
             this.SaveFile = new MetroFramework.Controls.MetroButton();
             this.SaveCards = new System.Windows.Forms.SaveFileDialog();
             this.TestStyle = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.ViewerQuestions = new MetroFramework.Controls.MetroTextBox();
+            this.ViewerAnswers = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.TestStyle)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtQuestion
-            // 
-            this.txtQuestion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtQuestion.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuestion.Location = new System.Drawing.Point(17, 63);
-            this.txtQuestion.Name = "txtQuestion";
-            this.txtQuestion.Size = new System.Drawing.Size(600, 96);
-            this.txtQuestion.TabIndex = 0;
-            this.txtQuestion.Text = "";
-            this.txtQuestion.TextChanged += new System.EventHandler(this.txtQuestion_TextChanged);
-            // 
-            // txtAnswer
-            // 
-            this.txtAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAnswer.Font = new System.Drawing.Font("Arial", 14.25F);
-            this.txtAnswer.Location = new System.Drawing.Point(17, 165);
-            this.txtAnswer.Name = "txtAnswer";
-            this.txtAnswer.Size = new System.Drawing.Size(600, 96);
-            this.txtAnswer.TabIndex = 0;
-            this.txtAnswer.Text = "";
-            this.txtAnswer.Visible = false;
-            this.txtAnswer.TextChanged += new System.EventHandler(this.txtAnswer_TextChanged);
-            
             // 
             // OpenCards
             // 
@@ -83,7 +59,7 @@
             this.ShowAnswer.TabIndex = 1;
             this.ShowAnswer.Text = "Ответ";
             this.ShowAnswer.UseSelectable = true;
-            this.ShowAnswer.Click += new System.EventHandler(this.btnAnswer_Click);
+            this.ShowAnswer.Click += new System.EventHandler(this.BtnAnswer_Click);
             // 
             // OpenFile
             // 
@@ -96,7 +72,7 @@
             this.OpenFile.TabIndex = 2;
             this.OpenFile.Text = "Открыть файл";
             this.OpenFile.UseSelectable = true;
-            this.OpenFile.Click += new System.EventHandler(this.button1_Click);
+            this.OpenFile.Click += new System.EventHandler(this.Button1_Click);
             // 
             // ShowNext
             // 
@@ -110,7 +86,7 @@
             this.ShowNext.TabIndex = 1;
             this.ShowNext.Text = "Следующий";
             this.ShowNext.UseSelectable = true;
-            this.ShowNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.ShowNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
             // SaveFile
             // 
@@ -123,7 +99,7 @@
             this.SaveFile.TabIndex = 3;
             this.SaveFile.Text = "Сохранить файл";
             this.SaveFile.UseSelectable = true;
-            this.SaveFile.Click += new System.EventHandler(this.metroButton1_Click);
+            this.SaveFile.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // SaveCards
             // 
@@ -133,17 +109,84 @@
             // 
             this.TestStyle.Owner = null;
             // 
+            // ViewerQuestions
+            // 
+            this.ViewerQuestions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            // 
+            // 
+            // 
+            this.ViewerQuestions.CustomButton.Image = null;
+            this.ViewerQuestions.CustomButton.Location = new System.Drawing.Point(506, 2);
+            this.ViewerQuestions.CustomButton.Name = "";
+            this.ViewerQuestions.CustomButton.Size = new System.Drawing.Size(91, 91);
+            this.ViewerQuestions.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.ViewerQuestions.CustomButton.TabIndex = 1;
+            this.ViewerQuestions.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ViewerQuestions.CustomButton.UseSelectable = true;
+            this.ViewerQuestions.CustomButton.Visible = false;
+            this.ViewerQuestions.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.ViewerQuestions.Lines = new string[0];
+            this.ViewerQuestions.Location = new System.Drawing.Point(17, 63);
+            this.ViewerQuestions.MaxLength = 32767;
+            this.ViewerQuestions.Name = "ViewerQuestions";
+            this.ViewerQuestions.PasswordChar = '\0';
+            this.ViewerQuestions.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ViewerQuestions.SelectedText = "";
+            this.ViewerQuestions.SelectionLength = 0;
+            this.ViewerQuestions.SelectionStart = 0;
+            this.ViewerQuestions.ShortcutsEnabled = true;
+            this.ViewerQuestions.Size = new System.Drawing.Size(600, 96);
+            this.ViewerQuestions.TabIndex = 4;
+            this.ViewerQuestions.UseSelectable = true;
+            this.ViewerQuestions.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ViewerQuestions.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.ViewerQuestions.Click += new System.EventHandler(this.ViewerQuestions_Click);
+            // 
+            // ViewerAnswers
+            // 
+            this.ViewerAnswers.Anchor = System.Windows.Forms.AnchorStyles.None;
+            // 
+            // 
+            // 
+            this.ViewerAnswers.CustomButton.Image = null;
+            this.ViewerAnswers.CustomButton.Location = new System.Drawing.Point(506, 2);
+            this.ViewerAnswers.CustomButton.Name = "";
+            this.ViewerAnswers.CustomButton.Size = new System.Drawing.Size(91, 91);
+            this.ViewerAnswers.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.ViewerAnswers.CustomButton.TabIndex = 1;
+            this.ViewerAnswers.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ViewerAnswers.CustomButton.UseSelectable = true;
+            this.ViewerAnswers.CustomButton.Visible = false;
+            this.ViewerAnswers.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.ViewerAnswers.Lines = new string[0];
+            this.ViewerAnswers.Location = new System.Drawing.Point(17, 165);
+            this.ViewerAnswers.MaxLength = 32767;
+            this.ViewerAnswers.Name = "ViewerAnswers";
+            this.ViewerAnswers.PasswordChar = '\0';
+            this.ViewerAnswers.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ViewerAnswers.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ViewerAnswers.SelectedText = "";
+            this.ViewerAnswers.SelectionLength = 0;
+            this.ViewerAnswers.SelectionStart = 0;
+            this.ViewerAnswers.ShortcutsEnabled = true;
+            this.ViewerAnswers.Size = new System.Drawing.Size(600, 96);
+            this.ViewerAnswers.TabIndex = 5;
+            this.ViewerAnswers.UseSelectable = true;
+            this.ViewerAnswers.Visible = false;
+            this.ViewerAnswers.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ViewerAnswers.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 320);
+            this.Controls.Add(this.ViewerAnswers);
+            this.Controls.Add(this.ViewerQuestions);
             this.Controls.Add(this.SaveFile);
             this.Controls.Add(this.ShowNext);
             this.Controls.Add(this.OpenFile);
             this.Controls.Add(this.ShowAnswer);
-            this.Controls.Add(this.txtAnswer);
-            this.Controls.Add(this.txtQuestion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(640, 320);
             this.MinimumSize = new System.Drawing.Size(640, 320);
@@ -156,9 +199,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox txtQuestion;
-        private System.Windows.Forms.RichTextBox txtAnswer;
         private System.Windows.Forms.OpenFileDialog OpenCards;
         private MetroFramework.Controls.MetroButton ShowAnswer;
         private MetroFramework.Controls.MetroButton OpenFile;
@@ -166,5 +206,7 @@
         private MetroFramework.Controls.MetroButton SaveFile;
         private System.Windows.Forms.SaveFileDialog SaveCards;
         protected MetroFramework.Components.MetroStyleManager TestStyle;
+        private MetroFramework.Controls.MetroTextBox ViewerQuestions;
+        private MetroFramework.Controls.MetroTextBox ViewerAnswers;
     }
 }

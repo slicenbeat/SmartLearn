@@ -14,7 +14,7 @@ namespace SmartLearn
 {
     public partial class Test : MetroForm
     {
-        List<string[]> questionsAnswers = new List<string[]>();
+        List<string[]> QuestionsAnswers = new List<string[]>();
         int currentQuestion = 0;
 
         public Test()
@@ -24,52 +24,52 @@ namespace SmartLearn
 
         private void Run_Load(object sender, EventArgs e)
         {
-           
+            
         }
 
-        private void btnAnswer_Click(object sender, EventArgs e)
+        private void BtnAnswer_Click(object sender, EventArgs e)
         {
-            if (txtAnswer.Visible)
-                txtAnswer.Visible = false;
+            if (ViewerAnswers.Visible)
+                ViewerAnswers.Visible = false;
             else
-                txtAnswer.Visible = true;
+                ViewerAnswers.Visible = true;
         }
 
-        private void btnNext_Click(object sender, EventArgs e)
+        private void BtnNext_Click(object sender, EventArgs e)
         {
-            txtAnswer.Visible = false;
+            ViewerAnswers.Visible = false;
 
-            if ((currentQuestion > questionsAnswers.Count)||(currentQuestion == questionsAnswers.Count))
+            if ((currentQuestion > QuestionsAnswers.Count)||(currentQuestion == QuestionsAnswers.Count))
             {
                 currentQuestion = 0;
             }
             else
             {
                 currentQuestion++;
-                if ((currentQuestion > questionsAnswers.Count) || (currentQuestion == questionsAnswers.Count))
+                if ((currentQuestion > QuestionsAnswers.Count) || (currentQuestion == QuestionsAnswers.Count))
                 {
                     currentQuestion = 0;
                 }
             }
-            txtQuestion.Text = questionsAnswers[currentQuestion][0] + "\r\n";
-            txtAnswer.Text = questionsAnswers[currentQuestion][1] + "\r\n";
+            ViewerQuestions.Text = QuestionsAnswers[currentQuestion][0] + "\r\n";
+            ViewerAnswers.Text = QuestionsAnswers[currentQuestion][1] + "\r\n";
 
 
         }
 
-        private void txtQuestion_TextChanged(object sender, EventArgs e)
+        private void TxtQuestion_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void txtAnswer_TextChanged(object sender, EventArgs e)
+        private void TxtAnswer_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            string path = "thequestions.txt"; ;
+            string path; ;
             if (OpenCards.ShowDialog() == DialogResult.OK)
             {
                 path = OpenCards.FileName;
@@ -80,35 +80,35 @@ namespace SmartLearn
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] questionAnswer = line.Split('—');
-                        questionsAnswers.Add(questionAnswer);
+                        string[] questionAnswer = line.Split(';');
+                        QuestionsAnswers.Add(questionAnswer);
                     }
                 }
-                txtQuestion.Text += questionsAnswers[0][0] + "\r\n";
-                txtAnswer.Text += questionsAnswers[0][1] + "\r\n";
+                ViewerQuestions.Text += QuestionsAnswers[0][0] + "\r\n";
+                ViewerAnswers.Text += QuestionsAnswers[0][1] + "\r\n";
             }
             
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        private void OpenFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
-            string path = ""; ;
+            string path; ;
             if (SaveCards.ShowDialog() == DialogResult.OK)
             {
                 path = SaveCards.FileName;
                 string buff ="";
                 using (StreamWriter writer = new StreamWriter(path, false, Encoding.GetEncoding(1251)))
                 {
-                    for (int i = 0; i < questionsAnswers.Count; i++)
+                    for (int i = 0; i < QuestionsAnswers.Count; i++)
                     {
-                        buff += questionsAnswers[i][0];
+                        buff += QuestionsAnswers[i][0];
                         buff += " — ";
-                        buff += questionsAnswers[i][1];
+                        buff += QuestionsAnswers[i][1];
                         writer.WriteLine(buff);
                         buff = "";
                     }
@@ -116,6 +116,11 @@ namespace SmartLearn
 
                 
             }
+        }
+
+        private void ViewerQuestions_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
