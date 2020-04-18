@@ -46,6 +46,7 @@ namespace SmartLearn
             // Test
             // 
             this.Test.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Test.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Test.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.Test.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.Test.Location = new System.Drawing.Point(152, 203);
@@ -87,6 +88,7 @@ namespace SmartLearn
             // ButtonHelp
             // 
             this.ButtonHelp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ButtonHelp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonHelp.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.ButtonHelp.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.ButtonHelp.Location = new System.Drawing.Point(152, 279);
@@ -102,6 +104,7 @@ namespace SmartLearn
             // LearningButton
             // 
             this.LearningButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LearningButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LearningButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.LearningButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.LearningButton.Location = new System.Drawing.Point(152, 126);
