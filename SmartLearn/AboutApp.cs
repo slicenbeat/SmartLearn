@@ -23,7 +23,6 @@ namespace SmartLearn
         {
             GitHubLink.StyleManager = this.StyleManager;
             TextAboutApp.StyleManager = this.StyleManager;
-
         }
         private void GitHubLink_Click(object sender, EventArgs e)
         {
@@ -42,6 +41,11 @@ namespace SmartLearn
         }
 
         private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

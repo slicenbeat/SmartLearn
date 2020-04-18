@@ -34,18 +34,20 @@
             this.AboutAppStyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.Logo = new System.Windows.Forms.PictureBox();
             this.TextAboutApp = new MetroFramework.Controls.MetroTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.AboutAppStyleManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GitHubLink
             // 
             this.GitHubLink.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.GitHubLink.Location = new System.Drawing.Point(284, 363);
+            this.GitHubLink.Location = new System.Drawing.Point(0, 3);
             this.GitHubLink.Name = "GitHubLink";
-            this.GitHubLink.Size = new System.Drawing.Size(265, 51);
+            this.GitHubLink.Size = new System.Drawing.Size(280, 34);
             this.GitHubLink.TabIndex = 0;
-            this.GitHubLink.Text = "Приложение на GitHub";
+            this.GitHubLink.Text = "Ссылка на GitHub";
             this.GitHubLink.UseSelectable = true;
             this.GitHubLink.Click += new System.EventHandler(this.GitHubLink_Click);
             // 
@@ -71,7 +73,7 @@
             // 
             // 
             this.TextAboutApp.CustomButton.Image = null;
-            this.TextAboutApp.CustomButton.Location = new System.Drawing.Point(449, 1);
+            this.TextAboutApp.CustomButton.Location = new System.Drawing.Point(442, 1);
             this.TextAboutApp.CustomButton.Name = "";
             this.TextAboutApp.CustomButton.Size = new System.Drawing.Size(253, 253);
             this.TextAboutApp.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -100,28 +102,38 @@
             this.TextAboutApp.SelectionLength = 0;
             this.TextAboutApp.SelectionStart = 0;
             this.TextAboutApp.ShortcutsEnabled = true;
-            this.TextAboutApp.Size = new System.Drawing.Size(696, 255);
+            this.TextAboutApp.Size = new System.Drawing.Size(707, 325);
             this.TextAboutApp.TabIndex = 11;
             this.TextAboutApp.Text = resources.GetString("TextAboutApp.Text");
             this.TextAboutApp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TextAboutApp.UseSelectable = true;
             this.TextAboutApp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextAboutApp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.TextAboutApp.WaterMarkFont = new System.Drawing.Font("Tahoma", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextAboutApp.Click += new System.EventHandler(this.metroTextBox1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.GitHubLink);
+            this.panel1.Location = new System.Drawing.Point(260, 404);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(280, 46);
+            this.panel1.TabIndex = 12;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // AboutApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.TextAboutApp);
             this.Controls.Add(this.Logo);
-            this.Controls.Add(this.GitHubLink);
             this.Name = "AboutApp";
-            this.Text = "AboutApp";
+            this.Text = "О приложении";
             this.Load += new System.EventHandler(this.AboutApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AboutAppStyleManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -132,5 +144,6 @@
         protected MetroFramework.Components.MetroStyleManager AboutAppStyleManager;
         private System.Windows.Forms.PictureBox Logo;
         private MetroFramework.Controls.MetroTextBox TextAboutApp;
+        private System.Windows.Forms.Panel panel1;
     }
 }
