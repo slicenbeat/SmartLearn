@@ -72,6 +72,7 @@
             this.TextAboutApp.CustomButton.Visible = false;
             this.TextAboutApp.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.TextAboutApp.Lines = new string[] {
+        "",
         "SmartLearn — это программа для улучшения запоминания информации, основанная на ме" +
             "тоде интервальных повторений. Бесплатная и с открытым исходным кодом.",
         "",
@@ -95,7 +96,7 @@
             this.TextAboutApp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TextAboutApp.UseSelectable = true;
             this.TextAboutApp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextAboutApp.WaterMarkFont = new System.Drawing.Font("Tahoma", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextAboutApp.WaterMarkFont = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextAboutApp.Click += new System.EventHandler(this.metroTextBox1_Click);
             // 
             // panel1
@@ -120,7 +121,7 @@
             this.MinimizeBox = false;
             this.Name = "AboutApp";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
-            this.Text = "О приложении";
+            this.Text = "О программе";
             this.Load += new System.EventHandler(this.AboutApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AboutAppStyleManager)).EndInit();
             this.panel1.ResumeLayout(false);
