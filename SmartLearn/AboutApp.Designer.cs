@@ -73,9 +73,9 @@
             // 
             // 
             this.TextAboutApp.CustomButton.Image = null;
-            this.TextAboutApp.CustomButton.Location = new System.Drawing.Point(442, 1);
+            this.TextAboutApp.CustomButton.Location = new System.Drawing.Point(375, 2);
             this.TextAboutApp.CustomButton.Name = "";
-            this.TextAboutApp.CustomButton.Size = new System.Drawing.Size(253, 253);
+            this.TextAboutApp.CustomButton.Size = new System.Drawing.Size(329, 329);
             this.TextAboutApp.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TextAboutApp.CustomButton.TabIndex = 1;
             this.TextAboutApp.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -84,14 +84,14 @@
             this.TextAboutApp.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextAboutApp.Lines = new string[] {
         "SmartLearn — это программа для улучшения запоминания информации,",
-        "снованная на методе интервальных повторений.",
+        "Основанная на методе интервальных повторений.",
         "Бесплатная и с открытым исходным кодом.",
         "Над приложением работали:",
         "Иваев Дамир",
         "Шеренков Данил",
         "Альгашев Алексей",
         "Прудовская Вероника"};
-            this.TextAboutApp.Location = new System.Drawing.Point(51, 102);
+            this.TextAboutApp.Location = new System.Drawing.Point(51, 93);
             this.TextAboutApp.MaxLength = 32767;
             this.TextAboutApp.Multiline = true;
             this.TextAboutApp.Name = "TextAboutApp";
@@ -102,7 +102,7 @@
             this.TextAboutApp.SelectionLength = 0;
             this.TextAboutApp.SelectionStart = 0;
             this.TextAboutApp.ShortcutsEnabled = true;
-            this.TextAboutApp.Size = new System.Drawing.Size(707, 325);
+            this.TextAboutApp.Size = new System.Drawing.Size(707, 334);
             this.TextAboutApp.TabIndex = 11;
             this.TextAboutApp.Text = resources.GetString("TextAboutApp.Text");
             this.TextAboutApp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using MetroFramework.Components;
+using MaterialSkin;
+using MaterialSkin.Controls;
+using MaterialSkin.Animations;
 
 namespace SmartLearn
 {
