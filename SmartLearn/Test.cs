@@ -24,7 +24,10 @@ namespace SmartLearn
 
         private void Run_Load(object sender, EventArgs e)
         {
-            
+            ViewerAnswers.StyleManager = this.StyleManager;
+            ViewerQuestions.StyleManager = this.StyleManager;
+
+
         }
 
         private void BtnAnswer_Click(object sender, EventArgs e)
