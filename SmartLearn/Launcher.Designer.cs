@@ -48,9 +48,9 @@ namespace SmartLearn
             this.Test.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Test.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.Test.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.Test.Location = new System.Drawing.Point(349, 150);
+            this.Test.Location = new System.Drawing.Point(152, 203);
             this.Test.Name = "Test";
-            this.Test.Size = new System.Drawing.Size(246, 117);
+            this.Test.Size = new System.Drawing.Size(130, 48);
             this.Test.TabIndex = 3;
             this.Test.TabStop = false;
             this.Test.Text = "Тест";
@@ -64,7 +64,7 @@ namespace SmartLearn
             // CheckTheme
             // 
             this.CheckTheme.AutoSize = true;
-            this.CheckTheme.Location = new System.Drawing.Point(524, 397);
+            this.CheckTheme.Location = new System.Drawing.Point(319, 396);
             this.CheckTheme.Name = "CheckTheme";
             this.CheckTheme.Size = new System.Drawing.Size(93, 15);
             this.CheckTheme.TabIndex = 7;
@@ -77,7 +77,7 @@ namespace SmartLearn
             this.Logo.Cursor = System.Windows.Forms.Cursors.Default;
             this.Logo.Enabled = false;
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
-            this.Logo.Location = new System.Drawing.Point(148, 18);
+            this.Logo.Location = new System.Drawing.Point(152, 17);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(32, 32);
             this.Logo.TabIndex = 8;
@@ -89,13 +89,13 @@ namespace SmartLearn
             this.ButtonHelp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ButtonHelp.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.ButtonHelp.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.ButtonHelp.Location = new System.Drawing.Point(17, 397);
+            this.ButtonHelp.Location = new System.Drawing.Point(152, 279);
             this.ButtonHelp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonHelp.Name = "ButtonHelp";
-            this.ButtonHelp.Size = new System.Drawing.Size(76, 20);
+            this.ButtonHelp.Size = new System.Drawing.Size(130, 48);
             this.ButtonHelp.TabIndex = 9;
             this.ButtonHelp.TabStop = false;
-            this.ButtonHelp.Text = "Справка";
+            this.ButtonHelp.Text = "О программе";
             this.ButtonHelp.UseSelectable = true;
             this.ButtonHelp.Click += new System.EventHandler(this.ButtonHelp_Click);
             // 
@@ -104,9 +104,9 @@ namespace SmartLearn
             this.LearningButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LearningButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.LearningButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.LearningButton.Location = new System.Drawing.Point(43, 150);
+            this.LearningButton.Location = new System.Drawing.Point(152, 126);
             this.LearningButton.Name = "LearningButton";
-            this.LearningButton.Size = new System.Drawing.Size(246, 117);
+            this.LearningButton.Size = new System.Drawing.Size(130, 48);
             this.LearningButton.TabIndex = 10;
             this.LearningButton.TabStop = false;
             this.LearningButton.Text = "Учить";
@@ -117,7 +117,7 @@ namespace SmartLearn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 431);
+            this.ClientSize = new System.Drawing.Size(430, 430);
             this.Controls.Add(this.LearningButton);
             this.Controls.Add(this.ButtonHelp);
             this.Controls.Add(this.Logo);
@@ -126,8 +126,8 @@ namespace SmartLearn
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(635, 431);
-            this.MinimumSize = new System.Drawing.Size(635, 431);
+            this.MaximumSize = new System.Drawing.Size(430, 430);
+            this.MinimumSize = new System.Drawing.Size(430, 430);
             this.Name = "SmartLearn";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "SmartLearn";
