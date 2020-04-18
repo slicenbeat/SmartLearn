@@ -53,9 +53,10 @@
             this.ShowAnswer.Enabled = false;
             this.ShowAnswer.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.ShowAnswer.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.ShowAnswer.Location = new System.Drawing.Point(17, 294);
+            this.ShowAnswer.Location = new System.Drawing.Point(23, 362);
+            this.ShowAnswer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ShowAnswer.Name = "ShowAnswer";
-            this.ShowAnswer.Size = new System.Drawing.Size(90, 23);
+            this.ShowAnswer.Size = new System.Drawing.Size(120, 28);
             this.ShowAnswer.TabIndex = 1;
             this.ShowAnswer.Text = "Ответ";
             this.ShowAnswer.UseSelectable = true;
@@ -66,10 +67,12 @@
             this.OpenFile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.OpenFile.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.OpenFile.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.OpenFile.Location = new System.Drawing.Point(167, 294);
+            this.OpenFile.Location = new System.Drawing.Point(223, 362);
+            this.OpenFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OpenFile.Name = "OpenFile";
-            this.OpenFile.Size = new System.Drawing.Size(125, 23);
+            this.OpenFile.Size = new System.Drawing.Size(167, 28);
             this.OpenFile.TabIndex = 2;
+            this.OpenFile.TabStop = false;
             this.OpenFile.Text = "Открыть файл";
             this.OpenFile.UseSelectable = true;
             this.OpenFile.Click += new System.EventHandler(this.button1_Click);
@@ -80,9 +83,10 @@
             this.ShowNext.Enabled = false;
             this.ShowNext.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.ShowNext.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.ShowNext.Location = new System.Drawing.Point(527, 294);
+            this.ShowNext.Location = new System.Drawing.Point(703, 362);
+            this.ShowNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ShowNext.Name = "ShowNext";
-            this.ShowNext.Size = new System.Drawing.Size(90, 23);
+            this.ShowNext.Size = new System.Drawing.Size(120, 28);
             this.ShowNext.TabIndex = 1;
             this.ShowNext.Text = "Следующий";
             this.ShowNext.UseSelectable = true;
@@ -93,10 +97,12 @@
             this.SaveFile.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.SaveFile.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.SaveFile.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.SaveFile.Location = new System.Drawing.Point(356, 294);
+            this.SaveFile.Location = new System.Drawing.Point(475, 362);
+            this.SaveFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SaveFile.Name = "SaveFile";
-            this.SaveFile.Size = new System.Drawing.Size(125, 23);
+            this.SaveFile.Size = new System.Drawing.Size(167, 28);
             this.SaveFile.TabIndex = 3;
+            this.SaveFile.TabStop = false;
             this.SaveFile.Text = "Сохранить файл";
             this.SaveFile.UseSelectable = true;
             this.SaveFile.Click += new System.EventHandler(this.metroButton1_Click);
@@ -115,9 +121,10 @@
             // 
             // 
             this.ViewerQuestions.CustomButton.Image = null;
-            this.ViewerQuestions.CustomButton.Location = new System.Drawing.Point(506, 2);
+            this.ViewerQuestions.CustomButton.Location = new System.Drawing.Point(912, 2);
+            this.ViewerQuestions.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ViewerQuestions.CustomButton.Name = "";
-            this.ViewerQuestions.CustomButton.Size = new System.Drawing.Size(91, 91);
+            this.ViewerQuestions.CustomButton.Size = new System.Drawing.Size(151, 139);
             this.ViewerQuestions.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.ViewerQuestions.CustomButton.TabIndex = 1;
             this.ViewerQuestions.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -126,7 +133,8 @@
             this.ViewerQuestions.DisplayIcon = true;
             this.ViewerQuestions.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.ViewerQuestions.Lines = new string[0];
-            this.ViewerQuestions.Location = new System.Drawing.Point(17, 63);
+            this.ViewerQuestions.Location = new System.Drawing.Point(23, 78);
+            this.ViewerQuestions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ViewerQuestions.MaxLength = 32767;
             this.ViewerQuestions.Name = "ViewerQuestions";
             this.ViewerQuestions.PasswordChar = '\0';
@@ -135,7 +143,7 @@
             this.ViewerQuestions.SelectionLength = 0;
             this.ViewerQuestions.SelectionStart = 0;
             this.ViewerQuestions.ShortcutsEnabled = true;
-            this.ViewerQuestions.Size = new System.Drawing.Size(600, 96);
+            this.ViewerQuestions.Size = new System.Drawing.Size(800, 118);
             this.ViewerQuestions.TabIndex = 4;
             this.ViewerQuestions.UseSelectable = true;
             this.ViewerQuestions.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -147,9 +155,10 @@
             // 
             // 
             this.ViewerAnswers.CustomButton.Image = null;
-            this.ViewerAnswers.CustomButton.Location = new System.Drawing.Point(506, 2);
+            this.ViewerAnswers.CustomButton.Location = new System.Drawing.Point(912, 2);
+            this.ViewerAnswers.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ViewerAnswers.CustomButton.Name = "";
-            this.ViewerAnswers.CustomButton.Size = new System.Drawing.Size(91, 91);
+            this.ViewerAnswers.CustomButton.Size = new System.Drawing.Size(151, 139);
             this.ViewerAnswers.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.ViewerAnswers.CustomButton.TabIndex = 1;
             this.ViewerAnswers.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -158,7 +167,8 @@
             this.ViewerAnswers.DisplayIcon = true;
             this.ViewerAnswers.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.ViewerAnswers.Lines = new string[0];
-            this.ViewerAnswers.Location = new System.Drawing.Point(17, 172);
+            this.ViewerAnswers.Location = new System.Drawing.Point(23, 212);
+            this.ViewerAnswers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ViewerAnswers.MaxLength = 32767;
             this.ViewerAnswers.Name = "ViewerAnswers";
             this.ViewerAnswers.PasswordChar = '\0';
@@ -167,7 +177,7 @@
             this.ViewerAnswers.SelectionLength = 0;
             this.ViewerAnswers.SelectionStart = 0;
             this.ViewerAnswers.ShortcutsEnabled = true;
-            this.ViewerAnswers.Size = new System.Drawing.Size(600, 96);
+            this.ViewerAnswers.Size = new System.Drawing.Size(800, 118);
             this.ViewerAnswers.TabIndex = 5;
             this.ViewerAnswers.UseSelectable = true;
             this.ViewerAnswers.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -176,9 +186,9 @@
             // 
             // Test
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 340);
+            this.ClientSize = new System.Drawing.Size(853, 418);
             this.Controls.Add(this.ViewerAnswers);
             this.Controls.Add(this.ViewerQuestions);
             this.Controls.Add(this.SaveFile);
@@ -186,10 +196,12 @@
             this.Controls.Add(this.OpenFile);
             this.Controls.Add(this.ShowAnswer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(640, 340);
-            this.MinimumSize = new System.Drawing.Size(640, 340);
+            this.MaximumSize = new System.Drawing.Size(853, 418);
+            this.MinimumSize = new System.Drawing.Size(853, 418);
             this.Name = "Test";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Тест";
             this.Load += new System.EventHandler(this.Run_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TestStyle)).EndInit();

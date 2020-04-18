@@ -39,6 +39,7 @@ namespace SmartLearn
             this.Logo = new System.Windows.Forms.PictureBox();
             this.LearningButton = new MetroFramework.Controls.MetroButton();
             this.ButtonHelp = new MetroFramework.Controls.MetroLink();
+            this.MyDecks = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.MainStyle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,7 @@ namespace SmartLearn
             this.Test.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Test.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.Test.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.Test.Location = new System.Drawing.Point(203, 250);
+            this.Test.Location = new System.Drawing.Point(203, 329);
             this.Test.Margin = new System.Windows.Forms.Padding(4);
             this.Test.Name = "Test";
             this.Test.Size = new System.Drawing.Size(173, 59);
@@ -116,11 +117,24 @@ namespace SmartLearn
             this.ButtonHelp.UseSelectable = true;
             this.ButtonHelp.Click += new System.EventHandler(this.metroLink1_Click);
             // 
+            // MyDecks
+            // 
+            this.MyDecks.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.MyDecks.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.MyDecks.Location = new System.Drawing.Point(203, 242);
+            this.MyDecks.Name = "MyDecks";
+            this.MyDecks.Size = new System.Drawing.Size(173, 59);
+            this.MyDecks.TabIndex = 12;
+            this.MyDecks.TabStop = false;
+            this.MyDecks.Text = "Мои колоды";
+            this.MyDecks.UseSelectable = true;
+            // 
             // SmartLearn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 529);
+            this.Controls.Add(this.MyDecks);
             this.Controls.Add(this.ButtonHelp);
             this.Controls.Add(this.LearningButton);
             this.Controls.Add(this.Logo);
@@ -150,6 +164,7 @@ namespace SmartLearn
         private System.Windows.Forms.PictureBox Logo;
         private MetroFramework.Controls.MetroButton LearningButton;
         private MetroFramework.Controls.MetroLink ButtonHelp;
+        private MetroFramework.Controls.MetroButton MyDecks;
     }
 }
 
