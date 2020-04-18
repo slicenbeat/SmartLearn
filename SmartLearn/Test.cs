@@ -24,20 +24,26 @@ namespace SmartLearn
 
         private void Run_Load(object sender, EventArgs e)
         {
-           
+            ViewerAnswers.StyleManager = this.StyleManager;
+            ViewerQuestions.StyleManager = this.StyleManager;
+            ShowAnswer.StyleManager = this.StyleManager;
+            ShowNext.StyleManager = this.StyleManager;
+            OpenFile.StyleManager = this.StyleManager;
+            SaveFile.StyleManager = this.StyleManager;
+            ViewerAnswers.Visible = false;
         }
 
         private void btnAnswer_Click(object sender, EventArgs e)
         {
-            if (txtAnswer.Visible)
-                txtAnswer.Visible = false;
+            if (ViewerAnswers.Visible)
+                ViewerAnswers.Visible = false;
             else
-                txtAnswer.Visible = true;
+                ViewerAnswers.Visible = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            txtAnswer.Visible = false;
+            ViewerAnswers.Visible = false;
 
             if ((currentQuestion > questionsAnswers.Count)||(currentQuestion == questionsAnswers.Count))
             {
@@ -51,8 +57,8 @@ namespace SmartLearn
                     currentQuestion = 0;
                 }
             }
-            txtQuestion.Text = questionsAnswers[currentQuestion][0] + "\r\n";
-            txtAnswer.Text = questionsAnswers[currentQuestion][1] + "\r\n";
+            ViewerQuestions.Text = questionsAnswers[currentQuestion][0] + "\r\n";
+            ViewerAnswers.Text = questionsAnswers[currentQuestion][1] + "\r\n";
 
 
         }
@@ -80,12 +86,12 @@ namespace SmartLearn
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] questionAnswer = line.Split('—');
+                        string[] questionAnswer = line.Split(';');
                         questionsAnswers.Add(questionAnswer);
                     }
                 }
-                txtQuestion.Text += questionsAnswers[0][0] + "\r\n";
-                txtAnswer.Text += questionsAnswers[0][1] + "\r\n";
+                ViewerQuestions.Text += questionsAnswers[0][0] + "\r\n";
+                ViewerAnswers.Text += questionsAnswers[0][1] + "\r\n";
             }
             
         }
@@ -97,7 +103,7 @@ namespace SmartLearn
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            string path = ""; ;
+            string path; ;
             if (SaveCards.ShowDialog() == DialogResult.OK)
             {
                 path = SaveCards.FileName;
@@ -116,6 +122,11 @@ namespace SmartLearn
 
                 
             }
+        }
+
+        private void ViewerAnswers_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
