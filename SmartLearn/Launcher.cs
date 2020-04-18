@@ -22,7 +22,13 @@ namespace SmartLearn
             InitializeComponent();
             this.StyleManager = MainStyle;
         }
-
+        
+        private void metroLink1_Click(object sender, EventArgs e)
+        {
+            AboutApp ifrm = new AboutApp();
+            ifrm.StyleManager = this.StyleManager;
+            ifrm.Show();
+        }
         private void SmartLearn_Load(object sender, EventArgs e)
         {
 
@@ -47,13 +53,6 @@ namespace SmartLearn
         private void Logo_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void ButtonHelp_Click(object sender, EventArgs e)
-        {
-            AboutApp ifrm = new AboutApp();
-            ifrm.StyleManager = this.StyleManager;
-            ifrm.Show(); 
         }
 
         private void LearningButton_Click(object sender, EventArgs e)

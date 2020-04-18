@@ -42,12 +42,12 @@
             // 
             this.GitHubLink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GitHubLink.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.GitHubLink.Location = new System.Drawing.Point(0, 13);
-            this.GitHubLink.Margin = new System.Windows.Forms.Padding(2);
+            this.GitHubLink.Location = new System.Drawing.Point(0, 16);
+            this.GitHubLink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GitHubLink.Name = "GitHubLink";
-            this.GitHubLink.Size = new System.Drawing.Size(144, 28);
+            this.GitHubLink.Size = new System.Drawing.Size(192, 34);
             this.GitHubLink.TabIndex = 0;
-            this.GitHubLink.Text = "GitHub 🖤";
+            this.GitHubLink.Text = "GitHub проекта";
             this.GitHubLink.UseSelectable = true;
             this.GitHubLink.Click += new System.EventHandler(this.GitHubLink_Click);
             // 
@@ -61,10 +61,10 @@
             // 
             // 
             this.TextAboutApp.CustomButton.Image = null;
-            this.TextAboutApp.CustomButton.Location = new System.Drawing.Point(312, 2);
-            this.TextAboutApp.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.TextAboutApp.CustomButton.Location = new System.Drawing.Point(583, 1);
+            this.TextAboutApp.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextAboutApp.CustomButton.Name = "";
-            this.TextAboutApp.CustomButton.Size = new System.Drawing.Size(215, 215);
+            this.TextAboutApp.CustomButton.Size = new System.Drawing.Size(359, 331);
             this.TextAboutApp.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TextAboutApp.CustomButton.TabIndex = 1;
             this.TextAboutApp.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -78,8 +78,8 @@
         "",
         "Над приложением работали: Дамир Иваев, Данил Шеренков, Алексей Альгашев, Вероника" +
             " Прудовская"};
-            this.TextAboutApp.Location = new System.Drawing.Point(38, 83);
-            this.TextAboutApp.Margin = new System.Windows.Forms.Padding(2);
+            this.TextAboutApp.Location = new System.Drawing.Point(51, 102);
+            this.TextAboutApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextAboutApp.MaxLength = 32767;
             this.TextAboutApp.Multiline = true;
             this.TextAboutApp.Name = "TextAboutApp";
@@ -90,7 +90,7 @@
             this.TextAboutApp.SelectionLength = 0;
             this.TextAboutApp.SelectionStart = 0;
             this.TextAboutApp.ShortcutsEnabled = true;
-            this.TextAboutApp.Size = new System.Drawing.Size(530, 220);
+            this.TextAboutApp.Size = new System.Drawing.Size(707, 271);
             this.TextAboutApp.TabIndex = 11;
             this.TextAboutApp.Text = resources.GetString("TextAboutApp.Text");
             this.TextAboutApp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -102,25 +102,25 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.GitHubLink);
-            this.panel1.Location = new System.Drawing.Point(231, 272);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(308, 335);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(144, 57);
+            this.panel1.Size = new System.Drawing.Size(192, 70);
             this.panel1.TabIndex = 12;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // AboutApp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 328);
+            this.ClientSize = new System.Drawing.Size(800, 404);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TextAboutApp);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutApp";
-            this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
+            this.Padding = new System.Windows.Forms.Padding(20, 74, 20, 20);
             this.Text = "О программе";
             this.Load += new System.EventHandler(this.AboutApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AboutAppStyleManager)).EndInit();
