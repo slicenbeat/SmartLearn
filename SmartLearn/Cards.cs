@@ -4,44 +4,73 @@ namespace SmartLearn
 {
     public class Cards
     {
-        private string NameCardList { get; set; }
-        private int number { get; set; }
-        private int current { get; set; }
+        private string NameCardList;
+        private int Size;
+        private int Number; 
+
+        public string getName()
+        {
+            return this.NameCardList;
+        }
+
+        public int getSize()
+        {
+            return this.Size;
+        }
+
+        public int getNumber()
+        {
+            return this.Number;
+        }
+
+        public void setSize(int newSize)
+        {
+            this.Size = newSize;
+        }
+
+        public void setNumber(int newNumber)
+        {
+            this.Number = newNumber;
+        }
+
         public Cards()
         {
             NameCardList = "";
-            number = 0;
-            current = 0;
+            Size = 0;
+            Number = 0;
         }
+
         public Cards(string name, int n)
         {
             NameCardList = name;
-            number = n;
+            Size = n;
         }
+
         public int nextID()
         {
-            if (current == number)
+            if (Number == Size)
             {
-                current = 1;
+                Number = 1;
                 return 1;
             }
             else
             {
-                current += 1;
-                return current + 1;
+                Number += 1;
+                return Number + 1;
             }
         }
+
         public int prevID()
         {
-            if (current == 1)
+            if (Number == 1)
             {
-                current = number;
-                return number;
+                Number = Size;
+                return Size;
             }
             else
             {
-                current -= 1;
-                return current - 1;
+                Number -= 1;
+                return Number - 1;
             }
         }
     }
