@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="Card.cs" />
     <Compile Include="CardList.cs" />
+    <Compile Include="Cards.cs" />
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
     </Compile>

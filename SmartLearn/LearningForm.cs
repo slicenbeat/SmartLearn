@@ -29,5 +29,10 @@ namespace SmartLearn
             LeViewer.StyleManager = this.StyleManager;
             LeShowAnswer.StyleManager = this.StyleManager; 
         }
+
+        private void LeOpenCards_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
