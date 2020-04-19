@@ -44,6 +44,7 @@ namespace SmartLearn
             {
                 pather = LeOpen.FileName;
             }
+            else return;
             string sql_path = "Data Source=" + pather + ";";
             LeViewer.Clear();
             Deck = new Cards("table_1", 4);
