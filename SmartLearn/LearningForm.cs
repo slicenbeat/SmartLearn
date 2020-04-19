@@ -43,6 +43,9 @@ namespace SmartLearn
             if (LeOpen.ShowDialog() == DialogResult.OK)
             {
                 pather = LeOpen.FileName;
+                LeNextQuestion.Enabled = true;
+                LePrevQuestion.Enabled = true;
+                LeShowAnswer.Enabled = true;
             }
             else return;
             string sql_path = "Data Source=" + pather + ";";
