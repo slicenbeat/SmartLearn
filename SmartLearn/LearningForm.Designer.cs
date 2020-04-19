@@ -33,15 +33,15 @@
             this.LePrevQuestion = new MetroFramework.Controls.MetroButton();
             this.LeOpenCards = new MetroFramework.Controls.MetroButton();
             this.LeViewer = new MetroFramework.Controls.MetroTextBox();
+            this.LeOpen = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // LeShowAnswer
             // 
             this.LeShowAnswer.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.LeShowAnswer.Location = new System.Drawing.Point(459, 596);
-            this.LeShowAnswer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LeShowAnswer.Location = new System.Drawing.Point(201, 485);
             this.LeShowAnswer.Name = "LeShowAnswer";
-            this.LeShowAnswer.Size = new System.Drawing.Size(197, 54);
+            this.LeShowAnswer.Size = new System.Drawing.Size(148, 44);
             this.LeShowAnswer.TabIndex = 1;
             this.LeShowAnswer.TabStop = false;
             this.LeShowAnswer.Text = "Показать ответ";
@@ -51,10 +51,9 @@
             // LeNextQuestion
             // 
             this.LeNextQuestion.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.LeNextQuestion.Location = new System.Drawing.Point(696, 596);
-            this.LeNextQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LeNextQuestion.Location = new System.Drawing.Point(379, 485);
             this.LeNextQuestion.Name = "LeNextQuestion";
-            this.LeNextQuestion.Size = new System.Drawing.Size(197, 54);
+            this.LeNextQuestion.Size = new System.Drawing.Size(148, 44);
             this.LeNextQuestion.TabIndex = 3;
             this.LeNextQuestion.TabStop = false;
             this.LeNextQuestion.Text = "Следующий вопрос";
@@ -64,10 +63,9 @@
             // LePrevQuestion
             // 
             this.LePrevQuestion.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.LePrevQuestion.Location = new System.Drawing.Point(221, 596);
-            this.LePrevQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LePrevQuestion.Location = new System.Drawing.Point(23, 485);
             this.LePrevQuestion.Name = "LePrevQuestion";
-            this.LePrevQuestion.Size = new System.Drawing.Size(197, 54);
+            this.LePrevQuestion.Size = new System.Drawing.Size(148, 44);
             this.LePrevQuestion.TabIndex = 4;
             this.LePrevQuestion.TabStop = false;
             this.LePrevQuestion.Text = "Предыдущий вопрос";
@@ -77,10 +75,9 @@
             // LeOpenCards
             // 
             this.LeOpenCards.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.LeOpenCards.Location = new System.Drawing.Point(459, 16);
-            this.LeOpenCards.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LeOpenCards.Location = new System.Drawing.Point(201, 14);
             this.LeOpenCards.Name = "LeOpenCards";
-            this.LeOpenCards.Size = new System.Drawing.Size(197, 54);
+            this.LeOpenCards.Size = new System.Drawing.Size(148, 44);
             this.LeOpenCards.TabIndex = 0;
             this.LeOpenCards.TabStop = false;
             this.LeOpenCards.Text = "Открыть колоду";
@@ -93,10 +90,9 @@
             // 
             // 
             this.LeViewer.CustomButton.Image = null;
-            this.LeViewer.CustomButton.Location = new System.Drawing.Point(182, 2);
-            this.LeViewer.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LeViewer.CustomButton.Location = new System.Drawing.Point(80, 2);
             this.LeViewer.CustomButton.Name = "";
-            this.LeViewer.CustomButton.Size = new System.Drawing.Size(487, 487);
+            this.LeViewer.CustomButton.Size = new System.Drawing.Size(296, 321);
             this.LeViewer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.LeViewer.CustomButton.TabIndex = 1;
             this.LeViewer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -104,8 +100,7 @@
             this.LeViewer.CustomButton.Visible = false;
             this.LeViewer.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.LeViewer.Lines = new string[0];
-            this.LeViewer.Location = new System.Drawing.Point(221, 78);
-            this.LeViewer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LeViewer.Location = new System.Drawing.Point(23, 64);
             this.LeViewer.MaxLength = 32767;
             this.LeViewer.Multiline = true;
             this.LeViewer.Name = "LeViewer";
@@ -115,29 +110,30 @@
             this.LeViewer.SelectionLength = 0;
             this.LeViewer.SelectionStart = 0;
             this.LeViewer.ShortcutsEnabled = true;
-            this.LeViewer.Size = new System.Drawing.Size(672, 492);
+            this.LeViewer.Size = new System.Drawing.Size(504, 400);
             this.LeViewer.TabIndex = 5;
             this.LeViewer.UseSelectable = true;
             this.LeViewer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.LeViewer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // LeOpen
+            // 
+            this.LeOpen.FileName = "Откройте файл бд";
+            // 
             // LearningForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1109, 716);
+            this.ClientSize = new System.Drawing.Size(552, 552);
             this.Controls.Add(this.LeViewer);
             this.Controls.Add(this.LePrevQuestion);
             this.Controls.Add(this.LeNextQuestion);
             this.Controls.Add(this.LeShowAnswer);
             this.Controls.Add(this.LeOpenCards);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1109, 716);
-            this.MinimumSize = new System.Drawing.Size(1109, 716);
+            this.MaximumSize = new System.Drawing.Size(552, 552);
+            this.MinimumSize = new System.Drawing.Size(552, 552);
             this.Name = "LearningForm";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
-            this.Text = "Обучение";
             this.Load += new System.EventHandler(this.LearningForm_Load);
             this.ResumeLayout(false);
 
@@ -150,5 +146,6 @@
         private MetroFramework.Controls.MetroButton LePrevQuestion;
         private MetroFramework.Controls.MetroButton LeOpenCards;
         private MetroFramework.Controls.MetroTextBox LeViewer;
+        private System.Windows.Forms.OpenFileDialog LeOpen;
     }
 }

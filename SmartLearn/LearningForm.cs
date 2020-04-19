@@ -39,10 +39,16 @@ namespace SmartLearn
 
         private void LeOpenCards_Click(object sender, EventArgs e)
         {
+            string pather = "";
+            if (LeOpen.ShowDialog() == DialogResult.OK)
+            {
+                pather = LeOpen.FileName;
+            }
+            string sql_path = "Data Source=" + pather + ";";
             LeViewer.Clear();
             Deck = new Cards("table_1", 4);
             Deck.setNumber(1);
-            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+            DB = new SQLiteConnection(sql_path + " Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
             CMD.CommandText = "SELECT * FROM '" + Deck.getName() + "'  WHERE id = 1";
