@@ -5,10 +5,19 @@ namespace SmartLearn
 {
     class CardList
     {
-        public List<Card> Cards { get; private set; }
-        public int current;
-        public string Name;
+        List<Card> Cards;
+        int current;
+        string Name;
         Random rand = new Random();
+
+        public int GetCurrent() { return this.current; }
+        public void SetCurrent(int c) { this.current = c; }
+
+        public string GetName() { return this.Name; }
+        public void SetName(string s) { this.Name = s; }
+
+        public Card GetList(int index) { return this.Cards[index]; }
+        public void SetList(int index, Card c) { this.Cards[index] = c; }
 
         public CardList(string Name)
         {
