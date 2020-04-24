@@ -29,30 +29,17 @@ namespace SmartLearn
 
         private void LearningForm_Load(object sender, EventArgs e)
         {
-            LeOpenCards.StyleManager = this.StyleManager;
             LeNextQuestion.StyleManager = this.StyleManager;
             LePrevQuestion.StyleManager = this.StyleManager;
             LeViewer.StyleManager = this.StyleManager;
-            LeShowAnswer.StyleManager = this.StyleManager; 
-            
-        }
-
-        private void LeOpenCards_Click(object sender, EventArgs e)
-        {
-            string pather = "";
-            if (LeOpen.ShowDialog() == DialogResult.OK)
-            {
-                pather = LeOpen.FileName;
-                LeNextQuestion.Enabled = true;
-                LePrevQuestion.Enabled = true;
-                LeShowAnswer.Enabled = true;
-            }
-            else return;
-            string sql_path = "Data Source=" + pather + ";";
+            LeShowAnswer.StyleManager = this.StyleManager;
+            LeNextQuestion.Enabled = true;
+            LePrevQuestion.Enabled = true;
+            LeShowAnswer.Enabled = true;
             LeViewer.Clear();
             Deck = new Cards("table_1", 4);
             Deck.setNumber(1);
-            DB = new SQLiteConnection(sql_path + " Version=3");
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
             CMD.CommandText = "SELECT * FROM '" + Deck.getName() + "'  WHERE id = 1";
