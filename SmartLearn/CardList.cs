@@ -6,13 +6,15 @@ namespace SmartLearn
     class CardList
     {
         public List<Card> Cards { get; private set; }
-        int current;
+        public int current;
+        public string Name;
         Random rand = new Random();
 
-        public CardList()
+        public CardList(string Name)
         {
             Cards = new List<Card>();
             current = 0;
+            this.Name = Name;
         }
 
         public void Add(Card card)

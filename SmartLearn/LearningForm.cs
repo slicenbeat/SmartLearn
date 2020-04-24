@@ -19,7 +19,7 @@ namespace SmartLearn
     public partial class LearningForm : MetroForm
     {
 
-        private Cards Deck;
+        private CardList Deck;
         private SQLiteConnection DB;
 
         public LearningForm()
@@ -37,69 +37,74 @@ namespace SmartLearn
             LePrevQuestion.Enabled = true;
             LeShowAnswer.Enabled = true;
             LeViewer.Clear();
-            Deck = new Cards("table_1", 4);
-            Deck.setNumber(1);
+
+
+            Deck = new CardList("table_1");
+            Deck.current = 1;
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "SELECT * FROM '" + Deck.getName() + "'  WHERE id = 1";
-            //CMD.Parameters.Add("@Name", DbType.String).Value = Deck.getName();
-            SQLiteDataReader SQL = CMD.ExecuteReader();
-            SQL.Read();
-            LeViewer.Text += SQL["question"];
+            CMD.CommandText = "SELECT Count(*) From table_1";
+            string s = CMD.ExecuteScalar().ToString();
+
+            int size = Convert.ToInt32(s);
+
+            SQLiteCommand CMD1 = DB.CreateCommand();
+            SQLiteDataReader SQL;
+            for (int i = 1; i < size + 1; i++)
+            {
+                CMD1.CommandText = "SELECT * FROM table_1 WHERE id like '%' || @Numb || '%' ";
+                CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
+                SQL = CMD1.ExecuteReader();
+                SQL.Read();
+                Card C = new Card(SQL["question"].ToString(), SQL["answer"].ToString());
+                this.Deck.Add(C);
+                SQL.Close();
+            }
+            LeViewer.Text += Deck.Cards[Deck.current].Question;
         }
 
         private void LeShowAnswer_Click(object sender, EventArgs e)
         {
             LeViewer.Clear();
-            SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "SELECT * FROM '" + Deck.getName() + "' WHERE id like '%' || @Numb || '%' ";
-            CMD.Parameters.Add("@Numb", DbType.Int16).Value = Deck.getNumber();
-            SQLiteDataReader SQL = CMD.ExecuteReader();
-            if (SQL.HasRows)
-            {
-
-                SQL.Read();
-                LeViewer.Text += SQL["answer"];
-
-            }
-            else LeViewer.Text = "Error";
+            
+            //LeViewer.Text = ;
         }
 
         private void LeNextQuestion_Click(object sender, EventArgs e)
         {
-            LeViewer.Clear();
-            Deck.nextID();
-            SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "SELECT * FROM '" + Deck.getName() + "' WHERE id like '%' || @Numb || '%' ";
-            CMD.Parameters.Add("@Numb", DbType.Int16).Value = Deck.getNumber();
-            SQLiteDataReader SQL = CMD.ExecuteReader();
-            if (SQL.HasRows)
-            {
+            //LeViewer.Clear();
+            //Deck.nextID();
+            //SQLiteCommand CMD = DB.CreateCommand();
+            //CMD.CommandText = "SELECT * FROM '" + Deck.getName() + "' WHERE id like '%' || @Numb || '%' ";
+            //CMD.Parameters.Add("@Numb", DbType.Int16).Value = Deck.getNumber();
+            //SQLiteDataReader SQL = CMD.ExecuteReader();
+            //if (SQL.HasRows)
+            //{
 
-                SQL.Read();
-                LeViewer.Text += SQL["question"];
+            //    SQL.Read();
+            //    LeViewer.Text += SQL["question"];
 
-            }
-            else LeViewer.Text = "Error";
+            //}
+            //else LeViewer.Text = "Error";
         }
 
         private void LePrevQuestion_Click(object sender, EventArgs e)
         {
-            LeViewer.Clear();
-            Deck.prevID();
-            SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "SELECT * FROM '" + Deck.getName() + "' WHERE id like '%' || @Numb || '%' ";
-            CMD.Parameters.Add("@Numb", DbType.Int16).Value = Deck.getNumber();
-            SQLiteDataReader SQL = CMD.ExecuteReader();
-            if (SQL.HasRows)
-            {
+            //LeViewer.Clear();
+            //Deck.prevID();
+            //SQLiteCommand CMD = DB.CreateCommand();
+            //CMD.CommandText = "SELECT * FROM '" + Deck.getName() + "' WHERE id like '%' || @Numb || '%' ";
+            //CMD.Parameters.Add("@Numb", DbType.Int16).Value = Deck.getNumber();
+            //SQLiteDataReader SQL = CMD.ExecuteReader();
+            //if (SQL.HasRows)
+            //{
 
-                SQL.Read();
-                LeViewer.Text += SQL["question"];
+            //    SQL.Read();
+            //    LeViewer.Text += SQL["question"];
 
-            }
-            else LeViewer.Text = "Error";
+            //}
+            //else LeViewer.Text = "Error";
         }
     }
 }
