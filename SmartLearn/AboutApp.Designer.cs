@@ -61,10 +61,10 @@
             // 
             // 
             this.TextAboutApp.CustomButton.Image = null;
-            this.TextAboutApp.CustomButton.Location = new System.Drawing.Point(583, 1);
+            this.TextAboutApp.CustomButton.Location = new System.Drawing.Point(437, 1);
             this.TextAboutApp.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextAboutApp.CustomButton.Name = "";
-            this.TextAboutApp.CustomButton.Size = new System.Drawing.Size(359, 331);
+            this.TextAboutApp.CustomButton.Size = new System.Drawing.Size(269, 269);
             this.TextAboutApp.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TextAboutApp.CustomButton.TabIndex = 1;
             this.TextAboutApp.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -92,6 +92,7 @@
             this.TextAboutApp.ShortcutsEnabled = true;
             this.TextAboutApp.Size = new System.Drawing.Size(707, 271);
             this.TextAboutApp.TabIndex = 11;
+            this.TextAboutApp.TabStop = false;
             this.TextAboutApp.Text = resources.GetString("TextAboutApp.Text");
             this.TextAboutApp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TextAboutApp.UseSelectable = true;
