@@ -33,15 +33,33 @@ namespace SmartLearn
 
         public Card GetNext()
         {
-            Card c = Cards[current];
-            if (current < Cards.Count - 1) current++;
+            Card c;
+            if (current == Cards.Count - 1)
+            {
+                current = 0;
+                c = Cards[current];
+            }
+            else
+            {
+                current++;
+                c = Cards[current];
+            }
             return c;
         }
 
         public Card GetPrev()
         {
-            current -= 2;
-            Card c = GetNext();
+            Card c;
+            if (current == 0)
+            {
+                current = Cards.Count - 1;
+                c = Cards[current];
+            }
+            else
+            {
+                current--;
+                c = Cards[current];
+            }
             return c;
         }
         
