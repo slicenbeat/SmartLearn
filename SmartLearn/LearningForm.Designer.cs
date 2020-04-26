@@ -39,9 +39,10 @@
             // 
             this.LeShowAnswer.Enabled = false;
             this.LeShowAnswer.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.LeShowAnswer.Location = new System.Drawing.Point(201, 485);
+            this.LeShowAnswer.Location = new System.Drawing.Point(268, 597);
+            this.LeShowAnswer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LeShowAnswer.Name = "LeShowAnswer";
-            this.LeShowAnswer.Size = new System.Drawing.Size(148, 44);
+            this.LeShowAnswer.Size = new System.Drawing.Size(197, 54);
             this.LeShowAnswer.TabIndex = 1;
             this.LeShowAnswer.TabStop = false;
             this.LeShowAnswer.Text = "Показать ответ";
@@ -52,9 +53,10 @@
             // 
             this.LeNextQuestion.Enabled = false;
             this.LeNextQuestion.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.LeNextQuestion.Location = new System.Drawing.Point(379, 485);
+            this.LeNextQuestion.Location = new System.Drawing.Point(505, 597);
+            this.LeNextQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LeNextQuestion.Name = "LeNextQuestion";
-            this.LeNextQuestion.Size = new System.Drawing.Size(148, 44);
+            this.LeNextQuestion.Size = new System.Drawing.Size(197, 54);
             this.LeNextQuestion.TabIndex = 3;
             this.LeNextQuestion.TabStop = false;
             this.LeNextQuestion.Text = "Следующий вопрос";
@@ -65,9 +67,10 @@
             // 
             this.LePrevQuestion.Enabled = false;
             this.LePrevQuestion.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.LePrevQuestion.Location = new System.Drawing.Point(23, 485);
+            this.LePrevQuestion.Location = new System.Drawing.Point(31, 597);
+            this.LePrevQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LePrevQuestion.Name = "LePrevQuestion";
-            this.LePrevQuestion.Size = new System.Drawing.Size(148, 44);
+            this.LePrevQuestion.Size = new System.Drawing.Size(197, 54);
             this.LePrevQuestion.TabIndex = 4;
             this.LePrevQuestion.TabStop = false;
             this.LePrevQuestion.Text = "Предыдущий вопрос";
@@ -80,9 +83,10 @@
             // 
             // 
             this.LeViewer.CustomButton.Image = null;
-            this.LeViewer.CustomButton.Location = new System.Drawing.Point(80, 2);
+            this.LeViewer.CustomButton.Location = new System.Drawing.Point(243, 2);
+            this.LeViewer.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LeViewer.CustomButton.Name = "";
-            this.LeViewer.CustomButton.Size = new System.Drawing.Size(296, 321);
+            this.LeViewer.CustomButton.Size = new System.Drawing.Size(649, 599);
             this.LeViewer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.LeViewer.CustomButton.TabIndex = 1;
             this.LeViewer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -90,7 +94,8 @@
             this.LeViewer.CustomButton.Visible = false;
             this.LeViewer.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.LeViewer.Lines = new string[0];
-            this.LeViewer.Location = new System.Drawing.Point(23, 64);
+            this.LeViewer.Location = new System.Drawing.Point(31, 79);
+            this.LeViewer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LeViewer.MaxLength = 32767;
             this.LeViewer.Multiline = true;
             this.LeViewer.Name = "LeViewer";
@@ -100,8 +105,9 @@
             this.LeViewer.SelectionLength = 0;
             this.LeViewer.SelectionStart = 0;
             this.LeViewer.ShortcutsEnabled = true;
-            this.LeViewer.Size = new System.Drawing.Size(504, 400);
+            this.LeViewer.Size = new System.Drawing.Size(672, 492);
             this.LeViewer.TabIndex = 5;
+            this.LeViewer.TabStop = false;
             this.LeViewer.UseSelectable = true;
             this.LeViewer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.LeViewer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -112,17 +118,19 @@
             // 
             // LearningForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 552);
+            this.ClientSize = new System.Drawing.Size(736, 679);
             this.Controls.Add(this.LeViewer);
             this.Controls.Add(this.LePrevQuestion);
             this.Controls.Add(this.LeNextQuestion);
             this.Controls.Add(this.LeShowAnswer);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(552, 552);
-            this.MinimumSize = new System.Drawing.Size(552, 552);
+            this.MaximumSize = new System.Drawing.Size(736, 679);
+            this.MinimumSize = new System.Drawing.Size(736, 679);
             this.Name = "LearningForm";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Load += new System.EventHandler(this.LearningForm_Load);
             this.ResumeLayout(false);
 
