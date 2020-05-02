@@ -6,7 +6,6 @@ namespace SmartLearn
     {
         string Question;
         string Answer;
-        //string[] Options;
         int ID;
 
         public string GetQuestion() { return this.Question; }
@@ -20,7 +19,6 @@ namespace SmartLearn
 
         public Card()
         {
-           // Options = new string[4];
             Question = "";
             Answer = "";
             ID = 0;
@@ -28,21 +26,10 @@ namespace SmartLearn
 
         public Card(string ques, string ans)
         {
-            //Options = new string[4];
             Question = ques;
             Answer = ans;
             ID = 0;
         }
-
-        //public void AddOption(int index, string option)
-        //{
-        //    if (index > Options.Length)
-        //    {
-        //        throw new IndexOutOfRangeException();
-        //    }
-
-        //    Options[index] = option;
-        //}
 
         public bool IsCorrect(string ans)
         {

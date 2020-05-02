@@ -83,5 +83,10 @@ namespace SmartLearn
         {
             current = 0;
         }
+
+        public void Delete(int i)
+        {
+            Cards.RemoveAt(i);
+        }
     }
 }
