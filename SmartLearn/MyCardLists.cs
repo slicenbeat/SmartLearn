@@ -46,5 +46,10 @@ namespace SmartLearn
         {
             CardListComboBox.Items.Remove(CardListComboBox.SelectedItem);
         }
+
+        private void bLearnCardList_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

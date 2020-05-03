@@ -37,9 +37,10 @@
             // 
             // AddCardList
             // 
-            this.AddCardList.Location = new System.Drawing.Point(40, 182);
+            this.AddCardList.Location = new System.Drawing.Point(53, 224);
+            this.AddCardList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddCardList.Name = "AddCardList";
-            this.AddCardList.Size = new System.Drawing.Size(132, 35);
+            this.AddCardList.Size = new System.Drawing.Size(176, 43);
             this.AddCardList.TabIndex = 0;
             this.AddCardList.Text = "Создать колоду";
             this.AddCardList.UseSelectable = true;
@@ -49,28 +50,32 @@
             // 
             this.CardListComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CardListComboBox.FormattingEnabled = true;
-            this.CardListComboBox.ItemHeight = 23;
-            this.CardListComboBox.Location = new System.Drawing.Point(170, 98);
+            this.CardListComboBox.ItemHeight = 24;
+            this.CardListComboBox.Location = new System.Drawing.Point(227, 121);
+            this.CardListComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CardListComboBox.Name = "CardListComboBox";
-            this.CardListComboBox.Size = new System.Drawing.Size(273, 29);
+            this.CardListComboBox.Size = new System.Drawing.Size(363, 30);
             this.CardListComboBox.TabIndex = 1;
             this.CardListComboBox.UseSelectable = true;
             this.CardListComboBox.SelectedIndexChanged += new System.EventHandler(this.CardListComboBox_SelectedIndexChanged);
             // 
             // bLearnCardList
             // 
-            this.bLearnCardList.Location = new System.Drawing.Point(178, 182);
+            this.bLearnCardList.Location = new System.Drawing.Point(237, 224);
+            this.bLearnCardList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bLearnCardList.Name = "bLearnCardList";
-            this.bLearnCardList.Size = new System.Drawing.Size(132, 35);
+            this.bLearnCardList.Size = new System.Drawing.Size(176, 43);
             this.bLearnCardList.TabIndex = 2;
             this.bLearnCardList.Text = "Учить колоду";
             this.bLearnCardList.UseSelectable = true;
+            this.bLearnCardList.Click += new System.EventHandler(this.bLearnCardList_Click);
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(454, 182);
+            this.metroButton1.Location = new System.Drawing.Point(605, 224);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(132, 35);
+            this.metroButton1.Size = new System.Drawing.Size(176, 43);
             this.metroButton1.TabIndex = 3;
             this.metroButton1.Text = "Удалить колоду";
             this.metroButton1.UseSelectable = true;
@@ -78,24 +83,27 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(316, 182);
+            this.metroButton2.Location = new System.Drawing.Point(421, 224);
+            this.metroButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(132, 35);
+            this.metroButton2.Size = new System.Drawing.Size(176, 43);
             this.metroButton2.TabIndex = 4;
             this.metroButton2.Text = "Редактировать колоду";
             this.metroButton2.UseSelectable = true;
             // 
             // MyCardLists
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 259);
+            this.ClientSize = new System.Drawing.Size(812, 319);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.bLearnCardList);
             this.Controls.Add(this.CardListComboBox);
             this.Controls.Add(this.AddCardList);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MyCardLists";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Мои колоды";
             this.Load += new System.EventHandler(this.MyCardLists_Load);
             this.ResumeLayout(false);

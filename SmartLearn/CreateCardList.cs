@@ -18,6 +18,7 @@ namespace SmartLearn
 {
     public partial class CreateCardList : MetroForm
     {
+        CardList Deck;
         public CreateCardList()
         {
             InitializeComponent();
@@ -34,13 +35,15 @@ namespace SmartLearn
         private void bCreateCardList_Click(object sender, EventArgs e)
         {
             Program.mcrdlsts.CardListComboBox.Items.Add(NameOfCardList.Text);
+            Deck = new CardList(NameOfCardList.Text);
             NameOfCardList.Clear();
             NameOfCardList.Focus();
+
         }
 
         private void NameOfCardList_Click(object sender, EventArgs e)
         {
-
+    
         }
     }
 }
