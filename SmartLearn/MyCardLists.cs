@@ -26,7 +26,6 @@ namespace SmartLearn
         private void MyCardLists_Load(object sender, EventArgs e)
         {
             AddCardList.StyleManager = this.StyleManager;
-            ListViewCardLists.StyleManager = this.StyleManager;
         }
 
 
