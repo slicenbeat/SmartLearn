@@ -61,5 +61,12 @@ namespace SmartLearn
             learning.StyleManager = this.StyleManager;
             learning.Show();
         }
+
+        private void MyDecks_Click(object sender, EventArgs e)
+        {
+            MyCardLists mycardlists = new MyCardLists();
+            mycardlists.StyleManager = this.StyleManager;
+            mycardlists.Show();
+        }
     }
 }

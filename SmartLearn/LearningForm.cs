@@ -81,5 +81,10 @@ namespace SmartLearn
             LeViewer.Clear();
             LeViewer.Text += Deck.GetPrev().GetQuestion();
         }
+
+        private void LeViewer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
