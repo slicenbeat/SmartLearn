@@ -20,20 +20,26 @@ namespace SmartLearn
     {
         public MyCardLists()
         {
+            Program.mcrdlsts = this;
             InitializeComponent();
         }
+
 
         private void MyCardLists_Load(object sender, EventArgs e)
         {
             AddCardList.StyleManager = this.StyleManager;
         }
 
-
         private void AddCardList_Click(object sender, EventArgs e)
         {
             CreateCardList createcardlist = new CreateCardList();
             createcardlist.StyleManager = this.StyleManager;
             createcardlist.Show();
+        }
+
+        private void CardListComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

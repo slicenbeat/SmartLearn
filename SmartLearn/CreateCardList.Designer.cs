@@ -62,6 +62,7 @@
             this.NameOfCardList.UseSelectable = true;
             this.NameOfCardList.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.NameOfCardList.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.NameOfCardList.Click += new System.EventHandler(this.NameOfCardList_Click);
             // 
             // lNameCardList
             // 

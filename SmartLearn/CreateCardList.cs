@@ -33,6 +33,13 @@ namespace SmartLearn
 
         private void bCreateCardList_Click(object sender, EventArgs e)
         {
+            Program.mcrdlsts.CardListComboBox.Items.Add(NameOfCardList.Text);
+            NameOfCardList.Clear();
+            NameOfCardList.Focus();
+        }
+
+        private void NameOfCardList_Click(object sender, EventArgs e)
+        {
 
         }
     }
