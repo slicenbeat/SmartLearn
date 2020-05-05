@@ -18,6 +18,7 @@ namespace SmartLearn
 {
     public partial class MyCardLists : MetroForm
     {
+
         public MyCardLists()
         {
             Program.mcrdlsts = this;

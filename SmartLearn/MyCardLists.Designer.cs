@@ -33,11 +33,13 @@
             this.bLearnCardList = new MetroFramework.Controls.MetroButton();
             this.bDeleteCardList = new MetroFramework.Controls.MetroButton();
             this.bEditCardList = new MetroFramework.Controls.MetroButton();
+            this.bImportCardList = new MetroFramework.Controls.MetroButton();
+            this.bExportCardList = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // bAddCardList
             // 
-            this.bAddCardList.Location = new System.Drawing.Point(40, 182);
+            this.bAddCardList.Location = new System.Drawing.Point(35, 155);
             this.bAddCardList.Name = "bAddCardList";
             this.bAddCardList.Size = new System.Drawing.Size(132, 35);
             this.bAddCardList.TabIndex = 0;
@@ -50,7 +52,7 @@
             this.CardListComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CardListComboBox.FormattingEnabled = true;
             this.CardListComboBox.ItemHeight = 23;
-            this.CardListComboBox.Location = new System.Drawing.Point(170, 98);
+            this.CardListComboBox.Location = new System.Drawing.Point(170, 104);
             this.CardListComboBox.Name = "CardListComboBox";
             this.CardListComboBox.Size = new System.Drawing.Size(273, 29);
             this.CardListComboBox.TabIndex = 1;
@@ -59,7 +61,7 @@
             // 
             // bLearnCardList
             // 
-            this.bLearnCardList.Location = new System.Drawing.Point(178, 182);
+            this.bLearnCardList.Location = new System.Drawing.Point(242, 155);
             this.bLearnCardList.Name = "bLearnCardList";
             this.bLearnCardList.Size = new System.Drawing.Size(132, 35);
             this.bLearnCardList.TabIndex = 2;
@@ -69,7 +71,7 @@
             // 
             // bDeleteCardList
             // 
-            this.bDeleteCardList.Location = new System.Drawing.Point(454, 182);
+            this.bDeleteCardList.Location = new System.Drawing.Point(35, 201);
             this.bDeleteCardList.Name = "bDeleteCardList";
             this.bDeleteCardList.Size = new System.Drawing.Size(132, 35);
             this.bDeleteCardList.TabIndex = 3;
@@ -79,18 +81,38 @@
             // 
             // bEditCardList
             // 
-            this.bEditCardList.Location = new System.Drawing.Point(316, 182);
+            this.bEditCardList.Location = new System.Drawing.Point(242, 201);
             this.bEditCardList.Name = "bEditCardList";
             this.bEditCardList.Size = new System.Drawing.Size(132, 35);
             this.bEditCardList.TabIndex = 4;
             this.bEditCardList.Text = "Редактировать колоду";
             this.bEditCardList.UseSelectable = true;
             // 
+            // bImportCardList
+            // 
+            this.bImportCardList.Location = new System.Drawing.Point(442, 155);
+            this.bImportCardList.Name = "bImportCardList";
+            this.bImportCardList.Size = new System.Drawing.Size(132, 35);
+            this.bImportCardList.TabIndex = 5;
+            this.bImportCardList.Text = "Загрузить колоду";
+            this.bImportCardList.UseSelectable = true;
+            // 
+            // bExportCardList
+            // 
+            this.bExportCardList.Location = new System.Drawing.Point(442, 201);
+            this.bExportCardList.Name = "bExportCardList";
+            this.bExportCardList.Size = new System.Drawing.Size(132, 35);
+            this.bExportCardList.TabIndex = 6;
+            this.bExportCardList.Text = "Выгрузить колоду";
+            this.bExportCardList.UseSelectable = true;
+            // 
             // MyCardLists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 259);
+            this.Controls.Add(this.bExportCardList);
+            this.Controls.Add(this.bImportCardList);
             this.Controls.Add(this.bEditCardList);
             this.Controls.Add(this.bDeleteCardList);
             this.Controls.Add(this.bLearnCardList);
@@ -113,5 +135,7 @@
         private MetroFramework.Controls.MetroButton bLearnCardList;
         private MetroFramework.Controls.MetroButton bDeleteCardList;
         private MetroFramework.Controls.MetroButton bEditCardList;
+        private MetroFramework.Controls.MetroButton bImportCardList;
+        private MetroFramework.Controls.MetroButton bExportCardList;
     }
 }

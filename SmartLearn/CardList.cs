@@ -5,7 +5,7 @@ namespace SmartLearn
 {
     class CardList
     {
-        List<Card> Cards;
+        public List<Card> Cards;
         int current;
         string Name;
         Random rand = new Random();
@@ -22,8 +22,8 @@ namespace SmartLearn
         public CardList(string Name)
         {
             Cards = new List<Card>();
-            current = 0;
-            this.Name = Name;
+                current = 0;
+                this.Name = Name;
         }
 
         public void Add(Card card)
