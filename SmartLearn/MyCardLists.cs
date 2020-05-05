@@ -21,13 +21,19 @@ namespace SmartLearn
         public MyCardLists()
         {
             Program.mcrdlsts = this;
+
             InitializeComponent();
         }
 
 
         private void MyCardLists_Load(object sender, EventArgs e)
         {
-            AddCardList.StyleManager = this.StyleManager;
+            bAddCardList.StyleManager = this.StyleManager;
+            bDeleteCardList.StyleManager = this.StyleManager;
+            bEditCardList.StyleManager = this.StyleManager;
+            bLearnCardList.StyleManager = this.StyleManager;
+            CardListComboBox.StyleManager = this.StyleManager;
+
         }
 
         private void AddCardList_Click(object sender, EventArgs e)
@@ -49,7 +55,9 @@ namespace SmartLearn
 
         private void bLearnCardList_Click(object sender, EventArgs e)
         {
-
+            ReviewForm reviewform = new ReviewForm();
+            reviewform.StyleManager = this.StyleManager;
+            reviewform.Show();
         }
     }
 }

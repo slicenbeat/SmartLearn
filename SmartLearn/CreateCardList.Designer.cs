@@ -39,16 +39,16 @@
             // 
             // 
             this.NameOfCardList.CustomButton.Image = null;
-            this.NameOfCardList.CustomButton.Location = new System.Drawing.Point(275, 2);
+            this.NameOfCardList.CustomButton.Location = new System.Drawing.Point(279, 1);
             this.NameOfCardList.CustomButton.Name = "";
-            this.NameOfCardList.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.NameOfCardList.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.NameOfCardList.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.NameOfCardList.CustomButton.TabIndex = 1;
             this.NameOfCardList.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.NameOfCardList.CustomButton.UseSelectable = true;
             this.NameOfCardList.CustomButton.Visible = false;
             this.NameOfCardList.Lines = new string[0];
-            this.NameOfCardList.Location = new System.Drawing.Point(202, 59);
+            this.NameOfCardList.Location = new System.Drawing.Point(202, 62);
             this.NameOfCardList.MaxLength = 32767;
             this.NameOfCardList.Name = "NameOfCardList";
             this.NameOfCardList.PasswordChar = '\0';
@@ -57,7 +57,7 @@
             this.NameOfCardList.SelectionLength = 0;
             this.NameOfCardList.SelectionStart = 0;
             this.NameOfCardList.ShortcutsEnabled = true;
-            this.NameOfCardList.Size = new System.Drawing.Size(303, 30);
+            this.NameOfCardList.Size = new System.Drawing.Size(303, 25);
             this.NameOfCardList.TabIndex = 0;
             this.NameOfCardList.UseSelectable = true;
             this.NameOfCardList.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -67,14 +67,17 @@
             // lNameCardList
             // 
             this.lNameCardList.AutoSize = true;
+            this.lNameCardList.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lNameCardList.Location = new System.Drawing.Point(23, 63);
             this.lNameCardList.Name = "lNameCardList";
-            this.lNameCardList.Size = new System.Drawing.Size(117, 19);
+            this.lNameCardList.Size = new System.Drawing.Size(135, 19);
             this.lNameCardList.TabIndex = 1;
             this.lNameCardList.Text = "Название колоды";
             // 
             // bCreateCardList
             // 
+            this.bCreateCardList.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.bCreateCardList.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.bCreateCardList.Location = new System.Drawing.Point(183, 157);
             this.bCreateCardList.Name = "bCreateCardList";
             this.bCreateCardList.Size = new System.Drawing.Size(183, 23);
@@ -91,6 +94,10 @@
             this.Controls.Add(this.bCreateCardList);
             this.Controls.Add(this.lNameCardList);
             this.Controls.Add(this.NameOfCardList);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(561, 203);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(561, 203);
             this.Name = "CreateCardList";
             this.Load += new System.EventHandler(this.CreateCardList_Load);
             this.ResumeLayout(false);
