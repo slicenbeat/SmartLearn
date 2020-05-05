@@ -60,5 +60,12 @@ namespace SmartLearn
             reviewform.StyleManager = this.StyleManager;
             reviewform.Show();
         }
+
+        private void bEditCardList_Click(object sender, EventArgs e)
+        {
+            EditCardList editcardlist = new EditCardList();
+            editcardlist.StyleManager = this.StyleManager;
+            editcardlist.Show();
+        }
     }
 }
