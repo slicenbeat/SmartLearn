@@ -87,6 +87,7 @@
             this.bEditCardList.TabIndex = 4;
             this.bEditCardList.Text = "Редактировать колоду";
             this.bEditCardList.UseSelectable = true;
+            this.bEditCardList.Click += new System.EventHandler(this.bEditCardList_Click);
             // 
             // bImportCardList
             // 
