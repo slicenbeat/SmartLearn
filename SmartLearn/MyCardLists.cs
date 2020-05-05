@@ -48,7 +48,7 @@ namespace SmartLearn
         {
             
         }
-
+        
         private void metroButton1_Click(object sender, EventArgs e)
         {
             CardListComboBox.Items.Remove(CardListComboBox.SelectedItem);
