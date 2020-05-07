@@ -34,6 +34,13 @@ namespace SmartLearn
             AddCard addcard = new AddCard();
             addcard.StyleManager = this.StyleManager;
             addcard.Show();
+
+
+        }
+
+        private void cListQA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,7 +37,7 @@ namespace SmartLearn
 
         private void bCreateCardList_Click(object sender, EventArgs e)
         {
-            Program.mcrdlsts.CardListComboBox.Items.Add(NameOfCardList.Text);
+            //Program.mcrdlsts.CardListComboBox.Items.Add(NameOfCardList.Text);
             if(NameOfCardList.Text != "")
             {
                 string S = NameOfCardList.Text;

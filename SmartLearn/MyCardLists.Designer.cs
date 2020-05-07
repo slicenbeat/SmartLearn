@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.CardListComboBox = new MetroFramework.Controls.MetroComboBox();
-            this.bImportCardList = new MetroFramework.Controls.MetroLink();
-            this.bExportCardList = new MetroFramework.Controls.MetroLink();
             this.bNewCardList = new MetroFramework.Controls.MetroLink();
             this.bEditCardList = new MetroFramework.Controls.MetroLink();
             this.bLearnCardList = new MetroFramework.Controls.MetroLink();
@@ -41,49 +39,24 @@
             // 
             this.CardListComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CardListComboBox.FormattingEnabled = true;
-            this.CardListComboBox.ItemHeight = 24;
-            this.CardListComboBox.Location = new System.Drawing.Point(231, 128);
-            this.CardListComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.CardListComboBox.ItemHeight = 23;
+            this.CardListComboBox.Location = new System.Drawing.Point(260, 160);
+            this.CardListComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CardListComboBox.Name = "CardListComboBox";
-            this.CardListComboBox.Size = new System.Drawing.Size(363, 30);
+            this.CardListComboBox.Size = new System.Drawing.Size(408, 29);
             this.CardListComboBox.TabIndex = 1;
             this.CardListComboBox.UseSelectable = true;
             this.CardListComboBox.SelectedIndexChanged += new System.EventHandler(this.CardListComboBox_SelectedIndexChanged);
-            // 
-            // bImportCardList
-            // 
-            this.bImportCardList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bImportCardList.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.bImportCardList.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.bImportCardList.Location = new System.Drawing.Point(349, 40);
-            this.bImportCardList.Name = "bImportCardList";
-            this.bImportCardList.Size = new System.Drawing.Size(194, 23);
-            this.bImportCardList.TabIndex = 7;
-            this.bImportCardList.Text = "Загрузить колоду";
-            this.bImportCardList.UseSelectable = true;
-            this.bImportCardList.Click += new System.EventHandler(this.bImportCardList_Click);
-            // 
-            // bExportCardList
-            // 
-            this.bExportCardList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bExportCardList.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.bExportCardList.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.bExportCardList.Location = new System.Drawing.Point(521, 40);
-            this.bExportCardList.Name = "bExportCardList";
-            this.bExportCardList.Size = new System.Drawing.Size(209, 23);
-            this.bExportCardList.TabIndex = 8;
-            this.bExportCardList.Text = "Выгрузить колоду";
-            this.bExportCardList.UseSelectable = true;
-            this.bExportCardList.Click += new System.EventHandler(this.bExportCardList_Click);
             // 
             // bNewCardList
             // 
             this.bNewCardList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bNewCardList.FontSize = MetroFramework.MetroLinkSize.Medium;
             this.bNewCardList.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.bNewCardList.Location = new System.Drawing.Point(205, 40);
+            this.bNewCardList.Location = new System.Drawing.Point(231, 50);
+            this.bNewCardList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bNewCardList.Name = "bNewCardList";
-            this.bNewCardList.Size = new System.Drawing.Size(163, 23);
+            this.bNewCardList.Size = new System.Drawing.Size(183, 29);
             this.bNewCardList.TabIndex = 9;
             this.bNewCardList.Text = "Создать колоду";
             this.bNewCardList.UseSelectable = true;
@@ -94,9 +67,10 @@
             this.bEditCardList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bEditCardList.FontSize = MetroFramework.MetroLinkSize.Medium;
             this.bEditCardList.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.bEditCardList.Location = new System.Drawing.Point(250, 194);
+            this.bEditCardList.Location = new System.Drawing.Point(281, 242);
+            this.bEditCardList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bEditCardList.Name = "bEditCardList";
-            this.bEditCardList.Size = new System.Drawing.Size(147, 41);
+            this.bEditCardList.Size = new System.Drawing.Size(165, 51);
             this.bEditCardList.TabIndex = 10;
             this.bEditCardList.Text = "Редактировать";
             this.bEditCardList.UseSelectable = true;
@@ -107,9 +81,10 @@
             this.bLearnCardList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bLearnCardList.FontSize = MetroFramework.MetroLinkSize.Medium;
             this.bLearnCardList.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.bLearnCardList.Location = new System.Drawing.Point(104, 128);
+            this.bLearnCardList.Location = new System.Drawing.Point(117, 160);
+            this.bLearnCardList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bLearnCardList.Name = "bLearnCardList";
-            this.bLearnCardList.Size = new System.Drawing.Size(120, 30);
+            this.bLearnCardList.Size = new System.Drawing.Size(135, 38);
             this.bLearnCardList.TabIndex = 11;
             this.bLearnCardList.Text = "Учить";
             this.bLearnCardList.UseSelectable = true;
@@ -120,9 +95,10 @@
             this.bDeleteCardList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bDeleteCardList.FontSize = MetroFramework.MetroLinkSize.Medium;
             this.bDeleteCardList.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.bDeleteCardList.Location = new System.Drawing.Point(403, 194);
+            this.bDeleteCardList.Location = new System.Drawing.Point(453, 242);
+            this.bDeleteCardList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bDeleteCardList.Name = "bDeleteCardList";
-            this.bDeleteCardList.Size = new System.Drawing.Size(182, 41);
+            this.bDeleteCardList.Size = new System.Drawing.Size(205, 51);
             this.bDeleteCardList.TabIndex = 12;
             this.bDeleteCardList.Text = "Удалить";
             this.bDeleteCardList.UseSelectable = true;
@@ -130,23 +106,21 @@
             // 
             // MyCardLists
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 319);
+            this.ClientSize = new System.Drawing.Size(844, 399);
             this.Controls.Add(this.bDeleteCardList);
             this.Controls.Add(this.bLearnCardList);
             this.Controls.Add(this.bEditCardList);
             this.Controls.Add(this.bNewCardList);
-            this.Controls.Add(this.bExportCardList);
-            this.Controls.Add(this.bImportCardList);
             this.Controls.Add(this.CardListComboBox);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(750, 319);
-            this.MinimumSize = new System.Drawing.Size(750, 319);
+            this.MaximumSize = new System.Drawing.Size(844, 399);
+            this.MinimumSize = new System.Drawing.Size(844, 399);
             this.Name = "MyCardLists";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
+            this.Padding = new System.Windows.Forms.Padding(30, 92, 30, 31);
             this.Text = "Мои колоды";
             this.Load += new System.EventHandler(this.MyCardLists_Load);
             this.ResumeLayout(false);
@@ -155,8 +129,6 @@
 
         #endregion
         public MetroFramework.Controls.MetroComboBox CardListComboBox;
-        private MetroFramework.Controls.MetroLink bImportCardList;
-        private MetroFramework.Controls.MetroLink bExportCardList;
         private MetroFramework.Controls.MetroLink bNewCardList;
         private MetroFramework.Controls.MetroLink bEditCardList;
         private MetroFramework.Controls.MetroLink bLearnCardList;

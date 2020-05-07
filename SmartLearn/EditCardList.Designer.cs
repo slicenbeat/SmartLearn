@@ -36,22 +36,23 @@
             // cListQA
             // 
             this.cListQA.FormattingEnabled = true;
-            this.cListQA.ItemHeight = 24;
-            this.cListQA.Location = new System.Drawing.Point(31, 138);
-            this.cListQA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cListQA.ItemHeight = 23;
+            this.cListQA.Location = new System.Drawing.Point(35, 172);
+            this.cListQA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cListQA.Name = "cListQA";
-            this.cListQA.Size = new System.Drawing.Size(580, 30);
+            this.cListQA.Size = new System.Drawing.Size(652, 29);
             this.cListQA.TabIndex = 0;
             this.cListQA.UseSelectable = true;
+            this.cListQA.SelectedIndexChanged += new System.EventHandler(this.cListQA_SelectedIndexChanged);
             // 
             // bAddCard
             // 
             this.bAddCard.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.bAddCard.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.bAddCard.Location = new System.Drawing.Point(31, 230);
-            this.bAddCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bAddCard.Location = new System.Drawing.Point(35, 288);
+            this.bAddCard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bAddCard.Name = "bAddCard";
-            this.bAddCard.Size = new System.Drawing.Size(199, 28);
+            this.bAddCard.Size = new System.Drawing.Size(224, 35);
             this.bAddCard.TabIndex = 1;
             this.bAddCard.TabStop = false;
             this.bAddCard.Text = "Добавить карточку";
@@ -62,10 +63,10 @@
             // 
             this.bDeleteCard.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.bDeleteCard.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.bDeleteCard.Location = new System.Drawing.Point(413, 230);
-            this.bDeleteCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bDeleteCard.Location = new System.Drawing.Point(465, 288);
+            this.bDeleteCard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bDeleteCard.Name = "bDeleteCard";
-            this.bDeleteCard.Size = new System.Drawing.Size(199, 28);
+            this.bDeleteCard.Size = new System.Drawing.Size(224, 35);
             this.bDeleteCard.TabIndex = 2;
             this.bDeleteCard.TabStop = false;
             this.bDeleteCard.Text = "Удалить карточку";
@@ -73,19 +74,19 @@
             // 
             // EditCardList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 293);
+            this.ClientSize = new System.Drawing.Size(710, 366);
             this.Controls.Add(this.bDeleteCard);
             this.Controls.Add(this.bAddCard);
             this.Controls.Add(this.cListQA);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(631, 293);
+            this.MaximumSize = new System.Drawing.Size(710, 366);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(631, 293);
+            this.MinimumSize = new System.Drawing.Size(710, 366);
             this.Name = "EditCardList";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
+            this.Padding = new System.Windows.Forms.Padding(30, 92, 30, 31);
             this.Text = "Редактировать колоду";
             this.Load += new System.EventHandler(this.EditCardList_Load);
             this.ResumeLayout(false);

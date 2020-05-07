@@ -18,6 +18,7 @@ namespace SmartLearn
 {
     public partial class MyCardLists : MetroForm
     {
+        private SQLiteConnection DB;
 
         public MyCardLists()
         {
@@ -33,9 +34,26 @@ namespace SmartLearn
             bEditCardList.StyleManager = this.StyleManager;
             bLearnCardList.StyleManager = this.StyleManager;
             CardListComboBox.StyleManager = this.StyleManager;
-            bExportCardList.StyleManager = this.StyleManager;
-            bImportCardList.StyleManager = this.StyleManager;
             bNewCardList.StyleManager = this.StyleManager;
+
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+            DB.Open();
+            SQLiteCommand CMD = DB.CreateCommand();
+            CMD.CommandText = "SELECT Count(*) From Name";
+            string s = CMD.ExecuteScalar().ToString();
+            int size = Convert.ToInt32(s);
+
+            SQLiteCommand CMD1 = DB.CreateCommand();
+            SQLiteDataReader SQL;
+            for (int i = 1; i < size + 1; i++)
+            {
+                CMD1.CommandText = "SELECT * FROM Name WHERE id like '%' || @Numb || '%' ";
+                CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
+                SQL = CMD1.ExecuteReader();
+                SQL.Read();
+                CardListComboBox.Items.Add(SQL["NameTable"].ToString());
+                SQL.Close();
+            }
         }
 
         private void AddCardList_Click(object sender, EventArgs e)

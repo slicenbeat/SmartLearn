@@ -18,6 +18,8 @@ namespace SmartLearn
 {
     public partial class AddCard : MetroForm
     {
+        private SQLiteConnection DB;
+
         public AddCard()
         {
             InitializeComponent();
@@ -39,7 +41,18 @@ namespace SmartLearn
         }
 
         private void bAddCard_Click(object sender, EventArgs e)
-        {
+        {          
+            if (tQuestion.Text != "" && tAnswer.Text != "")
+            {
+                DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+                DB.Open();
+                string name = "table_1";
+                SQLiteCommand CMD = DB.CreateCommand();
+                CMD.CommandText = "INSERT INTO'" + name + "'(answer, question) VALUES( @question , @answer ); ";
+                CMD.Parameters.Add("@question", System.Data.DbType.String).Value = tQuestion.Text;
+                CMD.Parameters.Add("@answer", System.Data.DbType.String).Value = tAnswer.Text;
+                CMD.ExecuteNonQuery();
+            }
             tQuestion.Clear();
             tAnswer.Clear();
         }
