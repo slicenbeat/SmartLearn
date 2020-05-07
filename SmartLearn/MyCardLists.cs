@@ -29,12 +29,13 @@ namespace SmartLearn
 
         private void MyCardLists_Load(object sender, EventArgs e)
         {
-            bAddCardList.StyleManager = this.StyleManager;
             bDeleteCardList.StyleManager = this.StyleManager;
             bEditCardList.StyleManager = this.StyleManager;
             bLearnCardList.StyleManager = this.StyleManager;
             CardListComboBox.StyleManager = this.StyleManager;
-
+            bExportCardList.StyleManager = this.StyleManager;
+            bImportCardList.StyleManager = this.StyleManager;
+            bNewCardList.StyleManager = this.StyleManager;
         }
 
         private void AddCardList_Click(object sender, EventArgs e)
@@ -54,18 +55,33 @@ namespace SmartLearn
             CardListComboBox.Items.Remove(CardListComboBox.SelectedItem);
         }
 
-        private void bLearnCardList_Click(object sender, EventArgs e)
+        private void bImportCardList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bExportCardList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bNewCardList_Click(object sender, EventArgs e)
         {
             ReviewForm reviewform = new ReviewForm();
             reviewform.StyleManager = this.StyleManager;
             reviewform.Show();
         }
 
-        private void bEditCardList_Click(object sender, EventArgs e)
+        private void metroLink1_Click(object sender, EventArgs e)
         {
             EditCardList editcardlist = new EditCardList();
             editcardlist.StyleManager = this.StyleManager;
             editcardlist.Show();
+        }
+
+        private void bDeleteCardList_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
