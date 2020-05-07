@@ -40,20 +40,14 @@ namespace SmartLearn
 
         private void AddCardList_Click(object sender, EventArgs e)
         {
-            CreateCardList createcardlist = new CreateCardList();
-            createcardlist.StyleManager = this.StyleManager;
-            createcardlist.Show();
+            
         }
 
         private void CardListComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
-        
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            CardListComboBox.Items.Remove(CardListComboBox.SelectedItem);
-        }
+       
 
         private void bImportCardList_Click(object sender, EventArgs e)
         {
@@ -67,9 +61,9 @@ namespace SmartLearn
 
         private void bNewCardList_Click(object sender, EventArgs e)
         {
-            ReviewForm reviewform = new ReviewForm();
-            reviewform.StyleManager = this.StyleManager;
-            reviewform.Show();
+            CreateCardList createcardlist = new CreateCardList();
+            createcardlist.StyleManager = this.StyleManager;
+            createcardlist.Show();
         }
 
         private void metroLink1_Click(object sender, EventArgs e)
@@ -82,6 +76,13 @@ namespace SmartLearn
         private void bDeleteCardList_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bLearnCardList_Click(object sender, EventArgs e)
+        {
+            ReviewForm reviewform = new ReviewForm();
+            reviewform.StyleManager = this.StyleManager;
+            reviewform.Show();
         }
     }
 }

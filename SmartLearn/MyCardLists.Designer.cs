@@ -113,6 +113,7 @@
             this.bLearnCardList.TabIndex = 11;
             this.bLearnCardList.Text = "Учить";
             this.bLearnCardList.UseSelectable = true;
+            this.bLearnCardList.Click += new System.EventHandler(this.bLearnCardList_Click);
             // 
             // bDeleteCardList
             // 
