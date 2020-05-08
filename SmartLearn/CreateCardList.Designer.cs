@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutApp));
             this.NameOfCardList = new MetroFramework.Controls.MetroTextBox();
             this.lNameCardList = new MetroFramework.Controls.MetroLabel();
             this.bCreateCardList = new MetroFramework.Controls.MetroButton();
@@ -49,7 +48,7 @@
             this.NameOfCardList.CustomButton.UseSelectable = true;
             this.NameOfCardList.CustomButton.Visible = false;
             this.NameOfCardList.Lines = new string[0];
-            this.NameOfCardList.Location = new System.Drawing.Point(202, 62);
+            this.NameOfCardList.Location = new System.Drawing.Point(202, 34);
             this.NameOfCardList.MaxLength = 32767;
             this.NameOfCardList.Name = "NameOfCardList";
             this.NameOfCardList.PasswordChar = '\0';
@@ -69,9 +68,9 @@
             // 
             this.lNameCardList.AutoSize = true;
             this.lNameCardList.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lNameCardList.Location = new System.Drawing.Point(23, 63);
+            this.lNameCardList.Location = new System.Drawing.Point(23, 35);
             this.lNameCardList.Name = "lNameCardList";
-            this.lNameCardList.Size = new System.Drawing.Size(135, 19);
+            this.lNameCardList.Size = new System.Drawing.Size(121, 19);
             this.lNameCardList.TabIndex = 1;
             this.lNameCardList.Text = "Название колоды";
             // 
@@ -79,7 +78,7 @@
             // 
             this.bCreateCardList.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.bCreateCardList.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.bCreateCardList.Location = new System.Drawing.Point(183, 157);
+            this.bCreateCardList.Location = new System.Drawing.Point(322, 88);
             this.bCreateCardList.Name = "bCreateCardList";
             this.bCreateCardList.Size = new System.Drawing.Size(183, 23);
             this.bCreateCardList.TabIndex = 2;
@@ -89,17 +88,16 @@
             // 
             // CreateCardList
             // 
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 203);
+            this.ClientSize = new System.Drawing.Size(561, 134);
             this.Controls.Add(this.bCreateCardList);
             this.Controls.Add(this.lNameCardList);
             this.Controls.Add(this.NameOfCardList);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(561, 203);
+            this.MaximumSize = new System.Drawing.Size(561, 134);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(561, 203);
+            this.MinimumSize = new System.Drawing.Size(561, 134);
             this.Name = "CreateCardList";
             this.Load += new System.EventHandler(this.CreateCardList_Load);
             this.ResumeLayout(false);

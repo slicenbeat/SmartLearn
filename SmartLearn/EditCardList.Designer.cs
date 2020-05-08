@@ -50,7 +50,7 @@
             // 
             this.bAddCard.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.bAddCard.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.bAddCard.Location = new System.Drawing.Point(23, 187);
+            this.bAddCard.Location = new System.Drawing.Point(23, 159);
             this.bAddCard.Name = "bAddCard";
             this.bAddCard.Size = new System.Drawing.Size(149, 23);
             this.bAddCard.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.bDeleteCard.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.bDeleteCard.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.bDeleteCard.Location = new System.Drawing.Point(310, 187);
+            this.bDeleteCard.Location = new System.Drawing.Point(310, 159);
             this.bDeleteCard.Name = "bDeleteCard";
             this.bDeleteCard.Size = new System.Drawing.Size(149, 23);
             this.bDeleteCard.TabIndex = 2;
@@ -75,14 +75,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 238);
+            this.ClientSize = new System.Drawing.Size(473, 202);
             this.Controls.Add(this.bDeleteCard);
             this.Controls.Add(this.bAddCard);
             this.Controls.Add(this.cListQA);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(473, 238);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(473, 238);
             this.Name = "EditCardList";
             this.Text = "Редактировать колоду";
             this.Load += new System.EventHandler(this.EditCardList_Load);

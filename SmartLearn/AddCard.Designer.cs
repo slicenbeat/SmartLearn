@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutApp));
             this.tQuestion = new MetroFramework.Controls.MetroTextBox();
             this.tAnswer = new MetroFramework.Controls.MetroTextBox();
             this.bCreateCard = new MetroFramework.Controls.MetroButton();
@@ -42,16 +41,16 @@
             // 
             // 
             this.tQuestion.CustomButton.Image = null;
-            this.tQuestion.CustomButton.Location = new System.Drawing.Point(378, 1);
+            this.tQuestion.CustomButton.Location = new System.Drawing.Point(356, 2);
             this.tQuestion.CustomButton.Name = "";
-            this.tQuestion.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.tQuestion.CustomButton.Size = new System.Drawing.Size(41, 41);
             this.tQuestion.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tQuestion.CustomButton.TabIndex = 1;
             this.tQuestion.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tQuestion.CustomButton.UseSelectable = true;
             this.tQuestion.CustomButton.Visible = false;
             this.tQuestion.Lines = new string[0];
-            this.tQuestion.Location = new System.Drawing.Point(133, 103);
+            this.tQuestion.Location = new System.Drawing.Point(133, 75);
             this.tQuestion.MaxLength = 32767;
             this.tQuestion.Name = "tQuestion";
             this.tQuestion.PasswordChar = '\0';
@@ -73,16 +72,16 @@
             // 
             // 
             this.tAnswer.CustomButton.Image = null;
-            this.tAnswer.CustomButton.Location = new System.Drawing.Point(378, 1);
+            this.tAnswer.CustomButton.Location = new System.Drawing.Point(356, 2);
             this.tAnswer.CustomButton.Name = "";
-            this.tAnswer.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.tAnswer.CustomButton.Size = new System.Drawing.Size(41, 41);
             this.tAnswer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tAnswer.CustomButton.TabIndex = 1;
             this.tAnswer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tAnswer.CustomButton.UseSelectable = true;
             this.tAnswer.CustomButton.Visible = false;
             this.tAnswer.Lines = new string[0];
-            this.tAnswer.Location = new System.Drawing.Point(133, 162);
+            this.tAnswer.Location = new System.Drawing.Point(133, 115);
             this.tAnswer.MaxLength = 32767;
             this.tAnswer.Name = "tAnswer";
             this.tAnswer.PasswordChar = '\0';
@@ -99,7 +98,7 @@
             // 
             // bCreateCard
             // 
-            this.bCreateCard.Location = new System.Drawing.Point(420, 217);
+            this.bCreateCard.Location = new System.Drawing.Point(420, 155);
             this.bCreateCard.Name = "bCreateCard";
             this.bCreateCard.Size = new System.Drawing.Size(113, 23);
             this.bCreateCard.TabIndex = 2;
@@ -111,7 +110,7 @@
             // 
             this.lQuestion.AutoSize = true;
             this.lQuestion.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lQuestion.Location = new System.Drawing.Point(37, 103);
+            this.lQuestion.Location = new System.Drawing.Point(37, 75);
             this.lQuestion.Name = "lQuestion";
             this.lQuestion.Size = new System.Drawing.Size(55, 19);
             this.lQuestion.TabIndex = 3;
@@ -121,7 +120,7 @@
             // 
             this.lAnswer.AutoSize = true;
             this.lAnswer.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lAnswer.Location = new System.Drawing.Point(37, 162);
+            this.lAnswer.Location = new System.Drawing.Point(37, 115);
             this.lAnswer.Name = "lAnswer";
             this.lAnswer.Size = new System.Drawing.Size(46, 19);
             this.lAnswer.TabIndex = 4;
@@ -129,19 +128,16 @@
             // 
             // AddCard
             // 
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 265);
+            this.ClientSize = new System.Drawing.Size(571, 202);
             this.Controls.Add(this.lAnswer);
             this.Controls.Add(this.lQuestion);
             this.Controls.Add(this.bCreateCard);
             this.Controls.Add(this.tAnswer);
             this.Controls.Add(this.tQuestion);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(571, 265);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(571, 265);
             this.Name = "AddCard";
             this.Text = "Создать карточку";
             this.Load += new System.EventHandler(this.EditCardList_Load);
