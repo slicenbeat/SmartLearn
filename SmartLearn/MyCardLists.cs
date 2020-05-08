@@ -99,6 +99,7 @@ namespace SmartLearn
 
         private void bLearnCardList_Click(object sender, EventArgs e)
         {
+            this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
             ReviewForm reviewform = new ReviewForm(Deck);
             reviewform.StyleManager = this.StyleManager;
             reviewform.Show();

@@ -36,12 +36,12 @@ namespace SmartLearn
             bNext.StyleManager = this.StyleManager;
             bPrev.StyleManager = this.StyleManager;
 
-            Deck = new CardList("table_1");
+            //Deck = new CardList("table_1");
             Deck.SetCurrent(1);
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "SELECT Count(*) From table_1";
+            CMD.CommandText = "SELECT Count(*) From " + Deck.GetName();
             string s = CMD.ExecuteScalar().ToString();
 
             int size = Convert.ToInt32(s);
@@ -50,7 +50,7 @@ namespace SmartLearn
             SQLiteDataReader SQL;
             for (int i = 1; i < size + 1; i++)
             {
-                CMD1.CommandText = "SELECT * FROM table_1 WHERE id like '%' || @Numb || '%' ";
+                CMD1.CommandText = "SELECT * FROM " + Deck.GetName() + " WHERE id like '%' || @Numb || '%' ";
                 CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
                 SQL = CMD1.ExecuteReader();
                 SQL.Read();
@@ -58,23 +58,24 @@ namespace SmartLearn
                 this.Deck.Add(C);
                 SQL.Close();
             }
-            ReviewForm.Text += Deck.GetList(Deck.GetCurrent()).GetQuestion();
+            bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
         }
 
         private void bQA_Click(object sender, EventArgs e)
         {
-           
+           if (bQA.Text == Deck.GetList(Deck.GetCurrent()).GetQuestion())
+                bQA.Text = Deck.GetList(Deck.GetCurrent()).GetAnswer();
+           else
+                bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
         }
         private void bNext_Click(object sender, EventArgs e)
         {
-            ReviewForm.Clear();
-            ReviewForm.Text += Deck.GetNext().GetQuestion();
+            bQA.Text = Deck.GetNext().GetQuestion();
         }
 
         private void bPrev_Click(object sender, EventArgs e)
         {
-            ReviewForm.Clear();
-            ReviewForm.Text += Deck.GetPrev().GetQuestion();
+            bQA.Text = Deck.GetPrev().GetQuestion();
         }
     }
 }

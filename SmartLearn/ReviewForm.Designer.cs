@@ -41,6 +41,7 @@
             this.bQA.Size = new System.Drawing.Size(753, 220);
             this.bQA.TabIndex = 0;
             this.bQA.TabStop = false;
+            this.bQA.Text = " ";
             this.bQA.UseSelectable = true;
             this.bQA.Click += new System.EventHandler(this.bQA_Click);
             // 
