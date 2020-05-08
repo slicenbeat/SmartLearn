@@ -14,6 +14,7 @@ using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using System.Data.SQLite;
 
+
 namespace SmartLearn
 {
     public partial class ReviewForm : MetroForm
@@ -41,7 +42,7 @@ namespace SmartLearn
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "SELECT Count(*) From " + Deck.GetName();
+            CMD.CommandText = "SELECT Count(*) From " + '\u0022'+ Deck.GetName() + '\u0022';
             string s = CMD.ExecuteScalar().ToString();
 
             int size = Convert.ToInt32(s);
@@ -50,7 +51,7 @@ namespace SmartLearn
             SQLiteDataReader SQL;
             for (int i = 1; i < size + 1; i++)
             {
-                CMD1.CommandText = "SELECT * FROM " + Deck.GetName() + " WHERE id like '%' || @Numb || '%' ";
+                CMD1.CommandText = "SELECT * FROM " +'\u0022' + Deck.GetName() + '\u0022'+ " WHERE id like '%' || @Numb || '%' ";
                 CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
                 SQL = CMD1.ExecuteReader();
                 SQL.Read();
