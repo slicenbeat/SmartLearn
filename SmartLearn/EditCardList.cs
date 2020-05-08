@@ -39,7 +39,7 @@ namespace SmartLearn
         {
             AddCard addcard = new AddCard(Deck);
             addcard.StyleManager = this.StyleManager;
-            addcard.Show();
+            addcard.ShowDialog();
 
 
         }

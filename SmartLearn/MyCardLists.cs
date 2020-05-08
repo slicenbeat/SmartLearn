@@ -81,7 +81,7 @@ namespace SmartLearn
         {
             CreateCardList createcardlist = new CreateCardList();
             createcardlist.StyleManager = this.StyleManager;
-            createcardlist.Show();
+            createcardlist.ShowDialog();
         }
 
         private void metroLink1_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace SmartLearn
             this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
             EditCardList editcardlist = new EditCardList(Deck);
             editcardlist.StyleManager = this.StyleManager;
-            editcardlist.Show();
+            editcardlist.ShowDialog();
         }
 
         private void bDeleteCardList_Click(object sender, EventArgs e)
@@ -102,7 +102,7 @@ namespace SmartLearn
             this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
             ReviewForm reviewform = new ReviewForm(Deck);
             reviewform.StyleManager = this.StyleManager;
-            reviewform.Show();
+            reviewform.ShowDialog();
         }
     }
 }

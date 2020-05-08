@@ -53,7 +53,7 @@ namespace SmartLearn
                 DB.Open();
                 string name = this.Deck.GetName();
                 SQLiteCommand CMD = DB.CreateCommand();
-                CMD.CommandText = "INSERT INTO'" + name + "'(answer, question) VALUES( @question , @answer ); ";
+                CMD.CommandText = "INSERT INTO'" + name + "'(question, answer) VALUES( @question , @answer ); ";
                 CMD.Parameters.Add("@question", System.Data.DbType.String).Value = tQuestion.Text;
                 CMD.Parameters.Add("@answer", System.Data.DbType.String).Value = tAnswer.Text;
                 CMD.ExecuteNonQuery();
