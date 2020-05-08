@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutApp));
             this.cListQA = new MetroFramework.Controls.MetroComboBox();
             this.bAddCard = new MetroFramework.Controls.MetroButton();
             this.bDeleteCard = new MetroFramework.Controls.MetroButton();
@@ -36,12 +35,13 @@
             // 
             // cListQA
             // 
+            this.cListQA.DropDownHeight = 100;
             this.cListQA.FormattingEnabled = true;
+            this.cListQA.IntegralHeight = false;
             this.cListQA.ItemHeight = 23;
-            this.cListQA.Location = new System.Drawing.Point(35, 172);
-            this.cListQA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cListQA.Location = new System.Drawing.Point(23, 112);
             this.cListQA.Name = "cListQA";
-            this.cListQA.Size = new System.Drawing.Size(652, 29);
+            this.cListQA.Size = new System.Drawing.Size(436, 29);
             this.cListQA.TabIndex = 0;
             this.cListQA.UseSelectable = true;
             this.cListQA.SelectedIndexChanged += new System.EventHandler(this.cListQA_SelectedIndexChanged);
@@ -50,10 +50,9 @@
             // 
             this.bAddCard.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.bAddCard.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.bAddCard.Location = new System.Drawing.Point(35, 288);
-            this.bAddCard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bAddCard.Location = new System.Drawing.Point(23, 187);
             this.bAddCard.Name = "bAddCard";
-            this.bAddCard.Size = new System.Drawing.Size(224, 35);
+            this.bAddCard.Size = new System.Drawing.Size(149, 23);
             this.bAddCard.TabIndex = 1;
             this.bAddCard.TabStop = false;
             this.bAddCard.Text = "Добавить карточку";
@@ -64,10 +63,9 @@
             // 
             this.bDeleteCard.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.bDeleteCard.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.bDeleteCard.Location = new System.Drawing.Point(465, 288);
-            this.bDeleteCard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bDeleteCard.Location = new System.Drawing.Point(310, 187);
             this.bDeleteCard.Name = "bDeleteCard";
-            this.bDeleteCard.Size = new System.Drawing.Size(224, 35);
+            this.bDeleteCard.Size = new System.Drawing.Size(149, 23);
             this.bDeleteCard.TabIndex = 2;
             this.bDeleteCard.TabStop = false;
             this.bDeleteCard.Text = "Удалить карточку";
@@ -75,20 +73,17 @@
             // 
             // EditCardList
             // 
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 366);
+            this.ClientSize = new System.Drawing.Size(473, 238);
             this.Controls.Add(this.bDeleteCard);
             this.Controls.Add(this.bAddCard);
             this.Controls.Add(this.cListQA);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(710, 366);
+            this.MaximumSize = new System.Drawing.Size(473, 238);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(710, 366);
+            this.MinimumSize = new System.Drawing.Size(473, 238);
             this.Name = "EditCardList";
-            this.Padding = new System.Windows.Forms.Padding(30, 92, 30, 31);
             this.Text = "Редактировать колоду";
             this.Load += new System.EventHandler(this.EditCardList_Load);
             this.ResumeLayout(false);
