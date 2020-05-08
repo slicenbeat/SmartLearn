@@ -186,6 +186,7 @@
             // 
             // Test
             // 
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 418);
