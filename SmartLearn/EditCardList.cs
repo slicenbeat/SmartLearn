@@ -17,6 +17,12 @@ namespace SmartLearn
 {
     public partial class EditCardList : MetroForm
     {
+        CardList Deck;
+        public EditCardList(CardList d)
+        {
+            InitializeComponent();
+            this.Deck = d;
+        }
         public EditCardList()
         {
             InitializeComponent();
@@ -31,7 +37,7 @@ namespace SmartLearn
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            AddCard addcard = new AddCard();
+            AddCard addcard = new AddCard(Deck);
             addcard.StyleManager = this.StyleManager;
             addcard.Show();
 

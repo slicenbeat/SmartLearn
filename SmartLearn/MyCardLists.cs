@@ -19,7 +19,7 @@ namespace SmartLearn
     public partial class MyCardLists : MetroForm
     {
         private SQLiteConnection DB;
-
+        CardList Deck;
         public MyCardLists()
         {
             Program.mcrdlsts = this;
@@ -86,7 +86,8 @@ namespace SmartLearn
 
         private void metroLink1_Click(object sender, EventArgs e)
         {
-            EditCardList editcardlist = new EditCardList();
+            this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
+            EditCardList editcardlist = new EditCardList(Deck);
             editcardlist.StyleManager = this.StyleManager;
             editcardlist.Show();
         }

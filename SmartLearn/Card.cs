@@ -2,7 +2,7 @@ using System;
 
 namespace SmartLearn
 {
-    class Card
+    public class Card
     {
         string Question;
         string Answer;

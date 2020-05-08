@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SmartLearn
 {
-    class CardList
+    public class CardList
     {
         public List<Card> Cards;
         int current;
