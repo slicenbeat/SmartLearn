@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutApp));
             this.bQA = new MetroFramework.Controls.MetroButton();
             this.bNext = new MetroFramework.Controls.MetroButton();
             this.bPrev = new MetroFramework.Controls.MetroButton();
@@ -37,7 +36,7 @@
             // bQA
             // 
             this.bQA.Location = new System.Drawing.Point(147, 91);
-            this.bQA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bQA.Margin = new System.Windows.Forms.Padding(4);
             this.bQA.Name = "bQA";
             this.bQA.Size = new System.Drawing.Size(753, 220);
             this.bQA.TabIndex = 0;
@@ -48,35 +47,36 @@
             // bNext
             // 
             this.bNext.Location = new System.Drawing.Point(835, 345);
-            this.bNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bNext.Margin = new System.Windows.Forms.Padding(4);
             this.bNext.Name = "bNext";
             this.bNext.Size = new System.Drawing.Size(65, 46);
             this.bNext.TabIndex = 1;
             this.bNext.TabStop = false;
             this.bNext.Text = "→";
             this.bNext.UseSelectable = true;
+            this.bNext.Click += new System.EventHandler(this.bNext_Click);
             // 
             // bPrev
             // 
             this.bPrev.Location = new System.Drawing.Point(147, 345);
-            this.bPrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bPrev.Margin = new System.Windows.Forms.Padding(4);
             this.bPrev.Name = "bPrev";
             this.bPrev.Size = new System.Drawing.Size(65, 46);
             this.bPrev.TabIndex = 2;
             this.bPrev.TabStop = false;
             this.bPrev.Text = "←";
             this.bPrev.UseSelectable = true;
+            this.bPrev.Click += new System.EventHandler(this.bPrev_Click);
             // 
             // ReviewForm
             // 
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 418);
             this.Controls.Add(this.bPrev);
             this.Controls.Add(this.bNext);
             this.Controls.Add(this.bQA);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1052, 418);
             this.MinimizeBox = false;
