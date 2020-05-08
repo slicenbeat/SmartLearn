@@ -22,7 +22,7 @@ namespace SmartLearn
         CardList Deck;
         public MyCardLists()
         {
-            Program.mcrdlsts = this;
+           // Program.mcrdlsts = this;
 
             InitializeComponent();
         }

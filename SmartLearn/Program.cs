@@ -10,7 +10,7 @@ namespace SmartLearn
 {
     static class Program
     {
-        public static MyCardLists mcrdlsts;
+        //public static MyCardLists mcrdlsts;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
