@@ -89,11 +89,36 @@ namespace SmartLearn
         private void bEditCardList_Click(object sender, EventArgs e)
         {
             this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
+
+            Deck.SetCurrent(1);
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+            DB.Open();
+            SQLiteCommand CMD = DB.CreateCommand();
+            CMD.CommandText = "SELECT Count(*) From " + '\u0022' + Deck.GetName() + '\u0022';
+            string s = CMD.ExecuteScalar().ToString();
+
+            int size = Convert.ToInt32(s);
+
+            SQLiteCommand CMD1 = DB.CreateCommand();
+            SQLiteDataReader SQL;
+            for (int i = 1; i < size + 1; i++)
+            {
+                CMD1.CommandText = "SELECT * FROM " + '\u0022' + Deck.GetName() + '\u0022' + " WHERE id like '%' || @Numb || '%' ";
+                CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
+                SQL = CMD1.ExecuteReader();
+                SQL.Read();
+                Card C = new Card(SQL["question"].ToString(), SQL["answer"].ToString());
+                this.Deck.Add(C);
+                SQL.Close();
+            }
+
             EditCardList editcardlist = new EditCardList(Deck);
             editcardlist.StyleManager = this.StyleManager;
             editcardlist.ShowDialog();
             CardListComboBox.Items.Clear();
             MyCardLists_Load(sender, e);
+
+
         }
 
         private void bDeleteCardList_Click(object sender, EventArgs e)
