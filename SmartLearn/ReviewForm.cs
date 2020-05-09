@@ -13,6 +13,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using System.Data.SQLite;
+using System.IO;
 
 
 namespace SmartLearn
@@ -77,6 +78,20 @@ namespace SmartLearn
         private void bPrev_Click(object sender, EventArgs e)
         {
             bQA.Text = Deck.GetPrev().GetQuestion();
+        }
+
+        private void ReviewForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void ReviewForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string file = "DeckName.txt";
+            using (StreamWriter writer = new StreamWriter(file, false, Encoding.GetEncoding(1251)))
+            {
+                writer.WriteLine(this.Deck.GetName());
+            }
         }
     }
 }
