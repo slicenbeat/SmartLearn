@@ -123,8 +123,12 @@ namespace SmartLearn
 
         private void bDeleteCardList_Click(object sender, EventArgs e)
         {
-            CardListComboBox.Items.Clear();
-            MyCardLists_Load(sender, e);
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+            DB.Open();
+            SQLiteCommand CMD = DB.CreateCommand();
+            CMD.CommandText = " DROP TABLE '" + CardListComboBox.SelectedItem.ToString() + "'; ";
+            CMD.ExecuteNonQuery();
+            CardListComboBox.Items.Remove(CardListComboBox.SelectedItem.ToString());
         }
 
         private void bLearnCardList_Click(object sender, EventArgs e)
