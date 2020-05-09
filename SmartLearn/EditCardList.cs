@@ -37,6 +37,11 @@ namespace SmartLearn
             cListQA.StyleManager = this.StyleManager;
             bAddCard.StyleManager = this.StyleManager;
             bDeleteCard.StyleManager = this.StyleManager;
+
+            for (int i = 0; i < this.Deck.GetSizeofList(); i++)
+            {
+                cListQA.Items.Add(this.Deck.GetList(i).GetQuestion());
+            }
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -56,7 +61,8 @@ namespace SmartLearn
         private void bDeleteCard_Click(object sender, EventArgs e)
         {
             Delete = true;
-            //Пропишите здесь удаление карточки из объекта Deck по индексации 
+            this.Deck.Delete(cListQA.SelectedIndex);
+            cListQA.Items.Remove(cListQA.SelectedIndex);
         }
 
         private void EditCardList_FormClosing(object sender, FormClosingEventArgs e)

@@ -19,6 +19,8 @@ namespace SmartLearn
         public Card GetList(int index) { return this.Cards[index]; }
         public void SetList(int index, Card c) { this.Cards[index] = c; }
 
+        public int GetSizeofList() { return this.Cards.Count; }
+
         public CardList(string Name)
         {
             Cards = new List<Card>();
