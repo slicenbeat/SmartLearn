@@ -75,7 +75,7 @@
             this.bEditCardList.TabIndex = 10;
             this.bEditCardList.Text = "Изменить";
             this.bEditCardList.UseSelectable = true;
-            this.bEditCardList.Click += new System.EventHandler(this.metroLink1_Click);
+            this.bEditCardList.Click += new System.EventHandler(this.bEditCardList_Click);
             // 
             // bLearnCardList
             // 

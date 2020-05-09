@@ -86,7 +86,7 @@ namespace SmartLearn
             MyCardLists_Load(sender, e);
         }
 
-        private void metroLink1_Click(object sender, EventArgs e)
+        private void bEditCardList_Click(object sender, EventArgs e)
         {
             this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
             EditCardList editcardlist = new EditCardList(Deck);
