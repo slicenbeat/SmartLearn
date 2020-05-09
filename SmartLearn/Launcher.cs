@@ -27,7 +27,7 @@ namespace SmartLearn
         {
             AboutApp ifrm = new AboutApp();
             ifrm.StyleManager = this.StyleManager;
-            ifrm.Show();
+            ifrm.ShowDialog();
         }
         private void SmartLearn_Load(object sender, EventArgs e)
         {
@@ -38,7 +38,7 @@ namespace SmartLearn
         {
             Test runner = new Test();
             runner.StyleManager = this.StyleManager;
-            runner.Show();
+            runner.ShowDialog();
         }
 
         private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -59,14 +59,14 @@ namespace SmartLearn
         {
             LearningForm learning = new LearningForm();
             learning.StyleManager = this.StyleManager;
-            learning.Show();
+            learning.ShowDialog();
         }
 
         private void MyDecks_Click(object sender, EventArgs e)
         {
             MyCardLists mycardlists = new MyCardLists();
             mycardlists.StyleManager = this.StyleManager;
-            mycardlists.Show();
+            mycardlists.ShowDialog();
         }
     }
 }
