@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutApp));
             this.cListQA = new MetroFramework.Controls.MetroComboBox();
             this.bAddCard = new MetroFramework.Controls.MetroButton();
             this.bDeleteCard = new MetroFramework.Controls.MetroButton();
@@ -77,6 +78,7 @@
             // 
             // EditCardList
             // 
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 311);
