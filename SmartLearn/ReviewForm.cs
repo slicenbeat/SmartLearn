@@ -39,7 +39,7 @@ namespace SmartLearn
             bPrev.StyleManager = this.StyleManager;
 
             //Deck = new CardList("table_1");
-            Deck.SetCurrent(1);
+            Deck.SetCurrent(0);
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
