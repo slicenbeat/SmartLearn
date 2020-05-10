@@ -129,19 +129,13 @@ namespace SmartLearn
             CMD.ExecuteNonQuery();
             NameTable.RemoveAt(CardListComboBox.Items.IndexOf(CardListComboBox.SelectedItem.ToString()));
             CardListComboBox.Items.Remove(CardListComboBox.SelectedItem.ToString());
-
-
-            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-            DB.Open();
+            
             SQLiteCommand CMD3 = DB.CreateCommand();
             CMD3.CommandText = " DROP TABLE 'Name'; ";
             CMD3.ExecuteNonQuery();
-
-
             SQLiteCommand CMD1 = DB.CreateCommand();
             CMD1.CommandText = "CREATE TABLE 'Name' (id INTEGER PRIMARY KEY AUTOINCREMENT, NameTable VARCHAR(1000) NOT NULL); ";
             CMD1.ExecuteNonQuery();
-
             SQLiteCommand CMD2 = DB.CreateCommand();
             for (int i = 0; i < NameTable.Count; i++)
             {
