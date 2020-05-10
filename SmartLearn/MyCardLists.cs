@@ -20,10 +20,9 @@ namespace SmartLearn
     {
         private SQLiteConnection DB;
         CardList Deck;
+        List <string> NameTable;
         public MyCardLists()
         {
-           // Program.mcrdlsts = this;
-
             InitializeComponent();
         }
 
@@ -45,13 +44,15 @@ namespace SmartLearn
 
             SQLiteCommand CMD1 = DB.CreateCommand();
             SQLiteDataReader SQL;
-            for (int i = 1; i < size + 1; i++)
+            NameTable = new List<string>();
+            for (int i = 0; i < size; i++)
             {
                 CMD1.CommandText = "SELECT * FROM Name WHERE id like '%' || @Numb || '%' ";
-                CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
+                CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i+1;
                 SQL = CMD1.ExecuteReader();
                 SQL.Read();
                 CardListComboBox.Items.Add(SQL["NameTable"].ToString());
+                NameTable.Add(SQL["NameTable"].ToString());
                 SQL.Close();
             }
         }
@@ -117,8 +118,6 @@ namespace SmartLearn
             editcardlist.ShowDialog();
             CardListComboBox.Items.Clear();
             MyCardLists_Load(sender, e);
-
-
         }
 
         private void bDeleteCardList_Click(object sender, EventArgs e)
@@ -128,7 +127,29 @@ namespace SmartLearn
             SQLiteCommand CMD = DB.CreateCommand();
             CMD.CommandText = " DROP TABLE '" + CardListComboBox.SelectedItem.ToString() + "'; ";
             CMD.ExecuteNonQuery();
+            NameTable.RemoveAt(CardListComboBox.Items.IndexOf(CardListComboBox.SelectedItem.ToString()));
             CardListComboBox.Items.Remove(CardListComboBox.SelectedItem.ToString());
+
+
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+            DB.Open();
+            SQLiteCommand CMD3 = DB.CreateCommand();
+            CMD3.CommandText = " DROP TABLE 'Name'; ";
+            CMD3.ExecuteNonQuery();
+
+
+            SQLiteCommand CMD1 = DB.CreateCommand();
+            CMD1.CommandText = "CREATE TABLE 'Name' (id INTEGER PRIMARY KEY AUTOINCREMENT, NameTable VARCHAR(1000) NOT NULL); ";
+            CMD1.ExecuteNonQuery();
+
+            SQLiteCommand CMD2 = DB.CreateCommand();
+            for (int i = 0; i < NameTable.Count; i++)
+            {
+                CMD2.CommandText = "insert into 'Name'(NameTable) values( @NameTable)";
+                CMD2.Parameters.Add("@NameTable", DbType.String).Value = NameTable[i];
+                CMD2.ExecuteNonQuery();
+            }
+
         }
 
         private void bLearnCardList_Click(object sender, EventArgs e)
@@ -137,6 +158,29 @@ namespace SmartLearn
             ReviewForm reviewform = new ReviewForm(Deck);
             reviewform.StyleManager = this.StyleManager;
             reviewform.ShowDialog();
+        }
+
+        private void MyCardLists_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            /*
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+            DB.Open();
+            SQLiteCommand CMD = DB.CreateCommand();
+            CMD.CommandText = " DROP TABLE 'Name'; ";
+            CMD.ExecuteNonQuery();
+
+
+            SQLiteCommand CMD1 = DB.CreateCommand();
+            CMD1.CommandText = "CREATE TABLE 'Name' (id INTEGER PRIMARY KEY AUTOINCREMENT, NameTable VARCHAR(1000) NOT NULL); ";
+            CMD1.ExecuteNonQuery();
+
+            SQLiteCommand CMD2 = DB.CreateCommand();
+            for (int i = 0; i < NameTable.Count; i++)
+            {
+                CMD2.CommandText = "insert into 'Name'(NameTable) values( @NameTable)";
+                CMD2.Parameters.Add("@NameTable", DbType.String).Value = NameTable[i];
+                CMD2.ExecuteNonQuery();
+            }*/
         }
     }
 }

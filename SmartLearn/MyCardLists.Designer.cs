@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutApp));
             this.CardListComboBox = new MetroFramework.Controls.MetroComboBox();
             this.bNewCardList = new MetroFramework.Controls.MetroLink();
             this.bEditCardList = new MetroFramework.Controls.MetroLink();
@@ -108,7 +107,6 @@
             // 
             // MyCardLists
             // 
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 123);
@@ -123,6 +121,7 @@
             this.MinimumSize = new System.Drawing.Size(455, 123);
             this.Name = "MyCardLists";
             this.Text = "Мои колоды";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MyCardLists_FormClosing);
             this.Load += new System.EventHandler(this.MyCardLists_Load);
             this.ResumeLayout(false);
 
