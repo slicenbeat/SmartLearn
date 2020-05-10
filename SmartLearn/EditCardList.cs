@@ -49,8 +49,8 @@ namespace SmartLearn
             AddCard addcard = new AddCard(Deck);
             addcard.StyleManager = this.StyleManager;
             addcard.ShowDialog();
-
-
+            cListQA.Items.Clear();
+            EditCardList_Load(sender, e);
         }
 
         private void cListQA_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,7 +62,9 @@ namespace SmartLearn
         {
             Delete = true;
             this.Deck.Delete(cListQA.SelectedIndex);
-            cListQA.Items.Remove(cListQA.SelectedIndex);
+            cListQA.Items.Clear();
+            EditCardList_Load(sender, e);
+
         }
 
         private void EditCardList_FormClosing(object sender, FormClosingEventArgs e)

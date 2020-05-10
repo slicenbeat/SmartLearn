@@ -58,6 +58,8 @@ namespace SmartLearn
                 CMD.Parameters.Add("@answer", System.Data.DbType.String).Value = tAnswer.Text;
                 CMD.ExecuteNonQuery();
             }
+            Card c = new Card(tQuestion.Text, tAnswer.Text);
+            this.Deck.Add(c);
             tQuestion.Clear();
             tAnswer.Clear();
         }
