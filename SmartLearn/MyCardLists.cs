@@ -139,7 +139,7 @@ namespace SmartLearn
             SQLiteCommand CMD2 = DB.CreateCommand();
             for (int i = 0; i < NameTable.Count; i++)
             {
-                CMD2.CommandText = "insert into 'Name'(NameTable) values( @NameTable)";
+                CMD2.CommandText = "insert into 'Name'(NameTable) values(@NameTable)";
                 CMD2.Parameters.Add("@NameTable", DbType.String).Value = NameTable[i];
                 CMD2.ExecuteNonQuery();
             }
