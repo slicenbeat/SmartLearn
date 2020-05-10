@@ -55,6 +55,10 @@ namespace SmartLearn
                 NameTable.Add(SQL["NameTable"].ToString());
                 SQL.Close();
             }
+            if (CardListComboBox.Items.Count != 0)
+            {
+                CardListComboBox.SelectedIndex = 0;
+            }
         }
 
         private void AddCardList_Click(object sender, EventArgs e)
