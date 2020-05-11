@@ -36,7 +36,9 @@ namespace SmartLearn
         {
             cListQA.StyleManager = this.StyleManager;
             bAddCard.StyleManager = this.StyleManager;
+            bEditCard.StyleManager = this.StyleManager;
             bDeleteCard.StyleManager = this.StyleManager;
+            
 
             for (int i = 0; i < this.Deck.GetSizeofList(); i++)
             {

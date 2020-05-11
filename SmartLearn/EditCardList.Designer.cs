@@ -31,7 +31,7 @@
             this.cListQA = new MetroFramework.Controls.MetroComboBox();
             this.bAddCard = new MetroFramework.Controls.MetroButton();
             this.bDeleteCard = new MetroFramework.Controls.MetroButton();
-            this.EditCard = new MetroFramework.Controls.MetroButton();
+            this.bEditCard = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // cListQA
@@ -73,25 +73,25 @@
             this.bDeleteCard.UseSelectable = true;
             this.bDeleteCard.Click += new System.EventHandler(this.bDeleteCard_Click);
             // 
-            // EditCard
+            // bEditCard
             // 
-            this.EditCard.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.EditCard.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.EditCard.Location = new System.Drawing.Point(174, 159);
-            this.EditCard.Name = "EditCard";
-            this.EditCard.Size = new System.Drawing.Size(130, 23);
-            this.EditCard.TabIndex = 3;
-            this.EditCard.TabStop = false;
-            this.EditCard.Text = "Изменить карточку";
-            this.EditCard.UseSelectable = true;
-            this.EditCard.Click += new System.EventHandler(this.ChangeCard_Click_1);
+            this.bEditCard.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.bEditCard.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.bEditCard.Location = new System.Drawing.Point(174, 159);
+            this.bEditCard.Name = "bEditCard";
+            this.bEditCard.Size = new System.Drawing.Size(130, 23);
+            this.bEditCard.TabIndex = 3;
+            this.bEditCard.TabStop = false;
+            this.bEditCard.Text = "Изменить карточку";
+            this.bEditCard.UseSelectable = true;
+            this.bEditCard.Click += new System.EventHandler(this.ChangeCard_Click_1);
             // 
             // EditCardList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 202);
-            this.Controls.Add(this.EditCard);
+            this.Controls.Add(this.bEditCard);
             this.Controls.Add(this.bDeleteCard);
             this.Controls.Add(this.bAddCard);
             this.Controls.Add(this.cListQA);
@@ -110,6 +110,6 @@
         private MetroFramework.Controls.MetroComboBox cListQA;
         private MetroFramework.Controls.MetroButton bAddCard;
         private MetroFramework.Controls.MetroButton bDeleteCard;
-        private MetroFramework.Controls.MetroButton EditCard;
+        private MetroFramework.Controls.MetroButton bEditCard;
     }
 }
