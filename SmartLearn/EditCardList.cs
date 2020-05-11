@@ -92,5 +92,14 @@ namespace SmartLearn
                 }
             }
         }
+
+        private void ChangeCard_Click_1(object sender, EventArgs e)
+        {
+            EditCard editcard = new EditCard();
+            editcard.StyleManager = this.StyleManager;
+            editcard.ShowDialog();
+            cListQA.Items.Clear();
+            EditCardList_Load(sender, e);
+        }
     }
 }

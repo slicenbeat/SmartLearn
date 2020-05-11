@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutApp));
             this.LeShowAnswer = new MetroFramework.Controls.MetroButton();
             this.LeNextQuestion = new MetroFramework.Controls.MetroButton();
             this.LePrevQuestion = new MetroFramework.Controls.MetroButton();
@@ -81,9 +80,9 @@
             // 
             // 
             this.LeViewer.CustomButton.Image = null;
-            this.LeViewer.CustomButton.Location = new System.Drawing.Point(80, 2);
+            this.LeViewer.CustomButton.Location = new System.Drawing.Point(106, 2);
             this.LeViewer.CustomButton.Name = "";
-            this.LeViewer.CustomButton.Size = new System.Drawing.Size(296, 321);
+            this.LeViewer.CustomButton.Size = new System.Drawing.Size(395, 395);
             this.LeViewer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.LeViewer.CustomButton.TabIndex = 1;
             this.LeViewer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -115,7 +114,6 @@
             // 
             // LearningForm
             // 
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 552);
