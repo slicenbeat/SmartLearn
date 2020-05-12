@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutApp));
             this.tQuestion = new MetroFramework.Controls.MetroTextBox();
             this.tAnswer = new MetroFramework.Controls.MetroTextBox();
             this.bCreateCard = new MetroFramework.Controls.MetroButton();
@@ -42,9 +41,9 @@
             // 
             // 
             this.tQuestion.CustomButton.Image = null;
-            this.tQuestion.CustomButton.Location = new System.Drawing.Point(356, 2);
+            this.tQuestion.CustomButton.Location = new System.Drawing.Point(378, 1);
             this.tQuestion.CustomButton.Name = "";
-            this.tQuestion.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.tQuestion.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tQuestion.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tQuestion.CustomButton.TabIndex = 1;
             this.tQuestion.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -73,9 +72,9 @@
             // 
             // 
             this.tAnswer.CustomButton.Image = null;
-            this.tAnswer.CustomButton.Location = new System.Drawing.Point(356, 2);
+            this.tAnswer.CustomButton.Location = new System.Drawing.Point(378, 1);
             this.tAnswer.CustomButton.Name = "";
-            this.tAnswer.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.tAnswer.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tAnswer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tAnswer.CustomButton.TabIndex = 1;
             this.tAnswer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -129,7 +128,6 @@
             // 
             // AddCard
             // 
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 202);
@@ -139,7 +137,9 @@
             this.Controls.Add(this.tAnswer);
             this.Controls.Add(this.tQuestion);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(571, 202);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(571, 202);
             this.Name = "AddCard";
             this.Text = "Создать карточку";
             this.Load += new System.EventHandler(this.EditCardList_Load);

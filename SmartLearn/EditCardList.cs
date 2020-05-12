@@ -36,7 +36,9 @@ namespace SmartLearn
         {
             cListQA.StyleManager = this.StyleManager;
             bAddCard.StyleManager = this.StyleManager;
+            bEditCard.StyleManager = this.StyleManager;
             bDeleteCard.StyleManager = this.StyleManager;
+            
 
             for (int i = 0; i < this.Deck.GetSizeofList(); i++)
             {
@@ -91,6 +93,15 @@ namespace SmartLearn
                     CMD2.ExecuteNonQuery();
                 }
             }
+        }
+
+        private void ChangeCard_Click_1(object sender, EventArgs e)
+        {
+            EditCard editcard = new EditCard();
+            editcard.StyleManager = this.StyleManager;
+            editcard.ShowDialog();
+            cListQA.Items.Clear();
+            EditCardList_Load(sender, e);
         }
     }
 }
