@@ -84,7 +84,7 @@ namespace SmartLearn
 
         private void bNewCardList_Click(object sender, EventArgs e)
         {
-            CreateCardList createcardlist = new CreateCardList();
+            CreateCardList createcardlist = new CreateCardList(NameTable);
             createcardlist.StyleManager = this.StyleManager;
             createcardlist.ShowDialog();
             CardListComboBox.Items.Clear(); 
@@ -93,69 +93,102 @@ namespace SmartLearn
 
         private void bEditCardList_Click(object sender, EventArgs e)
         {
-            this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
-
-            Deck.SetCurrent(1);
-            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-            DB.Open();
-            SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "SELECT Count(*) From " + '\u0022' + Deck.GetName() + '\u0022';
-            string s = CMD.ExecuteScalar().ToString();
-
-            int size = Convert.ToInt32(s);
-
-            SQLiteCommand CMD1 = DB.CreateCommand();
-            SQLiteDataReader SQL;
-            for (int i = 1; i < size + 1; i++)
+            try
             {
-                CMD1.CommandText = "SELECT * FROM " + '\u0022' + Deck.GetName() + '\u0022' + " WHERE id like '%' || @Numb || '%' ";
-                CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
-                SQL = CMD1.ExecuteReader();
-                SQL.Read();
-                Card C = new Card(SQL["question"].ToString(), SQL["answer"].ToString());
-                this.Deck.Add(C);
-                SQL.Close();
-            }
+                this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
 
-            EditCardList editcardlist = new EditCardList(Deck);
-            editcardlist.StyleManager = this.StyleManager;
-            editcardlist.ShowDialog();
-            CardListComboBox.Items.Clear();
-            MyCardLists_Load(sender, e);
+                Deck.SetCurrent(1);
+                DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+                DB.Open();
+                SQLiteCommand CMD = DB.CreateCommand();
+                CMD.CommandText = "SELECT Count(*) From " + '\u0022' + Deck.GetName() + '\u0022';
+                string s = CMD.ExecuteScalar().ToString();
+
+                int size = Convert.ToInt32(s);
+
+                SQLiteCommand CMD1 = DB.CreateCommand();
+                SQLiteDataReader SQL;
+                for (int i = 1; i < size + 1; i++)
+                {
+                    CMD1.CommandText = "SELECT * FROM " + '\u0022' + Deck.GetName() + '\u0022' + " WHERE id like '%' || @Numb || '%' ";
+                    CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
+                    SQL = CMD1.ExecuteReader();
+                    SQL.Read();
+                    Card C = new Card(SQL["question"].ToString(), SQL["answer"].ToString());
+                    this.Deck.Add(C);
+                    SQL.Close();
+                }
+
+                EditCardList editcardlist = new EditCardList(Deck);
+                editcardlist.StyleManager = this.StyleManager;
+                editcardlist.ShowDialog();
+                CardListComboBox.Items.Clear();
+                MyCardLists_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Выберите колоду, с которой вы будете работать.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void bDeleteCardList_Click(object sender, EventArgs e)
         {
-            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-            DB.Open();
-            SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = " DROP TABLE '" + CardListComboBox.SelectedItem.ToString() + "'; ";
-            CMD.ExecuteNonQuery();
-            NameTable.RemoveAt(CardListComboBox.Items.IndexOf(CardListComboBox.SelectedItem.ToString()));
-            CardListComboBox.Items.Remove(CardListComboBox.SelectedItem.ToString());
-            
-            SQLiteCommand CMD3 = DB.CreateCommand();
-            CMD3.CommandText = " DROP TABLE 'Name'; ";
-            CMD3.ExecuteNonQuery();
-            SQLiteCommand CMD1 = DB.CreateCommand();
-            CMD1.CommandText = "CREATE TABLE 'Name' (id INTEGER PRIMARY KEY AUTOINCREMENT, NameTable VARCHAR(1000) NOT NULL); ";
-            CMD1.ExecuteNonQuery();
-            SQLiteCommand CMD2 = DB.CreateCommand();
-            for (int i = 0; i < NameTable.Count; i++)
+            try
             {
-                CMD2.CommandText = "insert into 'Name'(NameTable) values(@NameTable)";
-                CMD2.Parameters.Add("@NameTable", DbType.String).Value = NameTable[i];
-                CMD2.ExecuteNonQuery();
-            }
+                DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+                DB.Open();
+                SQLiteCommand CMD = DB.CreateCommand();
+                CMD.CommandText = " DROP TABLE '" + CardListComboBox.SelectedItem.ToString() + "'; ";
+                CMD.ExecuteNonQuery();
+                NameTable.RemoveAt(CardListComboBox.Items.IndexOf(CardListComboBox.SelectedItem.ToString()));
+                CardListComboBox.Items.Remove(CardListComboBox.SelectedItem.ToString());
 
+                SQLiteCommand CMD3 = DB.CreateCommand();
+                CMD3.CommandText = " DROP TABLE 'Name'; ";
+                CMD3.ExecuteNonQuery();
+                SQLiteCommand CMD1 = DB.CreateCommand();
+                CMD1.CommandText = "CREATE TABLE 'Name' (id INTEGER PRIMARY KEY AUTOINCREMENT, NameTable VARCHAR(1000) NOT NULL); ";
+                CMD1.ExecuteNonQuery();
+                SQLiteCommand CMD2 = DB.CreateCommand();
+                for (int i = 0; i < NameTable.Count; i++)
+                {
+                    CMD2.CommandText = "insert into 'Name'(NameTable) values(@NameTable)";
+                    CMD2.Parameters.Add("@NameTable", DbType.String).Value = NameTable[i];
+                    CMD2.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Выберите колоду, с которой вы будете работать.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void bLearnCardList_Click(object sender, EventArgs e)
         {
-            this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
-            ReviewForm reviewform = new ReviewForm(Deck);
-            reviewform.StyleManager = this.StyleManager;
-            reviewform.ShowDialog();
+            try
+            {
+                this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
+                Deck.SetCurrent(0);
+                DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+                DB.Open();
+                SQLiteCommand CMD = DB.CreateCommand();
+                CMD.CommandText = "SELECT Count(*) From " + '\u0022' + Deck.GetName() + '\u0022';
+                string s = CMD.ExecuteScalar().ToString();
+
+                int size = Convert.ToInt32(s);
+                if (size < 3)
+                    MessageBox.Show("Для того, чтобы учить колоду, в ней должно быть не менее трёх карт.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    ReviewForm reviewform = new ReviewForm(Deck);
+                    reviewform.StyleManager = this.StyleManager;
+                    reviewform.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Выберите колоду, с которой вы будете работать.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void MyCardLists_FormClosing(object sender, FormClosingEventArgs e)

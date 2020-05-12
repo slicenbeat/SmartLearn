@@ -62,10 +62,17 @@ namespace SmartLearn
 
         private void bDeleteCard_Click(object sender, EventArgs e)
         {
-            Delete = true;
-            this.Deck.Delete(cListQA.SelectedIndex);
-            cListQA.Items.Clear();
-            EditCardList_Load(sender, e);
+            try
+            {
+                Delete = true;
+                this.Deck.Delete(cListQA.SelectedIndex);
+                cListQA.Items.Clear();
+                EditCardList_Load(sender, e);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Выберите карточку.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
 
@@ -97,11 +104,18 @@ namespace SmartLearn
 
         private void ChangeCard_Click_1(object sender, EventArgs e)
         {
-            EditCard editcard = new EditCard();
-            editcard.StyleManager = this.StyleManager;
-            editcard.ShowDialog();
-            cListQA.Items.Clear();
-            EditCardList_Load(sender, e);
+            try
+            {
+                EditCard editcard = new EditCard();
+                editcard.StyleManager = this.StyleManager;
+                editcard.ShowDialog();
+                cListQA.Items.Clear();
+                EditCardList_Load(sender, e);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Выберите карточку.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

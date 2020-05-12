@@ -21,10 +21,15 @@ namespace SmartLearn
     public partial class CreateCardList : MetroForm
     {
         private SQLiteConnection DB;
-
+        List<string> NameTable;
         public CreateCardList()
         {
             InitializeComponent();
+        }
+        public CreateCardList(List<string> nt)
+        {
+            InitializeComponent();
+            this.NameTable = nt;
         }
 
         private void CreateCardList_Load(object sender, EventArgs e)
@@ -37,10 +42,18 @@ namespace SmartLearn
 
         private void bCreateCardList_Click(object sender, EventArgs e)
         {
-            //Program.mcrdlsts.CardListComboBox.Items.Add(NameOfCardList.Text);
-            if(NameOfCardList.Text != "")
+            string S = NameOfCardList.Text;
+            bool flag1 = true;
+            bool flag2 = true;
+            for (int i = 0; i < NameTable.Count(); i++)
             {
-                string S = NameOfCardList.Text;
+                if (S == NameTable[i])
+                    flag1 = false;
+                else if (S == "")
+                    flag2 = false;
+            }
+            if ((flag1) && (flag2))
+            {
                 DB = new SQLiteConnection("Data Source=DB.db; Version=3");
                 DB.Open();
                 SQLiteCommand CMD = DB.CreateCommand();
@@ -50,11 +63,16 @@ namespace SmartLearn
                 SQLiteCommand CMD1 = DB.CreateCommand();
                 CMD1.CommandText = "CREATE TABLE '" + S + "' (id INTEGER PRIMARY KEY AUTOINCREMENT, question VARCHAR(1000) NOT NULL, answer VARCHAR(1000) NOT NULL); ";
                 CMD1.ExecuteNonQuery();
+                NameOfCardList.Clear();
+                NameOfCardList.Focus();
             }
-
-            NameOfCardList.Clear();
-            NameOfCardList.Focus();
-
+            else
+            {
+                if (!flag1)
+                    MessageBox.Show("Нельзя создавать несколько колод с одинаковыми названиями.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (!flag2)
+                MessageBox.Show("У колоды должно быть название.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void NameOfCardList_Click(object sender, EventArgs e)

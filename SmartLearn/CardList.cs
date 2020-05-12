@@ -24,8 +24,8 @@ namespace SmartLearn
         public CardList(string Name)
         {
             Cards = new List<Card>();
-                current = 0;
-                this.Name = Name;
+            current = 0;
+            this.Name = Name;
         }
 
         public void Add(Card card)

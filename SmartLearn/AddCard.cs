@@ -1,6 +1,7 @@
 ﻿using System;
 using MetroFramework.Forms;
 using System.Data.SQLite;
+using System.Windows.Forms;
 
 namespace SmartLearn
 {
@@ -34,8 +35,20 @@ namespace SmartLearn
         }
 
         private void bAddCard_Click(object sender, EventArgs e)
-        {          
-            if (tQuestion.Text != "" && tAnswer.Text != "")
+        {
+            bool flag1 = true;
+            bool flag2 = true;
+            bool flag3 = true;
+            for (int i = 0; i < this.Deck.GetSizeofList(); i++)
+            {
+                if (tQuestion.Text == "" || tAnswer.Text == "")
+                    flag1 = false;
+                else if (tQuestion.Text == this.Deck.GetList(i).GetQuestion())
+                    flag2 = false;
+                else if (tQuestion.Text.Length > 100 || tAnswer.Text.Length > 1000)
+                    flag3 = false;
+            }
+            if ((flag1) && (flag2) && (flag3))
             {
                 DB = new SQLiteConnection("Data Source=DB.db; Version=3");
                 DB.Open();
@@ -45,11 +58,22 @@ namespace SmartLearn
                 CMD.Parameters.Add("@question", System.Data.DbType.String).Value = tQuestion.Text;
                 CMD.Parameters.Add("@answer", System.Data.DbType.String).Value = tAnswer.Text;
                 CMD.ExecuteNonQuery();
+                Card c = new Card(tQuestion.Text, tAnswer.Text);
+                this.Deck.Add(c);
+                tQuestion.Clear();
+                tAnswer.Clear();
             }
-            Card c = new Card(tQuestion.Text, tAnswer.Text);
-            this.Deck.Add(c);
-            tQuestion.Clear();
-            tAnswer.Clear();
+            else
+            {
+                if (!flag1)
+                    MessageBox.Show("Поля вопроса и ответа не могут быть пустыми.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (!flag2)
+                    MessageBox.Show("Не могут существовать карточки с одинаковыми вопросами", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (!flag3)
+                    MessageBox.Show("Вы превысили ограничение по символам\nОграничение для вопроса: 100 (у вас " 
+                        + tQuestion.Text.Length + ")\nОграничение для ответа: 1000 (у вас " 
+                        + tAnswer.Text.Length + ")", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
