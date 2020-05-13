@@ -36,9 +36,7 @@ namespace SmartLearn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Test runner = new Test();
-            runner.StyleManager = this.StyleManager;
-            runner.ShowDialog();
+           
         }
 
         private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)

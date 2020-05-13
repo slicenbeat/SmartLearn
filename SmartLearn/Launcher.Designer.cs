@@ -33,7 +33,6 @@ namespace SmartLearn
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SmartLearn));
-            this.Test = new MetroFramework.Controls.MetroButton();
             this.MainStyle = new MetroFramework.Components.MetroStyleManager(this.components);
             this.CheckTheme = new MetroFramework.Controls.MetroCheckBox();
             this.Logo = new System.Windows.Forms.PictureBox();
@@ -43,21 +42,6 @@ namespace SmartLearn
             ((System.ComponentModel.ISupportInitialize)(this.MainStyle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Test
-            // 
-            this.Test.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Test.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Test.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.Test.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.Test.Location = new System.Drawing.Point(152, 267);
-            this.Test.Name = "Test";
-            this.Test.Size = new System.Drawing.Size(130, 48);
-            this.Test.TabIndex = 3;
-            this.Test.TabStop = false;
-            this.Test.Text = "Тест";
-            this.Test.UseSelectable = true;
-            this.Test.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainStyle
             // 
@@ -93,7 +77,7 @@ namespace SmartLearn
             this.LearningButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LearningButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.LearningButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.LearningButton.Location = new System.Drawing.Point(152, 126);
+            this.LearningButton.Location = new System.Drawing.Point(152, 164);
             this.LearningButton.Name = "LearningButton";
             this.LearningButton.Size = new System.Drawing.Size(130, 48);
             this.LearningButton.TabIndex = 10;
@@ -106,7 +90,7 @@ namespace SmartLearn
             // 
             this.ButtonHelp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonHelp.Location = new System.Drawing.Point(17, 391);
-            this.ButtonHelp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonHelp.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonHelp.Name = "ButtonHelp";
             this.ButtonHelp.Size = new System.Drawing.Size(110, 19);
             this.ButtonHelp.TabIndex = 11;
@@ -118,8 +102,8 @@ namespace SmartLearn
             // 
             this.MyDecks.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.MyDecks.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.MyDecks.Location = new System.Drawing.Point(152, 197);
-            this.MyDecks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MyDecks.Location = new System.Drawing.Point(152, 235);
+            this.MyDecks.Margin = new System.Windows.Forms.Padding(2);
             this.MyDecks.Name = "MyDecks";
             this.MyDecks.Size = new System.Drawing.Size(130, 48);
             this.MyDecks.TabIndex = 12;
@@ -138,7 +122,6 @@ namespace SmartLearn
             this.Controls.Add(this.LearningButton);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.CheckTheme);
-            this.Controls.Add(this.Test);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -156,7 +139,6 @@ namespace SmartLearn
         }
 
         #endregion
-        private MetroFramework.Controls.MetroButton Test;
         public MetroStyleManager MainStyle;
         private MetroFramework.Controls.MetroCheckBox CheckTheme;
         private System.Windows.Forms.PictureBox Logo;
