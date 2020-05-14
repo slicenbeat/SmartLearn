@@ -106,7 +106,8 @@ namespace SmartLearn
         {
             try
             {
-                EditCard editcard = new EditCard();
+                int index = cListQA.SelectedIndex;
+                EditCard editcard = new EditCard(Deck, index);
                 editcard.StyleManager = this.StyleManager;
                 editcard.ShowDialog();
                 cListQA.Items.Clear();

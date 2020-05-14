@@ -91,5 +91,10 @@ namespace SmartLearn
                 writer.WriteLine(this.Deck.GetName());
             }
         }
+
+        private void RandomButton_Click(object sender, EventArgs e)
+        {
+            bQA.Text = Deck.GetNextRandom().GetQuestion();
+        }
     }
 }

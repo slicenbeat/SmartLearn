@@ -68,6 +68,7 @@ namespace SmartLearn
         public Card GetNextRandom()
         {
             int i = rand.Next() % Cards.Count;
+            this.current = i;
             return Cards[i];
         }
 

@@ -31,13 +31,15 @@
             this.bQA = new MetroFramework.Controls.MetroButton();
             this.bNext = new MetroFramework.Controls.MetroButton();
             this.bPrev = new MetroFramework.Controls.MetroButton();
+            this.RandomButton = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // bQA
             // 
-            this.bQA.Location = new System.Drawing.Point(110, 74);
+            this.bQA.Location = new System.Drawing.Point(147, 91);
+            this.bQA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bQA.Name = "bQA";
-            this.bQA.Size = new System.Drawing.Size(565, 179);
+            this.bQA.Size = new System.Drawing.Size(753, 220);
             this.bQA.TabIndex = 0;
             this.bQA.TabStop = false;
             this.bQA.Text = " ";
@@ -47,9 +49,10 @@
             // 
             // bNext
             // 
-            this.bNext.Location = new System.Drawing.Point(626, 280);
+            this.bNext.Location = new System.Drawing.Point(835, 345);
+            this.bNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bNext.Name = "bNext";
-            this.bNext.Size = new System.Drawing.Size(49, 37);
+            this.bNext.Size = new System.Drawing.Size(65, 46);
             this.bNext.TabIndex = 1;
             this.bNext.TabStop = false;
             this.bNext.Text = "→";
@@ -58,28 +61,42 @@
             // 
             // bPrev
             // 
-            this.bPrev.Location = new System.Drawing.Point(110, 280);
+            this.bPrev.Location = new System.Drawing.Point(147, 345);
+            this.bPrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bPrev.Name = "bPrev";
-            this.bPrev.Size = new System.Drawing.Size(49, 37);
+            this.bPrev.Size = new System.Drawing.Size(65, 46);
             this.bPrev.TabIndex = 2;
             this.bPrev.TabStop = false;
             this.bPrev.Text = "←";
             this.bPrev.UseSelectable = true;
             this.bPrev.Click += new System.EventHandler(this.bPrev_Click);
             // 
+            // RandomButton
+            // 
+            this.RandomButton.Location = new System.Drawing.Point(455, 345);
+            this.RandomButton.Name = "RandomButton";
+            this.RandomButton.Size = new System.Drawing.Size(150, 45);
+            this.RandomButton.TabIndex = 4;
+            this.RandomButton.Text = "Случайная карта";
+            this.RandomButton.UseSelectable = true;
+            this.RandomButton.Click += new System.EventHandler(this.RandomButton_Click);
+            // 
             // ReviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 340);
+            this.ClientSize = new System.Drawing.Size(1052, 418);
+            this.Controls.Add(this.RandomButton);
             this.Controls.Add(this.bPrev);
             this.Controls.Add(this.bNext);
             this.Controls.Add(this.bQA);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(789, 340);
+            this.MaximumSize = new System.Drawing.Size(1052, 418);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(789, 340);
+            this.MinimumSize = new System.Drawing.Size(1052, 418);
             this.Name = "ReviewForm";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReviewForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReviewForm_FormClosed);
             this.Load += new System.EventHandler(this.ReviewForm_Load);
@@ -92,5 +109,6 @@
         private MetroFramework.Controls.MetroButton bQA;
         private MetroFramework.Controls.MetroButton bNext;
         private MetroFramework.Controls.MetroButton bPrev;
+        private MetroFramework.Controls.MetroButton RandomButton;
     }
 }
