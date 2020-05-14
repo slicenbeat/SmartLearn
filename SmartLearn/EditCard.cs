@@ -34,12 +34,13 @@ namespace SmartLearn
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             string name = this.Deck.GetName();
+            int i = index++;
             SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = @"UPDATE '" + name + "' SET question = @question WHERE answer = @answer";
+            CMD.CommandText = @"UPDATE '" + name + "' SET question = @question WHERE id = @" + i.ToString();
             //CMD.CommandText = "INSERT INTO'" + name + "'(question, answer) VALUES( @question , @answer ); ";
             CMD.Connection = new SQLiteConnection();
-            CMD.Parameters.Add("@question", System.Data.DbType.String).Value = tQuestion.Text;
-            CMD.Parameters.Add("@answer", System.Data.DbType.String).Value = tAnswer.Text;
+            CMD.Parameters.Add(new SQLiteParameter("@id", i));
+            CMD.Parameters.Add(new SQLiteParameter("@question", tQuestion.Text));
             CMD.ExecuteNonQuery();
             //Card c = new Card(tQuestion.Text, tAnswer.Text);
             this.Deck.GetList(index).SetQuestion(tQuestion.Text);
