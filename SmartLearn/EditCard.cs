@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MetroFramework.Forms;
 using System.Data.SQLite;
+using System.Windows.Forms;
 
 namespace SmartLearn
 {
@@ -33,14 +34,19 @@ namespace SmartLearn
         {
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
-            string name = this.Deck.GetName();
-            int i = index++;
-            SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = @"UPDATE " + name +" SET question= @question WHERE id= @" + i.ToString();
-            CMD.Connection = new SQLiteConnection();
-            CMD.Parameters.Add(new SQLiteParameter("@id", i));
-            CMD.Parameters.Add(new SQLiteParameter("@question", tQuestion.Text));
-            CMD.ExecuteNonQuery();
+            using (SQLiteConnection con = new SQLiteConnection("Data Source=DB.db; Version=3"))
+            {
+
+                string name = this.Deck.GetName();
+
+                SQLiteCommand CMD = DB.CreateCommand();
+                CMD.CommandText = @"Update " + name + " Set question = '" + tQuestion.Text + "', answer = '" + tAnswer.Text + "' Where id = '" + (index + 1).ToString() + "' ";
+                CMD.Connection = con;
+                con.Open();
+                
+                CMD.ExecuteNonQuery();
+               
+            }
             this.Deck.GetList(index).SetQuestion(tQuestion.Text);
             this.Deck.GetList(index).SetAnswer(tAnswer.Text);
             tQuestion.Clear();
