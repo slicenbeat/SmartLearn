@@ -75,5 +75,10 @@ namespace SmartLearn
                         + tAnswer.Text.Length + ")", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void tAnswer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

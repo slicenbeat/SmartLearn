@@ -32,41 +32,51 @@ namespace SmartLearn
 
         private void bEditCard_Click(object sender, EventArgs e)
         {
-            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-            DB.Open();
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=DB.db; Version=3"))
+            bool flag1 = true;
+            bool flag2 = true;
+            bool flag3 = true;
+            for (int i = 0; i < this.Deck.GetSizeofList(); i++)
             {
-
-                string name = this.Deck.GetName();
-
-                SQLiteCommand CMD = DB.CreateCommand();
-                CMD.CommandText = @"Update " + name + " Set question = '" + tQuestion.Text + "', answer = '" + tAnswer.Text + "' Where id = '" + (index + 1).ToString() + "' ";
-                CMD.Connection = con;
-                con.Open();
-                
-                CMD.ExecuteNonQuery();
-               
+                if (tQuestion.Text == "" || tAnswer.Text == "")
+                    flag1 = false;
+                else if (tQuestion.Text == this.Deck.GetList(i).GetQuestion())
+                    flag2 = false;
+                else if (tQuestion.Text.Length > 100 || tAnswer.Text.Length > 1000)
+                    flag3 = false;
             }
-            this.Deck.GetList(index).SetQuestion(tQuestion.Text);
-            this.Deck.GetList(index).SetAnswer(tAnswer.Text);
-            tQuestion.Clear();
-            tAnswer.Clear();
-
-
-
-
-            /*string baseName = "Printers.db3";
-            using (var connection = new SQLiteConnection())
+            if ((flag1) && (flag2) && (flag3))
             {
-                connection.ConnectionString = "Data Source = " + baseName;
-                connection.Open();
-                cmd.CommandText = @"UPDATE Kollvo SET Kollvo_Cart= @Kollvo_Cart WHERE id_cart= @ID_Cart";
-                cmd.Connection = connection;
-                cmd.Parameters.Add(new SQLiteParameter("@ID_Cart", listBox1.SelectedValue));
-                cmd.Parameters.Add(new SQLiteParameter("@Kollvo_Cart", numericUpDown1.Text));
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }*/
+                DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+                DB.Open();
+                using (SQLiteConnection con = new SQLiteConnection("Data Source=DB.db; Version=3"))
+                {
+
+                    string name = this.Deck.GetName();
+
+                    SQLiteCommand CMD = DB.CreateCommand();
+                    CMD.CommandText = @"Update " + name + " Set question = '" + tQuestion.Text + "', answer = '" + tAnswer.Text + "' Where id = '" + (index + 1).ToString() + "' ";
+                    CMD.Connection = con;
+                    con.Open();
+
+                    CMD.ExecuteNonQuery();
+
+                }
+                this.Deck.GetList(index).SetQuestion(tQuestion.Text);
+                this.Deck.GetList(index).SetAnswer(tAnswer.Text);
+                tQuestion.Clear();
+                tAnswer.Clear();
+            }
+            else
+            {
+                if (!flag1)
+                    MessageBox.Show("Поля вопроса и ответа не могут быть пустыми.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (!flag2)
+                    MessageBox.Show("Не могут существовать карточки с одинаковыми вопросами", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (!flag3)
+                    MessageBox.Show("Вы превысили ограничение по символам\nОграничение для вопроса: 100 (у вас "
+                        + tQuestion.Text.Length + ")\nОграничение для ответа: 1000 (у вас "
+                        + tAnswer.Text.Length + ")", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void tQuestion_Click(object sender, EventArgs e)
