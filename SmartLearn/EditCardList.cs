@@ -104,18 +104,19 @@ namespace SmartLearn
 
         private void ChangeCard_Click_1(object sender, EventArgs e)
         {
-            try
+
+            int index = cListQA.SelectedIndex;
+            if (index < 0)
+                MessageBox.Show("Выберите карточку.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
             {
-                EditCard editcard = new EditCard();
+                EditCard editcard = new EditCard(Deck, index);
                 editcard.StyleManager = this.StyleManager;
                 editcard.ShowDialog();
                 cListQA.Items.Clear();
                 EditCardList_Load(sender, e);
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Выберите карточку.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
         }
     }
 }
