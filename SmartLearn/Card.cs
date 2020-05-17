@@ -7,6 +7,8 @@ namespace SmartLearn
         string Question;
         string Answer;
         int ID;
+        DateTime time;
+        int level;
 
         public string GetQuestion() { return this.Question; }
         public void SetQuestion(string q) { this.Question = q; }
@@ -17,11 +19,18 @@ namespace SmartLearn
         public int GetID() { return this.ID; }
         public void SetID(int n) { this.ID = n; }
 
+        public int GetLevel() { return this.level; }
+        public void SetLevel(int l) { this.level = l; }
+
+        public DateTime GetTime() { return this.time; }
+        public void SetTime(DateTime t) { this.time = t; }
+
         public Card()
         {
             Question = "";
             Answer = "";
             ID = 0;
+            level = 0;
         }
 
         public Card(string ques, string ans)
@@ -35,6 +44,6 @@ namespace SmartLearn
         {
             return ans == this.Answer;
         }
-        //
+        
     }
 }

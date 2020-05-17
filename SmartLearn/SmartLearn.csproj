@@ -78,7 +78,7 @@
     <Compile Include="CreateCardList.Designer.cs">
       <DependentUpon>CreateCardList.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBCardList.cs" />
+    <Compile Include="DataBase.cs" />
     <Compile Include="AddCard.cs">
       <SubType>Form</SubType>
     </Compile>
