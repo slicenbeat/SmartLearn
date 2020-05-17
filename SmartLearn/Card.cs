@@ -40,6 +40,15 @@ namespace SmartLearn
             ID = 0;
         }
 
+        public Card(string ques, string ans, DateTime d, int l)
+        {
+            Question = ques;
+            Answer = ans;
+            ID = 0;
+            this.level = l;
+            this.time = d;
+        }
+
         public bool IsCorrect(string ans)
         {
             return ans == this.Answer;
