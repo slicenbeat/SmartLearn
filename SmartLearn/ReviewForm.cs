@@ -54,7 +54,8 @@ namespace SmartLearn
                 CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
                 SQL = CMD1.ExecuteReader();
                 SQL.Read();
-                Card C = new Card(SQL["question"].ToString(), SQL["answer"].ToString());
+                DateTime T = DateTime.Parse(SQL["time"].ToString());
+                Card C = new Card(SQL["question"].ToString(), SQL["answer"].ToString(), T, Int32.Parse(SQL["level"].ToString()));
                 this.Deck.Add(C);
                 SQL.Close();
             }
