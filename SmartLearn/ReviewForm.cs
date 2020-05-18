@@ -60,15 +60,22 @@ namespace SmartLearn
                 this.Deck.Add(C);
                 SQL.Close();
             }
+            this.Deck.Sorting();
             bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
         }
 
         private void bQA_Click(object sender, EventArgs e)
         {
-           if (bQA.Text == Deck.GetList(Deck.GetCurrent()).GetQuestion())
+            //if (bQA.Text == Deck.GetList(Deck.GetCurrent()).GetQuestion())
+            //{
                 bQA.Text = Deck.GetList(Deck.GetCurrent()).GetAnswer();
-           else
-                bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
+                LevelDown.Visible = true;
+                LevelUp.Visible = true;
+                bQA.Enabled = false;
+
+            //}
+            //else
+            //    bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
         }
         private void bNext_Click(object sender, EventArgs e)
         {
@@ -127,11 +134,20 @@ namespace SmartLearn
         private void metroButton1_Click(object sender, EventArgs e)
         {
             Delete = true;
+            int lv = Deck.GetList(Deck.GetCurrent()).GetLevel();
+            this.Deck.GetList(Deck.GetCurrent()).SetLevelUp(lv);
+            LevelDown.Visible = false;
+            LevelUp.Visible = false;
+            bQA.Enabled = true;
         }
 
         private void LevelDown_Click(object sender, EventArgs e)
         {
             Delete = true;
+            this.Deck.GetList(Deck.GetCurrent()).SetLevelDown();
+            LevelDown.Visible = false;
+            LevelUp.Visible = false;
+            bQA.Enabled = true;
         }
     }
 }

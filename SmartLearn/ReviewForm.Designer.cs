@@ -32,16 +32,16 @@
             this.bQA = new MetroFramework.Controls.MetroButton();
             this.bNext = new MetroFramework.Controls.MetroButton();
             this.bPrev = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.LevelUp = new MetroFramework.Controls.MetroButton();
             this.LevelDown = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // bQA
             // 
-            this.bQA.Location = new System.Drawing.Point(165, 114);
-            this.bQA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bQA.Location = new System.Drawing.Point(147, 91);
+            this.bQA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bQA.Name = "bQA";
-            this.bQA.Size = new System.Drawing.Size(847, 275);
+            this.bQA.Size = new System.Drawing.Size(753, 220);
             this.bQA.TabIndex = 0;
             this.bQA.TabStop = false;
             this.bQA.Text = " ";
@@ -51,10 +51,10 @@
             // 
             // bNext
             // 
-            this.bNext.Location = new System.Drawing.Point(939, 431);
-            this.bNext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bNext.Location = new System.Drawing.Point(835, 345);
+            this.bNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bNext.Name = "bNext";
-            this.bNext.Size = new System.Drawing.Size(73, 58);
+            this.bNext.Size = new System.Drawing.Size(65, 46);
             this.bNext.TabIndex = 1;
             this.bNext.TabStop = false;
             this.bNext.Text = "→";
@@ -63,58 +63,60 @@
             // 
             // bPrev
             // 
-            this.bPrev.Location = new System.Drawing.Point(165, 431);
-            this.bPrev.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bPrev.Location = new System.Drawing.Point(147, 345);
+            this.bPrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bPrev.Name = "bPrev";
-            this.bPrev.Size = new System.Drawing.Size(73, 58);
+            this.bPrev.Size = new System.Drawing.Size(65, 46);
             this.bPrev.TabIndex = 2;
             this.bPrev.TabStop = false;
             this.bPrev.Text = "←";
             this.bPrev.UseSelectable = true;
             this.bPrev.Click += new System.EventHandler(this.bPrev_Click);
             // 
-            // metroButton1
+            // LevelUp
             // 
-            this.metroButton1.Location = new System.Drawing.Point(1053, 222);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(73, 58);
-            this.metroButton1.TabIndex = 3;
-            this.metroButton1.TabStop = false;
-            this.metroButton1.Text = "↑";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.LevelUp.Location = new System.Drawing.Point(936, 178);
+            this.LevelUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LevelUp.Name = "LevelUp";
+            this.LevelUp.Size = new System.Drawing.Size(65, 46);
+            this.LevelUp.TabIndex = 3;
+            this.LevelUp.TabStop = false;
+            this.LevelUp.Text = "↑";
+            this.LevelUp.UseSelectable = true;
+            this.LevelUp.Visible = false;
+            this.LevelUp.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // LevelDown
             // 
-            this.LevelDown.Location = new System.Drawing.Point(35, 222);
-            this.LevelDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LevelDown.Location = new System.Drawing.Point(31, 178);
+            this.LevelDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LevelDown.Name = "LevelDown";
-            this.LevelDown.Size = new System.Drawing.Size(73, 58);
+            this.LevelDown.Size = new System.Drawing.Size(65, 46);
             this.LevelDown.TabIndex = 4;
             this.LevelDown.TabStop = false;
             this.LevelDown.Text = "↓";
             this.LevelDown.UseSelectable = true;
+            this.LevelDown.Visible = false;
             this.LevelDown.Click += new System.EventHandler(this.LevelDown_Click);
             // 
             // ReviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 522);
+            this.ClientSize = new System.Drawing.Size(1052, 418);
             this.Controls.Add(this.LevelDown);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.LevelUp);
             this.Controls.Add(this.bPrev);
             this.Controls.Add(this.bNext);
             this.Controls.Add(this.bQA);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1184, 522);
+            this.MaximumSize = new System.Drawing.Size(1052, 418);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1184, 522);
+            this.MinimumSize = new System.Drawing.Size(1052, 418);
             this.Name = "ReviewForm";
-            this.Padding = new System.Windows.Forms.Padding(30, 92, 30, 31);
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReviewForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReviewForm_FormClosed);
             this.Load += new System.EventHandler(this.ReviewForm_Load);
@@ -127,7 +129,7 @@
         private MetroFramework.Controls.MetroButton bQA;
         private MetroFramework.Controls.MetroButton bNext;
         private MetroFramework.Controls.MetroButton bPrev;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton LevelUp;
         private MetroFramework.Controls.MetroButton LevelDown;
     }
 }

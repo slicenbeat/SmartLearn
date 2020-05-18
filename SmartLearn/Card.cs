@@ -54,5 +54,47 @@ namespace SmartLearn
             return ans == this.Answer;
         }
         
+        public void SetLevelUp(int l)
+        {
+            if (l != 8)
+               this.level = l + 1;
+            DateTime q = new DateTime();
+            q = DateTime.Now;
+            switch (l)
+            {
+                case 1:
+                    q.AddMinutes(20);
+                    break;
+                case 2:
+                    q.AddMinutes(60);
+                    break;
+                case 3:
+                    q.AddHours(8);
+                    break;
+                case 4:
+                    q.AddDays(1);
+                    break;
+                case 5:
+                    q.AddDays(3);
+                    break;
+                case 6:
+                    q.AddDays(7);
+                    break;
+                case 7:
+                    q.AddDays(21);
+                    break;
+                case 8:
+                    q.AddMonths(3);
+                    break;
+
+            }
+            this.time = q;
+        }
+
+        public void SetLevelDown()
+        {
+            this.level = 0;
+            this.time = DateTime.Now;
+        }
     }
 }
