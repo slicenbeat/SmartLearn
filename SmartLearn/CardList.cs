@@ -5,7 +5,7 @@ namespace SmartLearn
 {
     public class CardList
     {
-        List<Card> Cards;
+        public List<Card> Cards;
         int current;
         string Name;
         Random rand = new Random();

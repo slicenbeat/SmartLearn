@@ -54,7 +54,7 @@ namespace SmartLearn
                     string name = this.Deck.GetName();
 
                     SQLiteCommand CMD = DB.CreateCommand();
-                    CMD.CommandText = @"Update " + name + " Set question = '" + tQuestion.Text + "', answer = '" + tAnswer.Text + "' Where id = '" + (index + 1).ToString() + "' ";
+                    CMD.CommandText = @"Update " + name + " Set question = '" + tQuestion.Text + "', answer = '" + tAnswer.Text + "', level = '" + Deck.Cards[index].GetLevel() + "', time = '" + Deck.Cards[index].GetTime().ToString() + "' Where id = '" + (index + 1).ToString() + "' ";
                     CMD.Connection = con;
                     con.Open();
 

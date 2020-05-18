@@ -61,7 +61,7 @@ namespace SmartLearn
                 CMD.ExecuteNonQuery();
 
                 SQLiteCommand CMD1 = DB.CreateCommand();
-                CMD1.CommandText = "CREATE TABLE '" + S + "' (id INTEGER PRIMARY KEY AUTOINCREMENT, question VARCHAR(1000) NOT NULL, answer VARCHAR(1000) NOT NULL); ";
+                CMD1.CommandText = "CREATE TABLE '" + S + "' (id INTEGER PRIMARY KEY AUTOINCREMENT, question VARCHAR(1000) NOT NULL, answer VARCHAR(1000) NOT NULL, level INTEGER NOT NULL, time VARCHAR(1000) ); ";
                 CMD1.ExecuteNonQuery();
                 NameOfCardList.Clear();
                 NameOfCardList.Focus();
