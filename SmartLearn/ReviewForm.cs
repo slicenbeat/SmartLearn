@@ -21,6 +21,7 @@ namespace SmartLearn
     public partial class ReviewForm : MetroForm
     {
         private SQLiteConnection DB;
+        DataBase db;
         CardList Deck;
         Card First;
         bool Delete = false;
@@ -40,27 +41,29 @@ namespace SmartLearn
             bNext.StyleManager = this.StyleManager;
             bPrev.StyleManager = this.StyleManager;
             Deck.SetCurrent(0);
-            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-            DB.Open();
-            SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "SELECT Count(*) From " + '\u0022' + Deck.GetName() + '\u0022';
-            string s = CMD.ExecuteScalar().ToString();
+            db = new DataBase();
+            db.LoadCardList(Deck);
+            //DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+            //DB.Open();
+            //SQLiteCommand CMD = DB.CreateCommand();
+            //CMD.CommandText = "SELECT Count(*) From " + '\u0022' + Deck.GetName() + '\u0022';
+            //string s = CMD.ExecuteScalar().ToString();
 
-            int size = Convert.ToInt32(s);
+            //int size = Convert.ToInt32(s);
 
-            SQLiteCommand CMD1 = DB.CreateCommand();
-            SQLiteDataReader SQL;
-            for (int i = 1; i < size + 1; i++)
-            {
-                CMD1.CommandText = "SELECT * FROM " + '\u0022' + Deck.GetName() + '\u0022' + " WHERE id like '%' || @Numb || '%' ";
-                CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
-                SQL = CMD1.ExecuteReader();
-                SQL.Read();
-                DateTime T = DateTime.Parse(SQL["time"].ToString());
-                Card C = new Card(SQL["question"].ToString(), SQL["answer"].ToString(), T, Int32.Parse(SQL["level"].ToString()));
-                this.Deck.Add(C);
-                SQL.Close();
-            }
+            //SQLiteCommand CMD1 = DB.CreateCommand();
+            //SQLiteDataReader SQL;
+            //for (int i = 1; i < size + 1; i++)
+            //{
+            //    CMD1.CommandText = "SELECT * FROM " + '\u0022' + Deck.GetName() + '\u0022' + " WHERE id like '%' || @Numb || '%' ";
+            //    CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
+            //    SQL = CMD1.ExecuteReader();
+            //    SQL.Read();
+            //    DateTime T = DateTime.Parse(SQL["time"].ToString());
+            //    Card C = new Card(SQL["question"].ToString(), SQL["answer"].ToString(), T, Int32.Parse(SQL["level"].ToString()));
+            //    this.Deck.Add(C);
+            //    SQL.Close();
+            //}
             this.Deck.Sorting();
             DateTime now = DateTime.Now;
             DateTime card_now = Deck.GetList(Deck.GetCurrent()).GetTime();
@@ -69,7 +72,9 @@ namespace SmartLearn
             if (comp > 0)
             {
                 bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
-                First = Deck.GetList(Deck.GetCurrent());           }
+                First = Deck.GetList(Deck.GetCurrent());
+                LevelLabel.Text = "Уровень карточки: " + Deck.GetList(Deck.GetCurrent()).GetLevel().ToString();
+            }
             else
             {
                 bQA.Text = "Новых к изучению карт нет.";
@@ -114,6 +119,7 @@ namespace SmartLearn
                     if (comp > 0)
                     {
                         bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
+                        LevelLabel.Text = "Уровень карточки: " + Deck.GetList(Deck.GetCurrent()).GetLevel().ToString();
                         bQA.Enabled = true;
                         bNext.Visible = false;
                         break;
@@ -134,35 +140,38 @@ namespace SmartLearn
 
         private void ReviewForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string file = "DeckName.txt";
-            using (StreamWriter writer = new StreamWriter(file, false, Encoding.GetEncoding(1251)))
-            {
-                writer.WriteLine(this.Deck.GetName());
-            }
+            //string file = "DeckName.txt";
+            //using (StreamWriter writer = new StreamWriter(file, false, Encoding.GetEncoding(1251)))
+            //{
+            //    writer.WriteLine(this.Deck.GetName());
+            //}
 
             if (Delete == true)
             {
-                DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-                DB.Open();
-                SQLiteCommand CMD = DB.CreateCommand();
-                CMD.CommandText = " DROP TABLE '" + Deck.GetName() + "'; ";
-                CMD.ExecuteNonQuery();
+                db = new DataBase();
+                db.DeleteCard(Deck);
+
+                //DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+                //DB.Open();
+                //SQLiteCommand CMD = DB.CreateCommand();
+                //CMD.CommandText = " DROP TABLE '" + Deck.GetName() + "'; ";
+                //CMD.ExecuteNonQuery();
 
 
-                SQLiteCommand CMD1 = DB.CreateCommand();
-                CMD1.CommandText = "CREATE TABLE '" + Deck.GetName() + "' (id INTEGER PRIMARY KEY AUTOINCREMENT, question VARCHAR(1000) NOT NULL, answer VARCHAR(1000) NOT NULL, level INTEGER NOT NULL, time VARCHAR(1000)); ";
-                CMD1.ExecuteNonQuery();
+                //SQLiteCommand CMD1 = DB.CreateCommand();
+                //CMD1.CommandText = "CREATE TABLE '" + Deck.GetName() + "' (id INTEGER PRIMARY KEY AUTOINCREMENT, question VARCHAR(1000) NOT NULL, answer VARCHAR(1000) NOT NULL, level INTEGER NOT NULL, time VARCHAR(1000)); ";
+                //CMD1.ExecuteNonQuery();
 
-                SQLiteCommand CMD2 = DB.CreateCommand();
-                for (int i = 0; i < Deck.Cards.Count; i++)
-                {
-                    CMD2.CommandText = "insert into '" + Deck.GetName() + "'(question, answer, level, time) values( @question , @answer, @level, @time)";
-                    CMD2.Parameters.Add("@question", DbType.String).Value = Deck.Cards[i].GetQuestion();
-                    CMD2.Parameters.Add("@answer", DbType.String).Value = Deck.Cards[i].GetAnswer();
-                    CMD2.Parameters.Add("@level", DbType.Int32).Value = Deck.Cards[i].GetLevel();
-                    CMD2.Parameters.Add("@time", DbType.String).Value = Deck.Cards[i].GetTime().ToString();
-                    CMD2.ExecuteNonQuery();
-                }
+                //SQLiteCommand CMD2 = DB.CreateCommand();
+                //for (int i = 0; i < Deck.Cards.Count; i++)
+                //{
+                //    CMD2.CommandText = "insert into '" + Deck.GetName() + "'(question, answer, level, time) values( @question , @answer, @level, @time)";
+                //    CMD2.Parameters.Add("@question", DbType.String).Value = Deck.Cards[i].GetQuestion();
+                //    CMD2.Parameters.Add("@answer", DbType.String).Value = Deck.Cards[i].GetAnswer();
+                //    CMD2.Parameters.Add("@level", DbType.Int32).Value = Deck.Cards[i].GetLevel();
+                //    CMD2.Parameters.Add("@time", DbType.String).Value = Deck.Cards[i].GetTime().ToString();
+                //    CMD2.ExecuteNonQuery();
+                //}
             }
         }
 

@@ -82,6 +82,11 @@ namespace SmartLearn
         {
             try
             {
+                if (CardListComboBox.SelectedItem == null)
+                {
+                    throw new Exception();
+                }
+
                 this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
                 db = new DataBase();
                 db.LoadCardList(Deck);
@@ -101,6 +106,10 @@ namespace SmartLearn
         {
             try
             {
+                if (CardListComboBox.SelectedItem == null)
+                {
+                    throw new Exception();
+                }
                 int ind = CardListComboBox.Items.IndexOf(CardListComboBox.SelectedItem.ToString());
                 string name = CardListComboBox.SelectedItem.ToString();
                 db = new DataBase();
@@ -117,6 +126,10 @@ namespace SmartLearn
         {
             try
             {
+                if (CardListComboBox.SelectedItem == null)
+                {
+                    throw new Exception();
+                }
                 this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
                 Deck.SetCurrent(0);
                 DB = new SQLiteConnection("Data Source=DB.db; Version=3");

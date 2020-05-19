@@ -34,16 +34,16 @@
             this.bPrev = new MetroFramework.Controls.MetroButton();
             this.LevelUp = new MetroFramework.Controls.MetroButton();
             this.LevelDown = new MetroFramework.Controls.MetroButton();
+            this.LevelLabel = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // bQA
             // 
             this.bQA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bQA.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.bQA.Location = new System.Drawing.Point(31, 78);
-            this.bQA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bQA.Location = new System.Drawing.Point(23, 63);
             this.bQA.Name = "bQA";
-            this.bQA.Size = new System.Drawing.Size(991, 234);
+            this.bQA.Size = new System.Drawing.Size(743, 190);
             this.bQA.TabIndex = 0;
             this.bQA.TabStop = false;
             this.bQA.UseSelectable = true;
@@ -52,10 +52,9 @@
             // bNext
             // 
             this.bNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bNext.Location = new System.Drawing.Point(956, 345);
-            this.bNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bNext.Location = new System.Drawing.Point(717, 280);
             this.bNext.Name = "bNext";
-            this.bNext.Size = new System.Drawing.Size(65, 46);
+            this.bNext.Size = new System.Drawing.Size(49, 37);
             this.bNext.TabIndex = 1;
             this.bNext.TabStop = false;
             this.bNext.Text = "→";
@@ -66,10 +65,9 @@
             // bPrev
             // 
             this.bPrev.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bPrev.Location = new System.Drawing.Point(147, 345);
-            this.bPrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bPrev.Location = new System.Drawing.Point(110, 280);
             this.bPrev.Name = "bPrev";
-            this.bPrev.Size = new System.Drawing.Size(65, 46);
+            this.bPrev.Size = new System.Drawing.Size(49, 37);
             this.bPrev.TabIndex = 2;
             this.bPrev.TabStop = false;
             this.bPrev.Text = "←";
@@ -80,10 +78,9 @@
             // LevelUp
             // 
             this.LevelUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LevelUp.Location = new System.Drawing.Point(521, 345);
-            this.LevelUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LevelUp.Location = new System.Drawing.Point(391, 280);
             this.LevelUp.Name = "LevelUp";
-            this.LevelUp.Size = new System.Drawing.Size(65, 46);
+            this.LevelUp.Size = new System.Drawing.Size(49, 37);
             this.LevelUp.TabIndex = 3;
             this.LevelUp.TabStop = false;
             this.LevelUp.Text = "↑";
@@ -94,10 +91,9 @@
             // LevelDown
             // 
             this.LevelDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LevelDown.Location = new System.Drawing.Point(448, 345);
-            this.LevelDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LevelDown.Location = new System.Drawing.Point(336, 280);
             this.LevelDown.Name = "LevelDown";
-            this.LevelDown.Size = new System.Drawing.Size(65, 46);
+            this.LevelDown.Size = new System.Drawing.Size(49, 37);
             this.LevelDown.TabIndex = 4;
             this.LevelDown.TabStop = false;
             this.LevelDown.Text = "↓";
@@ -105,28 +101,38 @@
             this.LevelDown.Visible = false;
             this.LevelDown.Click += new System.EventHandler(this.LevelDown_Click);
             // 
+            // LevelLabel
+            // 
+            this.LevelLabel.AutoSize = true;
+            this.LevelLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.LevelLabel.Location = new System.Drawing.Point(286, 31);
+            this.LevelLabel.Name = "LevelLabel";
+            this.LevelLabel.Size = new System.Drawing.Size(132, 19);
+            this.LevelLabel.TabIndex = 5;
+            this.LevelLabel.Text = "Уровень карточки: ";
+            // 
             // ReviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 418);
+            this.ClientSize = new System.Drawing.Size(789, 340);
+            this.Controls.Add(this.LevelLabel);
             this.Controls.Add(this.LevelDown);
             this.Controls.Add(this.LevelUp);
             this.Controls.Add(this.bPrev);
             this.Controls.Add(this.bNext);
             this.Controls.Add(this.bQA);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1052, 418);
+            this.MaximumSize = new System.Drawing.Size(789, 340);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1052, 418);
+            this.MinimumSize = new System.Drawing.Size(789, 340);
             this.Name = "ReviewForm";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReviewForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReviewForm_FormClosed);
             this.Load += new System.EventHandler(this.ReviewForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -137,5 +143,6 @@
         private MetroFramework.Controls.MetroButton bPrev;
         private MetroFramework.Controls.MetroButton LevelUp;
         private MetroFramework.Controls.MetroButton LevelDown;
+        private MetroFramework.Controls.MetroLabel LevelLabel;
     }
 }
