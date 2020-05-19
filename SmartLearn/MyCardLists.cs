@@ -21,6 +21,7 @@ namespace SmartLearn
         private SQLiteConnection DB;
         CardList Deck;
         List <string> NameTable;
+        DataBase db;
         public MyCardLists()
         {
             InitializeComponent();
@@ -34,26 +35,32 @@ namespace SmartLearn
             bLearnCardList.StyleManager = this.StyleManager;
             CardListComboBox.StyleManager = this.StyleManager;
             bNewCardList.StyleManager = this.StyleManager;
-
-            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-            DB.Open();
-            SQLiteCommand CMD = DB.CreateCommand();
-            CMD.CommandText = "SELECT Count(*) From Name";
-            string s = CMD.ExecuteScalar().ToString();
-            int size = Convert.ToInt32(s);
-
-            SQLiteCommand CMD1 = DB.CreateCommand();
-            SQLiteDataReader SQL;
             NameTable = new List<string>();
-            for (int i = 0; i < size; i++)
+            //DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+            //DB.Open();
+            //SQLiteCommand CMD = DB.CreateCommand();
+            //CMD.CommandText = "SELECT Count(*) From Name";
+            //string s = CMD.ExecuteScalar().ToString();
+            //int size = Convert.ToInt32(s);
+
+            //SQLiteCommand CMD1 = DB.CreateCommand();
+            //SQLiteDataReader SQL;
+            //// NameTable = new List<string>();
+            //for (int i = 0; i < size; i++)
+            //{
+            //    CMD1.CommandText = "SELECT * FROM Name WHERE id like '%' || @Numb || '%' ";
+            //    CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i+1;
+            //    SQL = CMD1.ExecuteReader();
+            //    SQL.Read();
+            //    CardListComboBox.Items.Add(SQL["NameTable"].ToString());
+            //    NameTable.Add(SQL["NameTable"].ToString());
+            //    SQL.Close();
+            //}
+            db = new DataBase();
+            db.LoadNameOfDecks(NameTable);
+            for (int i = 0; i < NameTable.Count; i++)
             {
-                CMD1.CommandText = "SELECT * FROM Name WHERE id like '%' || @Numb || '%' ";
-                CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i+1;
-                SQL = CMD1.ExecuteReader();
-                SQL.Read();
-                CardListComboBox.Items.Add(SQL["NameTable"].ToString());
-                NameTable.Add(SQL["NameTable"].ToString());
-                SQL.Close();
+                CardListComboBox.Items.Add(NameTable[i]);
             }
             if (CardListComboBox.Items.Count != 0)
             {
@@ -95,31 +102,33 @@ namespace SmartLearn
         {
             try
             {
+                //this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
+
+                //Deck.SetCurrent(1);
+                //DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+                //DB.Open();
+                //SQLiteCommand CMD = DB.CreateCommand();
+                //CMD.CommandText = "SELECT Count(*) From " + '\u0022' + Deck.GetName() + '\u0022';
+                //string s = CMD.ExecuteScalar().ToString();
+
+                //int size = Convert.ToInt32(s);
+
+                //SQLiteCommand CMD1 = DB.CreateCommand();
+                //SQLiteDataReader SQL;
+                //for (int i = 1; i < size + 1; i++)
+                //{
+                //    CMD1.CommandText = "SELECT * FROM " + '\u0022' + Deck.GetName() + '\u0022' + " WHERE id like '%' || @Numb || '%' ";
+                //    CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
+                //    SQL = CMD1.ExecuteReader();
+                //    SQL.Read();
+                //    DateTime T = DateTime.Parse(SQL["time"].ToString());
+                //    Card C = new Card(SQL["question"].ToString(), SQL["answer"].ToString(), T, Int32.Parse(SQL["level"].ToString()));
+                //    this.Deck.Add(C);
+                //    SQL.Close();
+                //}
                 this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
-
-                Deck.SetCurrent(1);
-                DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-                DB.Open();
-                SQLiteCommand CMD = DB.CreateCommand();
-                CMD.CommandText = "SELECT Count(*) From " + '\u0022' + Deck.GetName() + '\u0022';
-                string s = CMD.ExecuteScalar().ToString();
-
-                int size = Convert.ToInt32(s);
-
-                SQLiteCommand CMD1 = DB.CreateCommand();
-                SQLiteDataReader SQL;
-                for (int i = 1; i < size + 1; i++)
-                {
-                    CMD1.CommandText = "SELECT * FROM " + '\u0022' + Deck.GetName() + '\u0022' + " WHERE id like '%' || @Numb || '%' ";
-                    CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i;
-                    SQL = CMD1.ExecuteReader();
-                    SQL.Read();
-                    DateTime T = DateTime.Parse(SQL["time"].ToString());
-                    Card C = new Card(SQL["question"].ToString(), SQL["answer"].ToString(), T, Int32.Parse(SQL["level"].ToString()));
-                    this.Deck.Add(C);
-                    SQL.Close();
-                }
-
+                db = new DataBase();
+                db.LoadFromDBCard(Deck);
                 EditCardList editcardlist = new EditCardList(Deck);
                 editcardlist.StyleManager = this.StyleManager;
                 editcardlist.ShowDialog();
@@ -136,27 +145,33 @@ namespace SmartLearn
         {
             try
             {
-                DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-                DB.Open();
-                SQLiteCommand CMD = DB.CreateCommand();
-                CMD.CommandText = " DROP TABLE '" + CardListComboBox.SelectedItem.ToString() + "'; ";
-                CMD.ExecuteNonQuery();
-                NameTable.RemoveAt(CardListComboBox.Items.IndexOf(CardListComboBox.SelectedItem.ToString()));
-                CardListComboBox.Items.Remove(CardListComboBox.SelectedItem.ToString());
+                int ind = CardListComboBox.Items.IndexOf(CardListComboBox.SelectedItem.ToString());
+                string name = CardListComboBox.SelectedItem.ToString();
+                //DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+                //DB.Open();
+                //SQLiteCommand CMD = DB.CreateCommand();
+                //CMD.CommandText = " DROP TABLE '" + CardListComboBox.SelectedItem.ToString() + "'; ";
+                //CMD.ExecuteNonQuery();
+                ////int ind = CardListComboBox.Items.IndexOf(CardListComboBox.SelectedItem.ToString());
+                //NameTable.RemoveAt(ind);
+                ////CardListComboBox.Items.Remove(CardListComboBox.SelectedItem.ToString());
 
-                SQLiteCommand CMD3 = DB.CreateCommand();
-                CMD3.CommandText = " DROP TABLE 'Name'; ";
-                CMD3.ExecuteNonQuery();
-                SQLiteCommand CMD1 = DB.CreateCommand();
-                CMD1.CommandText = "CREATE TABLE 'Name' (id INTEGER PRIMARY KEY AUTOINCREMENT, NameTable VARCHAR(1000) NOT NULL); ";
-                CMD1.ExecuteNonQuery();
-                SQLiteCommand CMD2 = DB.CreateCommand();
-                for (int i = 0; i < NameTable.Count; i++)
-                {
-                    CMD2.CommandText = "insert into 'Name'(NameTable) values(@NameTable)";
-                    CMD2.Parameters.Add("@NameTable", DbType.String).Value = NameTable[i];
-                    CMD2.ExecuteNonQuery();
-                }
+                //SQLiteCommand CMD3 = DB.CreateCommand();
+                //CMD3.CommandText = " DROP TABLE 'Name'; ";
+                //CMD3.ExecuteNonQuery();
+                //SQLiteCommand CMD1 = DB.CreateCommand();
+                //CMD1.CommandText = "CREATE TABLE 'Name' (id INTEGER PRIMARY KEY AUTOINCREMENT, NameTable VARCHAR(1000) NOT NULL); ";
+                //CMD1.ExecuteNonQuery();
+                //SQLiteCommand CMD2 = DB.CreateCommand();
+                //for (int i = 0; i < NameTable.Count; i++)
+                //{
+                //    CMD2.CommandText = "insert into 'Name'(NameTable) values(@NameTable)";
+                //    CMD2.Parameters.Add("@NameTable", DbType.String).Value = NameTable[i];
+                //    CMD2.ExecuteNonQuery();
+                //}
+                db = new DataBase();
+                db.DeleteDeckFromDB(NameTable, name, ind);
+                CardListComboBox.Items.Remove(CardListComboBox.SelectedItem.ToString());
             }
             catch (Exception ex)
             {

@@ -20,7 +20,8 @@ namespace SmartLearn
 
     public partial class CreateCardList : MetroForm
     {
-        private SQLiteConnection DB;
+        //private SQLiteConnection DB;
+        DataBase DB;
         List<string> NameTable;
         public CreateCardList()
         {
@@ -54,15 +55,17 @@ namespace SmartLearn
             }
             if ((flag1) && (flag2))
             {
-                DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-                DB.Open();
-                SQLiteCommand CMD = DB.CreateCommand();
-                CMD.CommandText = "insert into Name(NameTable) values('" + S + "')";
-                CMD.ExecuteNonQuery();
+                //DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+                //DB.Open();
+                //SQLiteCommand CMD = DB.CreateCommand();
+                //CMD.CommandText = "insert into Name(NameTable) values('" + S + "')";
+                //CMD.ExecuteNonQuery();
 
-                SQLiteCommand CMD1 = DB.CreateCommand();
-                CMD1.CommandText = "CREATE TABLE '" + S + "' (id INTEGER PRIMARY KEY AUTOINCREMENT, question VARCHAR(1000) NOT NULL, answer VARCHAR(1000) NOT NULL, level INTEGER NOT NULL, time VARCHAR(1000) ); ";
-                CMD1.ExecuteNonQuery();
+                //SQLiteCommand CMD1 = DB.CreateCommand();
+                //CMD1.CommandText = "CREATE TABLE '" + S + "' (id INTEGER PRIMARY KEY AUTOINCREMENT, question VARCHAR(1000) NOT NULL, answer VARCHAR(1000) NOT NULL, level INTEGER NOT NULL, time VARCHAR(1000) ); ";
+                //CMD1.ExecuteNonQuery();
+                DB = new DataBase();
+                DB.CreateDeckInDB(S);
                 NameOfCardList.Clear();
                 NameOfCardList.Focus();
             }
