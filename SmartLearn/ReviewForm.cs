@@ -100,7 +100,7 @@ namespace SmartLearn
                 if (Next.GetQuestion() == First.GetQuestion())
                 {
                     bQA.Text = "Новых к изучению карт нет.";
-                    bNext.Enabled = false;
+                    bNext.Visible = false;
                     bPrev.Enabled = false;
                     bQA.Enabled = false;
                     break;
