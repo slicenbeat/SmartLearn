@@ -38,19 +38,18 @@
             // 
             // bQA
             // 
-            this.bQA.Location = new System.Drawing.Point(110, 74);
+            this.bQA.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.bQA.Location = new System.Drawing.Point(23, 63);
             this.bQA.Name = "bQA";
-            this.bQA.Size = new System.Drawing.Size(565, 179);
+            this.bQA.Size = new System.Drawing.Size(743, 190);
             this.bQA.TabIndex = 0;
             this.bQA.TabStop = false;
-            this.bQA.Text = " ";
-            this.bQA.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.bQA.UseSelectable = true;
             this.bQA.Click += new System.EventHandler(this.bQA_Click);
             // 
             // bNext
             // 
-            this.bNext.Location = new System.Drawing.Point(626, 280);
+            this.bNext.Location = new System.Drawing.Point(717, 280);
             this.bNext.Name = "bNext";
             this.bNext.Size = new System.Drawing.Size(49, 37);
             this.bNext.TabIndex = 1;
@@ -74,7 +73,7 @@
             // 
             // LevelUp
             // 
-            this.LevelUp.Location = new System.Drawing.Point(702, 145);
+            this.LevelUp.Location = new System.Drawing.Point(391, 280);
             this.LevelUp.Name = "LevelUp";
             this.LevelUp.Size = new System.Drawing.Size(49, 37);
             this.LevelUp.TabIndex = 3;
@@ -86,7 +85,7 @@
             // 
             // LevelDown
             // 
-            this.LevelDown.Location = new System.Drawing.Point(23, 145);
+            this.LevelDown.Location = new System.Drawing.Point(336, 280);
             this.LevelDown.Name = "LevelDown";
             this.LevelDown.Size = new System.Drawing.Size(49, 37);
             this.LevelDown.TabIndex = 4;
