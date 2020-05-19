@@ -133,12 +133,6 @@ namespace SmartLearn
                 this.Deck = new CardList(CardListComboBox.SelectedItem.ToString());
                 Deck.SetCurrent(0);
                 db = new DataBase();
-                //DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-                //DB.Open();
-                //SQLiteCommand CMD = DB.CreateCommand();
-                //CMD.CommandText = "SELECT Count(*) From " + '\u0022' + Deck.GetName() + '\u0022';
-                //string s = CMD.ExecuteScalar().ToString();
-
                 int size = Convert.ToInt32(db.GetNameCardList(Deck));
                 if (size < 3)
                     MessageBox.Show("Для того, чтобы учить колоду, в ней должно быть не менее трёх карт.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
