@@ -115,6 +115,7 @@ namespace SmartLearn
                     {
                         bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
                         bQA.Enabled = true;
+                        bNext.Visible = false;
                         break;
                     }
                 }
@@ -177,6 +178,7 @@ namespace SmartLearn
             this.Deck.GetList(Deck.GetCurrent()).SetLevelUp(lv);
             LevelDown.Visible = false;
             LevelUp.Visible = false;
+            bNext.Visible = true;
         }
 
         private void LevelDown_Click(object sender, EventArgs e)
@@ -185,6 +187,7 @@ namespace SmartLearn
             this.Deck.GetList(Deck.GetCurrent()).SetLevelDown();
             LevelDown.Visible = false;
             LevelUp.Visible = false;
+            bNext.Visible = true;
         }
     }
 }

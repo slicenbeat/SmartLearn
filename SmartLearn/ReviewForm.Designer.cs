@@ -57,6 +57,7 @@
             this.bNext.TabStop = false;
             this.bNext.Text = "→";
             this.bNext.UseSelectable = true;
+            this.bNext.Visible = false;
             this.bNext.Click += new System.EventHandler(this.bNext_Click);
             // 
             // bPrev
