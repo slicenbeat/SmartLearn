@@ -59,25 +59,5 @@ namespace SmartLearn.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] DB {
-            get {
-                object obj = ResourceManager.GetObject("DB", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] SQLite3 {
-            get {
-                object obj = ResourceManager.GetObject("SQLite3", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }

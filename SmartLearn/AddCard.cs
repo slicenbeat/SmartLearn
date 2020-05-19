@@ -7,7 +7,6 @@ namespace SmartLearn
 {
     public partial class AddCard : MetroForm
     {
-        private SQLiteConnection DB;
         CardList Deck;
         DataBase db;
         public AddCard(CardList d)
