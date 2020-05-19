@@ -169,6 +169,7 @@
     <EmbeddedResource Include="ReviewForm.resx">
       <DependentUpon>ReviewForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\DB.db" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -184,6 +185,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\SQLite3.DLL" />
     <Content Include="DeckName.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
