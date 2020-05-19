@@ -76,5 +76,12 @@ namespace SmartLearn
         {
 
         }
+
+        private void btnInsrtuction_Click(object sender, EventArgs e)
+        {
+            Instruction ifrm = new Instruction();
+            ifrm.StyleManager = this.StyleManager;
+            ifrm.ShowDialog();
+        }
     }
 }
