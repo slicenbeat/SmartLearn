@@ -22,6 +22,7 @@ namespace SmartLearn
     {
         private SQLiteConnection DB;
         CardList Deck;
+        Card First;
         bool Delete = false;
         public ReviewForm(CardList d)
         {
@@ -61,7 +62,21 @@ namespace SmartLearn
                 SQL.Close();
             }
             this.Deck.Sorting();
-            bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
+            DateTime now = DateTime.Now;
+            DateTime card_now = Deck.GetList(Deck.GetCurrent()).GetTime();
+            int comp = DateTime.Compare(now, card_now);
+
+            if (comp > 0)
+            {
+                bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
+                First = Deck.GetList(Deck.GetCurrent());           }
+            else
+            {
+                bQA.Text = "Новых к изучению карт нет.";
+                bNext.Enabled = false;
+                bPrev.Enabled = false;
+                bQA.Enabled = false;
+            }
         }
 
         private void bQA_Click(object sender, EventArgs e)
@@ -79,7 +94,31 @@ namespace SmartLearn
         }
         private void bNext_Click(object sender, EventArgs e)
         {
-            bQA.Text = Deck.GetNext().GetQuestion();
+            while (true)
+            {
+                Card Next = Deck.GetNext();
+                if (Next.GetQuestion() == First.GetQuestion())
+                {
+                    bQA.Text = "Новых к изучению карт нет.";
+                    bNext.Enabled = false;
+                    bPrev.Enabled = false;
+                    bQA.Enabled = false;
+                    break;
+                }
+                else 
+                {
+                    DateTime now = DateTime.Now;
+                    DateTime card_now = Deck.GetList(Deck.GetCurrent()).GetTime();
+                    int comp = DateTime.Compare(now, card_now);
+
+                    if (comp > 0)
+                    {
+                        bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
+                        bQA.Enabled = true;
+                        break;
+                    }
+                }
+            }
         }
 
         private void bPrev_Click(object sender, EventArgs e)
@@ -138,7 +177,6 @@ namespace SmartLearn
             this.Deck.GetList(Deck.GetCurrent()).SetLevelUp(lv);
             LevelDown.Visible = false;
             LevelUp.Visible = false;
-            bQA.Enabled = true;
         }
 
         private void LevelDown_Click(object sender, EventArgs e)
@@ -147,7 +185,6 @@ namespace SmartLearn
             this.Deck.GetList(Deck.GetCurrent()).SetLevelDown();
             LevelDown.Visible = false;
             LevelUp.Visible = false;
-            bQA.Enabled = true;
         }
     }
 }
