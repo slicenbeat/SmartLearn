@@ -10,7 +10,6 @@ namespace SmartLearn
     {
         CardList Deck;
         int index;
-        //SQLiteConnection DB;
         DataBase DB;
         public EditCard(CardList d, int i)
         {
@@ -47,23 +46,8 @@ namespace SmartLearn
             }
             if ((flag1) && (flag2) && (flag3))
             {
-                //DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-                //DB.Open();
-                //using (SQLiteConnection con = new SQLiteConnection("Data Source=DB.db; Version=3"))
-                //{
-
-                //    string name = this.Deck.GetName();
-
-                //    SQLiteCommand CMD = DB.CreateCommand();
-                //    CMD.CommandText = @"Update " + name + " Set question = '" + tQuestion.Text + "', answer = '" + tAnswer.Text + "', level = '" + Deck.Cards[index].GetLevel() + "', time = '" + Deck.Cards[index].GetTime().ToString() + "' Where id = '" + (index + 1).ToString() + "' ";
-                //    CMD.Connection = con;
-                //    con.Open();
-
-                //    CMD.ExecuteNonQuery();
-
-                //}
                 DB = new DataBase();
-                DB.UpdateDBCard(Deck, tQuestion.Text, tAnswer.Text, index);
+                DB.UpdateCard(Deck, tQuestion.Text, tAnswer.Text, index);
                 this.Deck.GetList(index).SetQuestion(tQuestion.Text);
                 this.Deck.GetList(index).SetAnswer(tAnswer.Text);
                 tQuestion.Clear();
@@ -80,6 +64,8 @@ namespace SmartLearn
                         + tQuestion.Text.Length + ")\nОграничение для ответа: 1000 (у вас "
                         + tAnswer.Text.Length + ")", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            Close();
         }
 
         private void tQuestion_Click(object sender, EventArgs e)
@@ -88,6 +74,11 @@ namespace SmartLearn
         }
 
         private void tAnswer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditCard_FormClosing(object sender, FormClosingEventArgs e)
         {
 
         }

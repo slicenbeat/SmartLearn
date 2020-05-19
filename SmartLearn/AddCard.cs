@@ -52,19 +52,8 @@ namespace SmartLearn
             if ((flag1) && (flag2) && (flag3))
             {
                 DateTime T = DateTime.Now;
-                //DB = new SQLiteConnection("Data Source=DB.db; Version=3");
-                //DB.Open();
-                //string name = this.Deck.GetName();
-                //SQLiteCommand CMD = DB.CreateCommand();
-                //CMD.CommandText = "INSERT INTO'" + name + "'(question, answer, level, time) VALUES( @question , @answer , @level , @time ); ";
-                //CMD.Parameters.Add("@question", System.Data.DbType.String).Value = tQuestion.Text;
-                //CMD.Parameters.Add("@answer", System.Data.DbType.String).Value = tAnswer.Text;
-                //CMD.Parameters.Add("@level", System.Data.DbType.Int32).Value = 0;
-                ////DateTime T = DateTime.Now;
-                //CMD.Parameters.Add("@time", System.Data.DbType.String).Value = T.ToString();
-                //CMD.ExecuteNonQuery();
                 db = new DataBase();
-                db.SaveInDBCard(Deck, T, tQuestion.Text, tAnswer.Text);
+                db.InsertCard(Deck, T, tQuestion.Text, tAnswer.Text);
                 Card c = new Card(tQuestion.Text, tAnswer.Text, T, 0);
                 this.Deck.Add(c);
                 tQuestion.Clear();

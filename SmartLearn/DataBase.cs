@@ -11,7 +11,7 @@ namespace SmartLearn
     class DataBase
     {
         SQLiteConnection DB;
-        public void LoadFromDBCard(CardList D)
+        public void LoadCardList(CardList D)
         {
             D.SetCurrent(1);
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
@@ -37,7 +37,7 @@ namespace SmartLearn
             }
         }
 
-        public void UpdateDBCard(CardList d, string q, string ans, int index)
+        public void UpdateCard(CardList d, string q, string ans, int index)
         {
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
@@ -52,7 +52,7 @@ namespace SmartLearn
             }
         }
 
-        public void DeleteDeckFromDB(List <string> NameTable, string CurrentName, int index)
+        public void DeleteCardList(List <string> NameTable, string CurrentName, int index)
         {
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
@@ -60,7 +60,6 @@ namespace SmartLearn
             CMD.CommandText = " DROP TABLE '" + CurrentName + "'; ";
             CMD.ExecuteNonQuery();
             NameTable.RemoveAt(index);
-            //CardListComboBox.Items.Remove(CardListComboBox.SelectedItem.ToString());
 
             SQLiteCommand CMD3 = DB.CreateCommand();
             CMD3.CommandText = " DROP TABLE 'Name'; ";
@@ -77,7 +76,7 @@ namespace SmartLearn
             }
         }
 
-        public void SaveInDBCard(CardList D, DateTime t, string q, string ans)
+        public void InsertCard(CardList D, DateTime t, string q, string ans)
         {
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
@@ -91,7 +90,7 @@ namespace SmartLearn
             CMD.ExecuteNonQuery();
         }
 
-        public void DeleteCardInDB(CardList Deck)
+        public void DeleteCard(CardList Deck)
         {
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
@@ -116,7 +115,7 @@ namespace SmartLearn
             }
         }
 
-        public void LoadNameOfDecks(List <string> NameTable)
+        public void LoadNamesOfCardLists(List <string> NameTable)
         {
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
@@ -134,13 +133,12 @@ namespace SmartLearn
                 CMD1.Parameters.Add("@Numb", DbType.Int16).Value = i + 1;
                 SQL = CMD1.ExecuteReader();
                 SQL.Read();
-                //CardListComboBox.Items.Add(SQL["NameTable"].ToString());
                 NameTable.Add(SQL["NameTable"].ToString());
                 SQL.Close();
             }
         }
 
-        public void CreateDeckInDB(string S)
+        public void CreateCardList(string S)
         {
             DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
