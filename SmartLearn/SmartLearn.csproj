@@ -78,7 +78,6 @@
     <Compile Include="CreateCardList.Designer.cs">
       <DependentUpon>CreateCardList.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataBase.cs" />
     <Compile Include="AddCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,7 +122,6 @@
     <Compile Include="ReviewForm.Designer.cs">
       <DependentUpon>ReviewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SL.cs" />
     <EmbeddedResource Include="AboutApp.resx">
       <DependentUpon>AboutApp.cs</DependentUpon>
     </EmbeddedResource>
