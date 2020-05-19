@@ -150,5 +150,15 @@ namespace SmartLearn
             CMD1.CommandText = "CREATE TABLE '" + S + "' (id INTEGER PRIMARY KEY AUTOINCREMENT, question VARCHAR(1000) NOT NULL, answer VARCHAR(1000) NOT NULL, level INTEGER NOT NULL, time VARCHAR(1000) ); ";
             CMD1.ExecuteNonQuery();
         }
+
+        public string GetNameCardList(CardList deck)
+        {
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+            DB.Open();
+            SQLiteCommand CMD = DB.CreateCommand();
+            CMD.CommandText = "SELECT Count(*) From " + '\u0022' + deck.GetName() + '\u0022';
+            return CMD.ExecuteScalar().ToString();
+
+        }
     }
 }

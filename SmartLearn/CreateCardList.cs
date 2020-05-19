@@ -20,7 +20,6 @@ namespace SmartLearn
 
     public partial class CreateCardList : MetroForm
     {
-        //private SQLiteConnection DB;
         DataBase DB;
         List<string> NameTable;
         public CreateCardList()
