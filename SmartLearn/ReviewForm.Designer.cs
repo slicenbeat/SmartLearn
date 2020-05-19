@@ -38,10 +38,9 @@
             // 
             // bQA
             // 
-            this.bQA.Location = new System.Drawing.Point(147, 91);
-            this.bQA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bQA.Location = new System.Drawing.Point(110, 74);
             this.bQA.Name = "bQA";
-            this.bQA.Size = new System.Drawing.Size(753, 220);
+            this.bQA.Size = new System.Drawing.Size(565, 179);
             this.bQA.TabIndex = 0;
             this.bQA.TabStop = false;
             this.bQA.Text = " ";
@@ -51,10 +50,9 @@
             // 
             // bNext
             // 
-            this.bNext.Location = new System.Drawing.Point(835, 345);
-            this.bNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bNext.Location = new System.Drawing.Point(626, 280);
             this.bNext.Name = "bNext";
-            this.bNext.Size = new System.Drawing.Size(65, 46);
+            this.bNext.Size = new System.Drawing.Size(49, 37);
             this.bNext.TabIndex = 1;
             this.bNext.TabStop = false;
             this.bNext.Text = "→";
@@ -63,22 +61,21 @@
             // 
             // bPrev
             // 
-            this.bPrev.Location = new System.Drawing.Point(147, 345);
-            this.bPrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bPrev.Location = new System.Drawing.Point(110, 280);
             this.bPrev.Name = "bPrev";
-            this.bPrev.Size = new System.Drawing.Size(65, 46);
+            this.bPrev.Size = new System.Drawing.Size(49, 37);
             this.bPrev.TabIndex = 2;
             this.bPrev.TabStop = false;
             this.bPrev.Text = "←";
             this.bPrev.UseSelectable = true;
+            this.bPrev.Visible = false;
             this.bPrev.Click += new System.EventHandler(this.bPrev_Click);
             // 
             // LevelUp
             // 
-            this.LevelUp.Location = new System.Drawing.Point(936, 178);
-            this.LevelUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LevelUp.Location = new System.Drawing.Point(702, 145);
             this.LevelUp.Name = "LevelUp";
-            this.LevelUp.Size = new System.Drawing.Size(65, 46);
+            this.LevelUp.Size = new System.Drawing.Size(49, 37);
             this.LevelUp.TabIndex = 3;
             this.LevelUp.TabStop = false;
             this.LevelUp.Text = "↑";
@@ -88,10 +85,9 @@
             // 
             // LevelDown
             // 
-            this.LevelDown.Location = new System.Drawing.Point(31, 178);
-            this.LevelDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LevelDown.Location = new System.Drawing.Point(23, 145);
             this.LevelDown.Name = "LevelDown";
-            this.LevelDown.Size = new System.Drawing.Size(65, 46);
+            this.LevelDown.Size = new System.Drawing.Size(49, 37);
             this.LevelDown.TabIndex = 4;
             this.LevelDown.TabStop = false;
             this.LevelDown.Text = "↓";
@@ -101,22 +97,20 @@
             // 
             // ReviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 418);
+            this.ClientSize = new System.Drawing.Size(789, 340);
             this.Controls.Add(this.LevelDown);
             this.Controls.Add(this.LevelUp);
             this.Controls.Add(this.bPrev);
             this.Controls.Add(this.bNext);
             this.Controls.Add(this.bQA);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1052, 418);
+            this.MaximumSize = new System.Drawing.Size(789, 340);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1052, 418);
+            this.MinimumSize = new System.Drawing.Size(789, 340);
             this.Name = "ReviewForm";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReviewForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReviewForm_FormClosed);
             this.Load += new System.EventHandler(this.ReviewForm_Load);
