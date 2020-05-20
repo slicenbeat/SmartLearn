@@ -59,5 +59,15 @@ namespace SmartLearn.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Мои_колоды {
+            get {
+                object obj = ResourceManager.GetObject("Мои колоды", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -117,6 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="metroLabel4.Text" xml:space="preserve">
+    <value>Отлично! 
+Теперь выбери нужную колоду из списка и нажми "Учить" - откроется 
+окно для изучения. Видишь вопрос - отвечай!
+Нажимай на карточку, чтобы увидеть правильный ответ. 
+Если твой ответ совпал с правильным, нажимай стрелочку вверх, 
+повысится уровень карточки, и в следующий раз ты будешь учить ее позже.
+Если ошибся - жми стрелочку вниз, тогда эту карточку придется 
+повторять до тех пор, пока ты не выучишь правильный ответ!
+Переодически заходи в приложение и повторяй ранее изученные карты,
+так материал усвоится лучше!
+ 
+</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
