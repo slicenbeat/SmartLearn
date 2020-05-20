@@ -41,5 +41,10 @@ namespace SmartLearn
         {
 
         }
+
+        private void metroLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
