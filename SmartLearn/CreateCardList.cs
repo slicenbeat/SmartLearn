@@ -45,26 +45,32 @@ namespace SmartLearn
             string S = NameOfCardList.Text;
             bool flag1 = true;
             bool flag2 = true;
+            bool flag3 = true;
             for (int i = 0; i < NameTable.Count(); i++)
             {
                 if (S == NameTable[i])
                     flag1 = false;
                 else if (S == "")
                     flag2 = false;
+                else if (S == "Name")
+                    flag3 = false;
             }
-            if ((flag1) && (flag2))
+            if ((flag1) && (flag2) && (flag3))
             {
                 DB = new DataBase();
                 DB.CreateCardList(S);
                 NameOfCardList.Clear();
                 NameOfCardList.Focus();
             }
+
             else
             {
                 if (!flag1)
                     MessageBox.Show("Нельзя создавать несколько колод с одинаковыми названиями.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else if (!flag2)
-                MessageBox.Show("У колоды должно быть название.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("У колоды должно быть название.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (!flag3)
+                    MessageBox.Show("Данное имя зарезервировано программой, назовите колоду по другому.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

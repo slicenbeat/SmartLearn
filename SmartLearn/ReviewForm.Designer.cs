@@ -29,32 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReviewForm));
-            this.bQA = new MetroFramework.Controls.MetroButton();
             this.bNext = new MetroFramework.Controls.MetroButton();
             this.bPrev = new MetroFramework.Controls.MetroButton();
             this.LevelUp = new MetroFramework.Controls.MetroButton();
             this.LevelDown = new MetroFramework.Controls.MetroButton();
             this.LevelLabel = new MetroFramework.Controls.MetroLabel();
+            this.tQA = new MetroFramework.Controls.MetroTextBox();
+            this.bShowQA = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
-            // 
-            // bQA
-            // 
-            this.bQA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bQA.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.bQA.Location = new System.Drawing.Point(23, 63);
-            this.bQA.Name = "bQA";
-            this.bQA.Size = new System.Drawing.Size(743, 190);
-            this.bQA.TabIndex = 0;
-            this.bQA.TabStop = false;
-            this.bQA.UseSelectable = true;
-            this.bQA.Click += new System.EventHandler(this.bQA_Click);
             // 
             // bNext
             // 
             this.bNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bNext.Location = new System.Drawing.Point(717, 280);
+            this.bNext.Location = new System.Drawing.Point(956, 345);
+            this.bNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bNext.Name = "bNext";
-            this.bNext.Size = new System.Drawing.Size(49, 37);
+            this.bNext.Size = new System.Drawing.Size(65, 46);
             this.bNext.TabIndex = 1;
             this.bNext.TabStop = false;
             this.bNext.Text = "→";
@@ -65,9 +55,10 @@
             // bPrev
             // 
             this.bPrev.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bPrev.Location = new System.Drawing.Point(110, 280);
+            this.bPrev.Location = new System.Drawing.Point(31, 343);
+            this.bPrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bPrev.Name = "bPrev";
-            this.bPrev.Size = new System.Drawing.Size(49, 37);
+            this.bPrev.Size = new System.Drawing.Size(65, 46);
             this.bPrev.TabIndex = 2;
             this.bPrev.TabStop = false;
             this.bPrev.Text = "←";
@@ -78,9 +69,10 @@
             // LevelUp
             // 
             this.LevelUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LevelUp.Location = new System.Drawing.Point(391, 280);
+            this.LevelUp.Location = new System.Drawing.Point(582, 345);
+            this.LevelUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LevelUp.Name = "LevelUp";
-            this.LevelUp.Size = new System.Drawing.Size(49, 37);
+            this.LevelUp.Size = new System.Drawing.Size(65, 46);
             this.LevelUp.TabIndex = 3;
             this.LevelUp.TabStop = false;
             this.LevelUp.Text = "↑";
@@ -91,9 +83,10 @@
             // LevelDown
             // 
             this.LevelDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LevelDown.Location = new System.Drawing.Point(336, 280);
+            this.LevelDown.Location = new System.Drawing.Point(387, 345);
+            this.LevelDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LevelDown.Name = "LevelDown";
-            this.LevelDown.Size = new System.Drawing.Size(49, 37);
+            this.LevelDown.Size = new System.Drawing.Size(65, 46);
             this.LevelDown.TabIndex = 4;
             this.LevelDown.TabStop = false;
             this.LevelDown.Text = "↓";
@@ -105,29 +98,79 @@
             // 
             this.LevelLabel.AutoSize = true;
             this.LevelLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.LevelLabel.Location = new System.Drawing.Point(286, 31);
+            this.LevelLabel.Location = new System.Drawing.Point(443, 41);
+            this.LevelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LevelLabel.Name = "LevelLabel";
-            this.LevelLabel.Size = new System.Drawing.Size(132, 19);
+            this.LevelLabel.Size = new System.Drawing.Size(143, 20);
             this.LevelLabel.TabIndex = 5;
             this.LevelLabel.Text = "Уровень карточки: ";
+            this.LevelLabel.Click += new System.EventHandler(this.LevelLabel_Click);
+            // 
+            // tQA
+            // 
+            // 
+            // 
+            // 
+            this.tQA.CustomButton.Image = null;
+            this.tQA.CustomButton.Location = new System.Drawing.Point(758, 2);
+            this.tQA.CustomButton.Name = "";
+            this.tQA.CustomButton.Size = new System.Drawing.Size(229, 229);
+            this.tQA.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tQA.CustomButton.TabIndex = 1;
+            this.tQA.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tQA.CustomButton.UseSelectable = true;
+            this.tQA.CustomButton.Visible = false;
+            this.tQA.Lines = new string[] {
+        "metroTextBox1"};
+            this.tQA.Location = new System.Drawing.Point(31, 78);
+            this.tQA.MaxLength = 32767;
+            this.tQA.Multiline = true;
+            this.tQA.Name = "tQA";
+            this.tQA.PasswordChar = '\0';
+            this.tQA.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tQA.SelectedText = "";
+            this.tQA.SelectionLength = 0;
+            this.tQA.SelectionStart = 0;
+            this.tQA.ShortcutsEnabled = true;
+            this.tQA.Size = new System.Drawing.Size(990, 234);
+            this.tQA.TabIndex = 6;
+            this.tQA.Text = "metroTextBox1";
+            this.tQA.UseSelectable = true;
+            this.tQA.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tQA.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tQA.Click += new System.EventHandler(this.tQA_Click);
+            // 
+            // bShowQA
+            // 
+            this.bShowQA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bShowQA.Location = new System.Drawing.Point(460, 345);
+            this.bShowQA.Margin = new System.Windows.Forms.Padding(4);
+            this.bShowQA.Name = "bShowQA";
+            this.bShowQA.Size = new System.Drawing.Size(114, 46);
+            this.bShowQA.TabIndex = 7;
+            this.bShowQA.TabStop = false;
+            this.bShowQA.Text = "Показать\r\n ответ";
+            this.bShowQA.UseSelectable = true;
+            this.bShowQA.Click += new System.EventHandler(this.bShowQA_Click);
             // 
             // ReviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 340);
+            this.ClientSize = new System.Drawing.Size(1052, 418);
+            this.Controls.Add(this.bShowQA);
+            this.Controls.Add(this.tQA);
             this.Controls.Add(this.LevelLabel);
             this.Controls.Add(this.LevelDown);
             this.Controls.Add(this.LevelUp);
             this.Controls.Add(this.bPrev);
             this.Controls.Add(this.bNext);
-            this.Controls.Add(this.bQA);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(789, 340);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(789, 340);
             this.Name = "ReviewForm";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReviewForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReviewForm_FormClosed);
             this.Load += new System.EventHandler(this.ReviewForm_Load);
@@ -137,12 +180,12 @@
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroButton bQA;
         private MetroFramework.Controls.MetroButton bNext;
         private MetroFramework.Controls.MetroButton bPrev;
         private MetroFramework.Controls.MetroButton LevelUp;
         private MetroFramework.Controls.MetroButton LevelDown;
         private MetroFramework.Controls.MetroLabel LevelLabel;
+        private MetroFramework.Controls.MetroTextBox tQA;
+        private MetroFramework.Controls.MetroButton bShowQA;
     }
 }

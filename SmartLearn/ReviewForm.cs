@@ -36,7 +36,8 @@ namespace SmartLearn
 
         private void ReviewForm_Load(object sender, EventArgs e)
         {
-            bQA.StyleManager = this.StyleManager;
+            bShowQA.StyleManager = this.StyleManager;
+            tQA.StyleManager = this.StyleManager;
             bNext.StyleManager = this.StyleManager;
             bPrev.StyleManager = this.StyleManager;
             db = new DataBase();
@@ -49,25 +50,25 @@ namespace SmartLearn
 
             if (comp > 0)
             {
-                bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
+                tQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
                 First = Deck.GetList(Deck.GetCurrent());
                 LevelLabel.Text = "Уровень карточки: " + Deck.GetList(Deck.GetCurrent()).GetLevel().ToString();
             }
             else
             {
-                bQA.Text = "Новых к изучению карт нет.";
+                tQA.Text = "Новых к изучению карт нет.";
                 bNext.Enabled = false;
                 bPrev.Enabled = false;
-                bQA.Enabled = false;
+                //bQA.Enabled = false;
             }
         }
 
         private void bQA_Click(object sender, EventArgs e)
         {
-                bQA.Text = Deck.GetList(Deck.GetCurrent()).GetAnswer();
-                LevelDown.Visible = true;
-                LevelUp.Visible = true;
-                bQA.Enabled = false;
+                //bQA.Text = Deck.GetList(Deck.GetCurrent()).GetAnswer();
+                //LevelDown.Visible = true;
+                //LevelUp.Visible = true;
+                //bQA.Enabled = false;
         }
         private void bNext_Click(object sender, EventArgs e)
         {
@@ -76,10 +77,10 @@ namespace SmartLearn
                 Card Next = Deck.GetNext();
                 if (Next.GetQuestion() == First.GetQuestion())
                 {
-                    bQA.Text = "Новых к изучению карт нет.";
+                    tQA.Text = "Пока карт для изучения нет, зайдите позже.";
                     bNext.Visible = false;
                     bPrev.Enabled = false;
-                    bQA.Enabled = false;
+                    //bQA.Enabled = false;
                     break;
                 }
                 else 
@@ -90,9 +91,9 @@ namespace SmartLearn
 
                     if (comp > 0)
                     {
-                        bQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
+                        tQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
                         LevelLabel.Text = "Уровень карточки: " + Deck.GetList(Deck.GetCurrent()).GetLevel().ToString();
-                        bQA.Enabled = true;
+                        //bQA.Enabled = true;
                         bNext.Visible = false;
                         break;
                     }
@@ -102,7 +103,7 @@ namespace SmartLearn
 
         private void bPrev_Click(object sender, EventArgs e)
         {
-            bQA.Text = Deck.GetPrev().GetQuestion();
+        //    bQA.Text = Deck.GetPrev().GetQuestion();
         }
 
         private void ReviewForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -121,7 +122,7 @@ namespace SmartLearn
 
         private void RandomButton_Click(object sender, EventArgs e)
         {
-            bQA.Text = Deck.GetNextRandom().GetQuestion();
+        //    bQA.Text = Deck.GetNextRandom().GetQuestion();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -141,6 +142,24 @@ namespace SmartLearn
             LevelDown.Visible = false;
             LevelUp.Visible = false;
             bNext.Visible = true;
+        }
+
+        private void LevelLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tQA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bShowQA_Click(object sender, EventArgs e)
+        {
+            tQA.Text = Deck.GetList(Deck.GetCurrent()).GetAnswer();
+            LevelDown.Visible = true;
+            LevelUp.Visible = true;
+            //bQA.Enabled = false;
         }
     }
 }
