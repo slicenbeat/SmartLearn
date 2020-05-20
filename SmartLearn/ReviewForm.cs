@@ -20,6 +20,7 @@ namespace SmartLearn
 {
     public partial class ReviewForm : MetroForm
     {
+        bool Click;
         DataBase db;
         CardList Deck;
         Card First;
@@ -39,7 +40,6 @@ namespace SmartLearn
             bShowQA.StyleManager = this.StyleManager;
             tQA.StyleManager = this.StyleManager;
             bNext.StyleManager = this.StyleManager;
-            bPrev.StyleManager = this.StyleManager;
             db = new DataBase();
             db.LoadCardList(Deck);
             this.Deck.Sorting();
@@ -56,20 +56,13 @@ namespace SmartLearn
             }
             else
             {
-                tQA.Text = "Новых к изучению карт нет.";
+                tQA.Text = "Пока карт для изучения нет, зайдите позже.";
+                LevelLabel.Text = "";
                 bNext.Enabled = false;
-                bPrev.Enabled = false;
-                //bQA.Enabled = false;
+                bShowQA.Visible = false;
             }
         }
 
-        private void bQA_Click(object sender, EventArgs e)
-        {
-                //bQA.Text = Deck.GetList(Deck.GetCurrent()).GetAnswer();
-                //LevelDown.Visible = true;
-                //LevelUp.Visible = true;
-                //bQA.Enabled = false;
-        }
         private void bNext_Click(object sender, EventArgs e)
         {
             while (true)
@@ -78,9 +71,9 @@ namespace SmartLearn
                 if (Next.GetQuestion() == First.GetQuestion())
                 {
                     tQA.Text = "Пока карт для изучения нет, зайдите позже.";
+                    LevelLabel.Text = "";
                     bNext.Visible = false;
-                    bPrev.Enabled = false;
-                    //bQA.Enabled = false;
+                    bShowQA.Visible = false;
                     break;
                 }
                 else 
@@ -95,16 +88,13 @@ namespace SmartLearn
                         LevelLabel.Text = "Уровень карточки: " + Deck.GetList(Deck.GetCurrent()).GetLevel().ToString();
                         //bQA.Enabled = true;
                         bNext.Visible = false;
+                        Click = false;
                         break;
                     }
                 }
             }
         }
 
-        private void bPrev_Click(object sender, EventArgs e)
-        {
-        //    bQA.Text = Deck.GetPrev().GetQuestion();
-        }
 
         private void ReviewForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -120,16 +110,14 @@ namespace SmartLearn
             }
         }
 
-        private void RandomButton_Click(object sender, EventArgs e)
-        {
-        //    bQA.Text = Deck.GetNextRandom().GetQuestion();
-        }
+    
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
             Delete = true;
             int lv = Deck.GetList(Deck.GetCurrent()).GetLevel();
             this.Deck.GetList(Deck.GetCurrent()).SetLevelUp(lv);
+            LevelLabel.Text += "";
             LevelDown.Visible = false;
             LevelUp.Visible = false;
             bNext.Visible = true;
@@ -156,10 +144,30 @@ namespace SmartLearn
 
         private void bShowQA_Click(object sender, EventArgs e)
         {
-            tQA.Text = Deck.GetList(Deck.GetCurrent()).GetAnswer();
-            LevelDown.Visible = true;
-            LevelUp.Visible = true;
-            //bQA.Enabled = false;
+            if (Click == false) 
+            { 
+            if (tQA.Text == Deck.GetList(Deck.GetCurrent()).GetQuestion()) 
+                { 
+                    tQA.Text = Deck.GetList(Deck.GetCurrent()).GetAnswer();
+                    bShowQA.Text = "Показать вопрос";
+                    LevelDown.Visible = true;
+                    LevelUp.Visible = true;
+                    Click = true;
+                }
+            }
+            else
+            {
+                if (tQA.Text == Deck.GetList(Deck.GetCurrent()).GetQuestion())
+                {
+                    tQA.Text = Deck.GetList(Deck.GetCurrent()).GetAnswer();
+                    bShowQA.Text = "Показать вопрос";
+                }
+                else
+                {
+                    tQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
+                    bShowQA.Text = "Показать ответ";
+                }
+            }
         }
     }
 }
