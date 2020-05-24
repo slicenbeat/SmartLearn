@@ -30,9 +30,11 @@ namespace SmartLearn
             InitializeComponent();
             this.Deck = d;
         }
-        public ReviewForm()
+        public ReviewForm(string name)
         {
             InitializeComponent();
+            this.Deck = new CardList(name);
+            //db.LoadCardList(Deck);
         }
 
         private void ReviewForm_Load(object sender, EventArgs e)
@@ -56,6 +58,9 @@ namespace SmartLearn
                 tQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
                 First = Deck.GetList(Deck.GetCurrent());
                 LevelLabel.Text = "Уровень карточки: " + Deck.GetList(Deck.GetCurrent()).GetLevel().ToString();
+                StreamWriter writer = new StreamWriter("NameOfLastDeck.txt");
+                writer.Write(this.Deck.GetName());
+                writer.Close();
             }
             else
             {

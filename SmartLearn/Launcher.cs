@@ -12,6 +12,7 @@ using MetroFramework.Components;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
+using System.IO;
 
 namespace SmartLearn
 {
@@ -55,9 +56,18 @@ namespace SmartLearn
 
         private void LearningButton_Click(object sender, EventArgs e)
         {
-            LearningForm learning = new LearningForm();
-            learning.StyleManager = this.StyleManager;
-            learning.ShowDialog();
+            StreamReader read = new StreamReader("NameOfLastDeck.txt");
+            string name;
+            name = read.ReadLine();
+            read.Close();
+            if (name == null)
+                MessageBox.Show("Вы ещё не открывали ни одну колоду");
+            else
+            {
+                ReviewForm learning = new ReviewForm(name);
+                learning.StyleManager = this.StyleManager;
+                learning.ShowDialog();
+            }
         }
 
         private void MyDecks_Click(object sender, EventArgs e)

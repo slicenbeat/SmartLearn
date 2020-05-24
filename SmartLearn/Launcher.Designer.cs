@@ -51,7 +51,7 @@ namespace SmartLearn
             this.CheckTheme.AutoSize = true;
             this.CheckTheme.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CheckTheme.Location = new System.Drawing.Point(425, 487);
-            this.CheckTheme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CheckTheme.Margin = new System.Windows.Forms.Padding(4);
             this.CheckTheme.Name = "CheckTheme";
             this.CheckTheme.Size = new System.Drawing.Size(100, 17);
             this.CheckTheme.TabIndex = 7;
@@ -63,18 +63,16 @@ namespace SmartLearn
             // 
             this.LearningButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LearningButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LearningButton.Enabled = false;
             this.LearningButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.LearningButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.LearningButton.Location = new System.Drawing.Point(203, 78);
-            this.LearningButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LearningButton.Location = new System.Drawing.Point(203, 191);
+            this.LearningButton.Margin = new System.Windows.Forms.Padding(4);
             this.LearningButton.Name = "LearningButton";
             this.LearningButton.Size = new System.Drawing.Size(173, 59);
             this.LearningButton.TabIndex = 10;
             this.LearningButton.TabStop = false;
             this.LearningButton.Text = "Учить";
             this.LearningButton.UseSelectable = true;
-            this.LearningButton.Visible = false;
             this.LearningButton.Click += new System.EventHandler(this.LearningButton_Click);
             // 
             // ButtonHelp
@@ -94,7 +92,7 @@ namespace SmartLearn
             this.MyDecks.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MyDecks.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.MyDecks.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.MyDecks.Location = new System.Drawing.Point(203, 233);
+            this.MyDecks.Location = new System.Drawing.Point(203, 256);
             this.MyDecks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MyDecks.Name = "MyDecks";
             this.MyDecks.Size = new System.Drawing.Size(173, 59);
@@ -128,7 +126,7 @@ namespace SmartLearn
             this.Controls.Add(this.CheckTheme);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(573, 529);
             this.MinimumSize = new System.Drawing.Size(573, 529);
