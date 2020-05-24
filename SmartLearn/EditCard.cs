@@ -37,6 +37,7 @@ namespace SmartLearn
             bool flag3 = true;
             for (int i = 0; i < this.Deck.GetSizeofList(); i++)
             {
+                if (i == index) continue;
                 if (tQuestion.Text == "" || tAnswer.Text == "")
                     flag1 = false;
                 else if (tQuestion.Text == this.Deck.GetList(i).GetQuestion())

@@ -47,7 +47,7 @@ namespace SmartLearn
                 string name = d.GetName();
                 SQLiteCommand CMD = DB.CreateCommand();
                 // Изменение всех полей строки с номером index в колоде
-                CMD.CommandText = @"Update " + name + " Set question = '" + q + "', answer = '" + ans + "', level = '" + d.Cards[index].GetLevel() + "', time = '" + d.Cards[index].GetTime().ToString() + "' Where id = '" + (index + 1).ToString() + "' ";
+                CMD.CommandText = @"Update '" + name + "' Set question = '" + q + "', answer = '" + ans + "', level = '" + d.Cards[index].GetLevel() + "', time = '" + d.Cards[index].GetTime().ToString() + "' Where id = '" + (index + 1).ToString() + "' ";
                 CMD.Connection = con;
                 con.Open();
                 CMD.ExecuteNonQuery();
