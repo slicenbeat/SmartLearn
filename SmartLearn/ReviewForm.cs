@@ -24,7 +24,7 @@ namespace SmartLearn
         DataBase db;
         CardList Deck;
         Card First;
-        bool Delete = false;
+        bool Change = false;
         public ReviewForm(CardList d)
         {
             InitializeComponent();
@@ -106,7 +106,7 @@ namespace SmartLearn
 
         private void ReviewForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Delete == true)
+            if (Change == true)
             {
                 db = new DataBase();
                 db.DeleteCard(Deck);
@@ -117,10 +117,11 @@ namespace SmartLearn
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            Delete = true;
+            Change = true;
             int lv = Deck.GetList(Deck.GetCurrent()).GetLevel();
             this.Deck.GetList(Deck.GetCurrent()).SetLevelUp(lv);
-            LevelLabel.Text += "";
+            if (lv == 8) LevelLabel.Text = "Уровень карточки: " + (lv).ToString();
+            else LevelLabel.Text = "Уровень карточки: " + (lv+1).ToString();
             LevelDown.Visible = false;
             LevelUp.Visible = false;
             bNext.Visible = true;
@@ -128,8 +129,9 @@ namespace SmartLearn
 
         private void LevelDown_Click(object sender, EventArgs e)
         {
-            Delete = true;
+            Change = true;
             this.Deck.GetList(Deck.GetCurrent()).SetLevelDown();
+            LevelLabel.Text = "Уровень карточки: 0";
             LevelDown.Visible = false;
             LevelUp.Visible = false;
             bNext.Visible = true;
