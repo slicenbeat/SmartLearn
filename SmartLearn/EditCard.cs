@@ -53,20 +53,31 @@ namespace SmartLearn
                 this.Deck.GetList(index).SetAnswer(tAnswer.Text);
                 tQuestion.Clear();
                 tAnswer.Clear();
+                Close();
             }
             else
             {
                 if (!flag1)
+                {
                     MessageBox.Show("Поля вопроса и ответа не могут быть пустыми.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
                 else if (!flag2)
+                {
                     MessageBox.Show("Не могут существовать карточки с одинаковыми вопросами", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tQuestion.Clear();
+                    tAnswer.Clear();
+                }
                 else if (!flag3)
+                {
                     MessageBox.Show("Вы превысили ограничение по символам\nОграничение для вопроса: 100 (у вас "
                         + tQuestion.Text.Length + ")\nОграничение для ответа: 1000 (у вас "
                         + tAnswer.Text.Length + ")", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tQuestion.Clear();
+                    tAnswer.Clear();
+                }
             }
 
-            Close();
         }
 
         private void tQuestion_Click(object sender, EventArgs e)
