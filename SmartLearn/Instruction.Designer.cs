@@ -31,20 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Instruction));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -58,7 +58,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(20, 74);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 3;
             this.metroTabControl1.Size = new System.Drawing.Size(760, 356);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -80,6 +80,16 @@
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.VerticalScrollbarSize = 11;
             this.metroTabPage4.Click += new System.EventHandler(this.metroTabPage4_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SmartLearn.Properties.Resources.Мои_колоды;
+            this.pictureBox1.Location = new System.Drawing.Point(279, 96);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(154, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // metroLabel1
             // 
@@ -110,6 +120,17 @@
             this.metroTabPage1.VerticalScrollbarSize = 11;
             this.metroTabPage1.Click += new System.EventHandler(this.metroTabPage1_Click);
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(47, 33);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(504, 60);
+            this.metroLabel2.TabIndex = 3;
+            this.metroLabel2.Text = "Чтобы добавить колоду, нажми кнопку \"Создать\" и введи название для нее \r\nв открыв" +
+    "шемся окне.\r\n";
+            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // metroTabPage2
             // 
             this.metroTabPage2.Controls.Add(this.metroLabel3);
@@ -125,6 +146,18 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 11;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(80, 35);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(460, 80);
+            this.metroLabel3.TabIndex = 4;
+            this.metroLabel3.Text = "Затем в общем списке выбери только что созданную колоду, нажми\r\nкнопку \"Редактиро" +
+    "вать\", а затем \"Добавить карточку\". \r\nВведи в соответствующие поля вопрос и отве" +
+    "т. Готово!\r\n";
+            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroTabPage3
             // 
@@ -142,29 +175,6 @@
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.VerticalScrollbarSize = 11;
             // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(47, 33);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(504, 60);
-            this.metroLabel2.TabIndex = 3;
-            this.metroLabel2.Text = "Чтобы добавить колоду, нажми кнопку \"Создать\" и введи название для нее \r\nв открыв" +
-    "шемся окне.\r\n";
-            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(80, 35);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(460, 80);
-            this.metroLabel3.TabIndex = 4;
-            this.metroLabel3.Text = "Затем в общем списке выбери только что созданную колоду, нажми\r\nкнопку \"Редактиро" +
-    "вать\", а затем \"Добавить карточку\". \r\nВведи в соответствующие поля вопрос и отве" +
-    "т. Готово!\r\n";
-            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
@@ -174,16 +184,7 @@
             this.metroLabel4.TabIndex = 5;
             this.metroLabel4.Text = resources.GetString("metroLabel4.Text");
             this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SmartLearn.Properties.Resources.Мои_колоды;
-            this.pictureBox1.Location = new System.Drawing.Point(279, 96);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.metroLabel4.Click += new System.EventHandler(this.metroLabel4_Click);
             // 
             // Instruction
             // 
@@ -200,13 +201,13 @@
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage4.ResumeLayout(false);
             this.metroTabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

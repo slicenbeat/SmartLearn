@@ -37,6 +37,9 @@ namespace SmartLearn
 
         private void ReviewForm_Load(object sender, EventArgs e)
         {
+            LevelLabel.StyleManager = this.StyleManager;
+            LevelUp.StyleManager = this.StyleManager;
+            LevelDown.StyleManager = this.StyleManager;
             bShowQA.StyleManager = this.StyleManager;
             tQA.StyleManager = this.StyleManager;
             bNext.StyleManager = this.StyleManager;
