@@ -34,6 +34,7 @@
             this.bEditCardList = new MetroFramework.Controls.MetroLink();
             this.bLearnCardList = new MetroFramework.Controls.MetroLink();
             this.bDeleteCardList = new MetroFramework.Controls.MetroLink();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.SuspendLayout();
             // 
             // CardListComboBox
@@ -44,7 +45,7 @@
             this.CardListComboBox.IntegralHeight = false;
             this.CardListComboBox.ItemHeight = 24;
             this.CardListComboBox.Location = new System.Drawing.Point(31, 78);
-            this.CardListComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CardListComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.CardListComboBox.Name = "CardListComboBox";
             this.CardListComboBox.Size = new System.Drawing.Size(547, 30);
             this.CardListComboBox.TabIndex = 1;
@@ -107,11 +108,26 @@
             this.bDeleteCardList.UseSelectable = true;
             this.bDeleteCardList.Click += new System.EventHandler(this.bDeleteCardList_Click);
             // 
+            // metroLink1
+            // 
+            this.metroLink1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroLink1.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.metroLink1.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.metroLink1.Location = new System.Drawing.Point(21, 116);
+            this.metroLink1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(151, 25);
+            this.metroLink1.TabIndex = 13;
+            this.metroLink1.Text = "Распечатать колоду";
+            this.metroLink1.UseSelectable = true;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click_1);
+            // 
             // MyCardLists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 151);
+            this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.bDeleteCardList);
             this.Controls.Add(this.bLearnCardList);
             this.Controls.Add(this.bEditCardList);
@@ -119,7 +135,7 @@
             this.Controls.Add(this.CardListComboBox);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(607, 151);
             this.MinimumSize = new System.Drawing.Size(607, 151);
@@ -138,5 +154,6 @@
         private MetroFramework.Controls.MetroLink bEditCardList;
         private MetroFramework.Controls.MetroLink bLearnCardList;
         private MetroFramework.Controls.MetroLink bDeleteCardList;
+        private MetroFramework.Controls.MetroLink metroLink1;
     }
 }

@@ -13,6 +13,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using System.Data.SQLite;
+using System.Drawing.Printing;
 
 namespace SmartLearn
 {
@@ -22,6 +23,8 @@ namespace SmartLearn
         CardList Deck;
         List <string> NameTable;
         DataBase db;
+        string result;
+
         public MyCardLists()
         {
             InitializeComponent();
@@ -151,6 +154,52 @@ namespace SmartLearn
 
         private void MyCardLists_FormClosing(object sender, FormClosingEventArgs e)
         {
+        }
+
+        private void metroLink1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        void PrintPageHandler(object sender, PrintPageEventArgs e) // обработчик событий
+        {
+            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+        }
+
+        void TitlePageHandler(object sender, PrintPageEventArgs e) // обработчик событий
+        {
+            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+        }
+
+        private void metroLink1_Click_1(object sender, EventArgs e)
+        {
+            if (CardListComboBox.Text == "")
+                MessageBox.Show("Выберите колоду, с которой вы будете работать.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                Deck = new CardList(CardListComboBox.Text);
+                db.LoadCardList(Deck);
+                result = Deck.GetName();
+                for (int i = 0; i < this.Deck.GetSizeofList(); i++)
+                {
+                    result += '\n' + Deck.GetList(i).GetQuestion() + '\t' + Deck.GetList(i).GetAnswer();
+                }
+                // объект для печати
+                PrintDocument printDocument = new PrintDocument();
+
+                // обработчик события печати
+                printDocument.PrintPage += PrintPageHandler;
+
+                // диалог настройки печати
+                PrintDialog printDialog = new PrintDialog();
+
+                // установка объекта печати для его настройки
+                printDialog.Document = printDocument;
+
+                // если в диалоге было нажато ОК
+                if (printDialog.ShowDialog() == DialogResult.OK)
+                    printDialog.Document.Print(); // печатаем
+            }
         }
     }
 }
