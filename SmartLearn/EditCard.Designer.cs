@@ -62,6 +62,7 @@
             this.bEditCard.Name = "bEditCard";
             this.bEditCard.Size = new System.Drawing.Size(113, 23);
             this.bEditCard.TabIndex = 7;
+            this.bEditCard.TabStop = false;
             this.bEditCard.Text = "Сохранить";
             this.bEditCard.UseSelectable = true;
             this.bEditCard.Click += new System.EventHandler(this.bEditCard_Click);
@@ -72,9 +73,9 @@
             // 
             // 
             this.tAnswer.CustomButton.Image = null;
-            this.tAnswer.CustomButton.Location = new System.Drawing.Point(284, 1);
+            this.tAnswer.CustomButton.Location = new System.Drawing.Point(378, 1);
             this.tAnswer.CustomButton.Name = "";
-            this.tAnswer.CustomButton.Size = new System.Drawing.Size(16, 17);
+            this.tAnswer.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tAnswer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tAnswer.CustomButton.TabIndex = 1;
             this.tAnswer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -102,9 +103,9 @@
             // 
             // 
             this.tQuestion.CustomButton.Image = null;
-            this.tQuestion.CustomButton.Location = new System.Drawing.Point(284, 1);
+            this.tQuestion.CustomButton.Location = new System.Drawing.Point(378, 1);
             this.tQuestion.CustomButton.Name = "";
-            this.tQuestion.CustomButton.Size = new System.Drawing.Size(16, 17);
+            this.tQuestion.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tQuestion.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tQuestion.CustomButton.TabIndex = 1;
             this.tQuestion.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;

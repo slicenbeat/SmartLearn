@@ -93,5 +93,13 @@ namespace SmartLearn
             ifrm.StyleManager = this.StyleManager;
             ifrm.ShowDialog();
         }
+
+        private void bPomodoro_Click(object sender, EventArgs e)
+        {
+            PomodoroForm pomodoroForm = new PomodoroForm();
+            pomodoroForm.StyleManager = this.StyleManager;
+            pomodoroForm.Show();
+
+        }
     }
 }

@@ -55,6 +55,7 @@ namespace SmartLearn
             this.CheckTheme.Name = "CheckTheme";
             this.CheckTheme.Size = new System.Drawing.Size(93, 15);
             this.CheckTheme.TabIndex = 7;
+            this.CheckTheme.TabStop = false;
             this.CheckTheme.Text = "Тёмная тема";
             this.CheckTheme.UseSelectable = true;
             this.CheckTheme.CheckedChanged += new System.EventHandler(this.metroCheckBox1_CheckedChanged);
@@ -82,6 +83,7 @@ namespace SmartLearn
             this.ButtonHelp.Name = "ButtonHelp";
             this.ButtonHelp.Size = new System.Drawing.Size(110, 19);
             this.ButtonHelp.TabIndex = 11;
+            this.ButtonHelp.TabStop = false;
             this.ButtonHelp.Text = "О программе";
             this.ButtonHelp.UseSelectable = true;
             this.ButtonHelp.Click += new System.EventHandler(this.metroLink1_Click);
@@ -109,6 +111,7 @@ namespace SmartLearn
             this.btnInsrtuction.Name = "btnInsrtuction";
             this.btnInsrtuction.Size = new System.Drawing.Size(161, 19);
             this.btnInsrtuction.TabIndex = 13;
+            this.btnInsrtuction.TabStop = false;
             this.btnInsrtuction.Text = "Как этим пользоваться?";
             this.btnInsrtuction.UseSelectable = true;
             this.btnInsrtuction.Click += new System.EventHandler(this.btnInsrtuction_Click);
@@ -126,6 +129,7 @@ namespace SmartLearn
             this.bPomodoro.TabStop = false;
             this.bPomodoro.Text = "Помодоро";
             this.bPomodoro.UseSelectable = true;
+            this.bPomodoro.Click += new System.EventHandler(this.bPomodoro_Click);
             // 
             // SmartLearn
             // 
