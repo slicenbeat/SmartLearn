@@ -131,6 +131,18 @@
       <DependentUpon>MyCardLists.cs</DependentUpon>
     </Compile>
     <Compile Include="Pomodoro.cs" />
+    <Compile Include="PomodoroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PomodoroForm.Designer.cs">
+      <DependentUpon>PomodoroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PomodoroSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PomodoroSettings.Designer.cs">
+      <DependentUpon>PomodoroSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReviewForm.cs">
@@ -162,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyCardLists.resx">
       <DependentUpon>MyCardLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PomodoroForm.resx">
+      <DependentUpon>PomodoroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PomodoroSettings.resx">
+      <DependentUpon>PomodoroSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
