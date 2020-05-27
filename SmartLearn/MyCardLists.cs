@@ -179,26 +179,9 @@ namespace SmartLearn
             {
                 Deck = new CardList(CardListComboBox.Text);
                 db.LoadCardList(Deck);
-                result = Deck.GetName();
-                for (int i = 0; i < this.Deck.GetSizeofList(); i++)
-                {
-                    result += '\n' + Deck.GetList(i).GetQuestion() + '\t' + Deck.GetList(i).GetAnswer();
-                }
-                // объект для печати
-                PrintDocument printDocument = new PrintDocument();
-
-                // обработчик события печати
-                printDocument.PrintPage += PrintPageHandler;
-
-                // диалог настройки печати
-                PrintDialog printDialog = new PrintDialog();
-
-                // установка объекта печати для его настройки
-                printDialog.Document = printDocument;
-
-                // если в диалоге было нажато ОК
-                if (printDialog.ShowDialog() == DialogResult.OK)
-                    printDialog.Document.Print(); // печатаем
+                PrintForm printform = new PrintForm(Deck);
+                printform.StyleManager = this.StyleManager;
+                printform.ShowDialog();
             }
         }
     }
