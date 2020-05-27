@@ -42,25 +42,34 @@
             // 
             this.trackPomodoroLength.BackColor = System.Drawing.Color.Transparent;
             this.trackPomodoroLength.Location = new System.Drawing.Point(269, 89);
+            this.trackPomodoroLength.Maximum = 120;
+            this.trackPomodoroLength.Minimum = 10;
             this.trackPomodoroLength.Name = "trackPomodoroLength";
             this.trackPomodoroLength.Size = new System.Drawing.Size(162, 23);
             this.trackPomodoroLength.TabIndex = 0;
+            this.trackPomodoroLength.Value = 25;
             // 
             // trackShortBreak
             // 
             this.trackShortBreak.BackColor = System.Drawing.Color.Transparent;
             this.trackShortBreak.Location = new System.Drawing.Point(269, 127);
+            this.trackShortBreak.Maximum = 30;
+            this.trackShortBreak.Minimum = 5;
             this.trackShortBreak.Name = "trackShortBreak";
             this.trackShortBreak.Size = new System.Drawing.Size(162, 23);
             this.trackShortBreak.TabIndex = 1;
+            this.trackShortBreak.Value = 5;
             // 
             // trackLongBreak
             // 
             this.trackLongBreak.BackColor = System.Drawing.Color.Transparent;
             this.trackLongBreak.Location = new System.Drawing.Point(269, 163);
+            this.trackLongBreak.Maximum = 60;
+            this.trackLongBreak.Minimum = 15;
             this.trackLongBreak.Name = "trackLongBreak";
             this.trackLongBreak.Size = new System.Drawing.Size(162, 23);
             this.trackLongBreak.TabIndex = 2;
+            this.trackLongBreak.Value = 15;
             // 
             // checkboxNotify
             // 
@@ -114,6 +123,7 @@
             this.metroButton1.TabIndex = 7;
             this.metroButton1.Text = "Старт";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // PomodoroSettings
             // 
