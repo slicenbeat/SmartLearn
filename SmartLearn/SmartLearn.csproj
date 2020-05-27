@@ -124,12 +124,6 @@
     <Compile Include="Launcher.Designer.cs">
       <DependentUpon>Launcher.cs</DependentUpon>
     </Compile>
-    <Compile Include="LearningForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LearningForm.Designer.cs">
-      <DependentUpon>LearningForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyCardLists.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,9 +159,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LearningForm.resx">
-      <DependentUpon>LearningForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyCardLists.resx">
       <DependentUpon>MyCardLists.cs</DependentUpon>

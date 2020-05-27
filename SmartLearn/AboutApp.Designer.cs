@@ -43,7 +43,7 @@
             this.GitHubLink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GitHubLink.FontSize = MetroFramework.MetroLinkSize.Medium;
             this.GitHubLink.Location = new System.Drawing.Point(0, 13);
-            this.GitHubLink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GitHubLink.Margin = new System.Windows.Forms.Padding(2);
             this.GitHubLink.Name = "GitHubLink";
             this.GitHubLink.Size = new System.Drawing.Size(144, 28);
             this.GitHubLink.TabIndex = 0;
@@ -61,10 +61,10 @@
             // 
             // 
             this.TextAboutApp.CustomButton.Image = null;
-            this.TextAboutApp.CustomButton.Location = new System.Drawing.Point(234, 2);
-            this.TextAboutApp.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextAboutApp.CustomButton.Location = new System.Drawing.Point(312, 2);
+            this.TextAboutApp.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.TextAboutApp.CustomButton.Name = "";
-            this.TextAboutApp.CustomButton.Size = new System.Drawing.Size(161, 175);
+            this.TextAboutApp.CustomButton.Size = new System.Drawing.Size(215, 215);
             this.TextAboutApp.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TextAboutApp.CustomButton.TabIndex = 1;
             this.TextAboutApp.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -79,7 +79,7 @@
         "Над приложением работали: Дамир Иваев, Данил Шеренков, Алексей Альгашев, Вероника" +
             " Прудовская"};
             this.TextAboutApp.Location = new System.Drawing.Point(38, 83);
-            this.TextAboutApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TextAboutApp.Margin = new System.Windows.Forms.Padding(2);
             this.TextAboutApp.MaxLength = 32767;
             this.TextAboutApp.Multiline = true;
             this.TextAboutApp.Name = "TextAboutApp";
@@ -104,7 +104,7 @@
             // 
             this.panel1.Controls.Add(this.GitHubLink);
             this.panel1.Location = new System.Drawing.Point(231, 272);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(144, 57);
             this.panel1.TabIndex = 12;
@@ -118,7 +118,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TextAboutApp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutApp";
