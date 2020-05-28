@@ -73,6 +73,7 @@ namespace SmartLearn
 
         private void bNext_Click(object sender, EventArgs e)
         {
+            bShowQA.Text = "Показать ответ";
             while (true)
             {
                 Card Next = Deck.GetNext();
