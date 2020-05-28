@@ -14,6 +14,7 @@ using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using System.Data.SQLite;
 using System.Drawing.Printing;
+using System.IO;
 
 namespace SmartLearn
 {
@@ -174,9 +175,28 @@ namespace SmartLearn
             {
                 Deck = new CardList(CardListComboBox.Text);
                 db.LoadCardList(Deck);
-                PrintForm printform = new PrintForm(Deck);
-                printform.StyleManager = this.StyleManager;
-                printform.ShowDialog();
+                if (this.Deck.GetSizeofList() < 5 )
+                    MessageBox.Show("Для экспорта колоды в ней должно быть не менее 5 карт.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    ExportDeck.FileName = Deck.GetName();
+                    string path;
+                    if (ExportDeck.ShowDialog() == DialogResult.OK)
+                    {
+                        path = ExportDeck.FileName;
+                        string result = "";
+                        for (int i = 0; i < Deck.GetSizeofList(); i++)
+                        {
+                            result += "Вопрос: " + Deck.GetList(i).GetQuestion() + "\n" + "Ответ: " + Deck.GetList(i).GetAnswer() + "\n\n";
+                        }
+                        using (StreamWriter writer = new StreamWriter(path, false, Encoding.GetEncoding(1251)))
+                        {
+                            writer.WriteLine(result);
+                            writer.Close();
+                        }
+
+                    }
+                }
             }
         }
     }
