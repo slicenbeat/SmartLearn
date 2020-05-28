@@ -79,7 +79,7 @@ namespace SmartLearn
             // 
             this.ButtonHelp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonHelp.Location = new System.Drawing.Point(17, 391);
-            this.ButtonHelp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonHelp.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonHelp.Name = "ButtonHelp";
             this.ButtonHelp.Size = new System.Drawing.Size(110, 19);
             this.ButtonHelp.TabIndex = 11;
@@ -94,7 +94,7 @@ namespace SmartLearn
             this.MyDecks.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.MyDecks.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.MyDecks.Location = new System.Drawing.Point(152, 175);
-            this.MyDecks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MyDecks.Margin = new System.Windows.Forms.Padding(2);
             this.MyDecks.Name = "MyDecks";
             this.MyDecks.Size = new System.Drawing.Size(130, 48);
             this.MyDecks.TabIndex = 12;
@@ -107,7 +107,7 @@ namespace SmartLearn
             // 
             this.btnInsrtuction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInsrtuction.Location = new System.Drawing.Point(132, 391);
-            this.btnInsrtuction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInsrtuction.Margin = new System.Windows.Forms.Padding(2);
             this.btnInsrtuction.Name = "btnInsrtuction";
             this.btnInsrtuction.Size = new System.Drawing.Size(161, 19);
             this.btnInsrtuction.TabIndex = 13;
@@ -127,7 +127,7 @@ namespace SmartLearn
             this.bPomodoro.Size = new System.Drawing.Size(130, 48);
             this.bPomodoro.TabIndex = 14;
             this.bPomodoro.TabStop = false;
-            this.bPomodoro.Text = "Помодоро";
+            this.bPomodoro.Text = "Помидорка";
             this.bPomodoro.UseSelectable = true;
             this.bPomodoro.Click += new System.EventHandler(this.bPomodoro_Click);
             // 
