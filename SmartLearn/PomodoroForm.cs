@@ -170,6 +170,7 @@ namespace SmartLearn
         private void bResetPomodoro_Click(object sender, EventArgs e)
         {
             lStatus.Text = "«Старт», чтобы начать";
+            bStartPomodoro.Text = "Старт";
             notifyPomodoro.Text = "Помидорка";
             time_keep = 0;
             UpdateTimerLabel();
