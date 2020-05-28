@@ -53,12 +53,16 @@ namespace SmartLearn
 
         void PrintPageHandler(object sender, PrintPageEventArgs e) // обработчик событий
         {
-            e.Graphics.DrawString(tPrintText.Text, new Font("Arial", 14), Brushes.Black, 0, 0);
+            System.Drawing.StringFormat stringFormat = new StringFormat();
+            stringFormat.Alignment = StringAlignment.Near;
+            stringFormat.LineAlignment = StringAlignment.Far;
+            e.Graphics.DrawString(tPrintText.Text, this.Font, Brushes.Black, new Rectangle(10, 10, 50, 100), stringFormat);
         }
 
         void TitlePageHandler(object sender, PrintPageEventArgs e) // обработчик событий
         {
             e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+
         }
 
         private void tPrintText_Click(object sender, EventArgs e)

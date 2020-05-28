@@ -94,20 +94,7 @@ namespace SmartLearn
 
         public void Sorting()
         {
-            Card temp;
-            for (int i = 0; i < this.Cards.Count; i++)
-            {
-                for (int j = i + 1; j < this.Cards.Count; j++)
-                {
-                    int r = DateTime.Compare(Cards[i].GetTime(), Cards[j].GetTime());
-                    if (r > 0)
-                    {
-                        temp = Cards[i];
-                        Cards[i] = Cards[j];
-                        Cards[j] = temp;
-                    }
-                }
-            }
+            Cards.Sort((x, y) => x.GetTime().CompareTo(y.GetTime()));
         }
     }
 }
