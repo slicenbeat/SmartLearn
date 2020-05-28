@@ -240,6 +240,7 @@
     <Content Include="NameOfLastDeck.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Resources\DB.db" />
     <None Include="Resources\notify_sound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

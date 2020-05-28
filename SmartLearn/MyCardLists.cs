@@ -38,7 +38,14 @@ namespace SmartLearn
             bNewCardList.StyleManager = this.StyleManager;
             NameTable = new List<string>();
             db = new DataBase();
-            db.LoadNamesOfCardLists(NameTable);
+            try 
+            { 
+                db.LoadNamesOfCardLists(NameTable);
+            }
+            catch
+            {
+                db.CreateNameTable();
+            }
             for (int i = 0; i < NameTable.Count; i++)
             {
                 CardListComboBox.Items.Add(NameTable[i]);

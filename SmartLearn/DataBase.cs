@@ -166,5 +166,15 @@ namespace SmartLearn
             return CMD.ExecuteScalar().ToString();
 
         }
+
+        public void CreateNameTable()
+        {
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
+            DB.Open();
+            SQLiteCommand CMD1 = DB.CreateCommand();
+            // Создание новой таблицы с именами
+            CMD1.CommandText = "CREATE TABLE 'Name' (id INTEGER PRIMARY KEY AUTOINCREMENT, NameTable VARCHAR(1000) NOT NULL); ";
+            CMD1.ExecuteNonQuery();
+        }
     }
 }
