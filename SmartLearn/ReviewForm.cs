@@ -20,7 +20,7 @@ namespace SmartLearn
 {
     public partial class ReviewForm : MetroForm
     {
-        bool Click;
+        bool clicker;
         DataBase db;
         CardList Deck;
         Card First;
@@ -96,7 +96,7 @@ namespace SmartLearn
                         LevelLabel.Text = "Уровень карточки: " + Deck.GetList(Deck.GetCurrent()).GetLevel().ToString();
                         //bQA.Enabled = true;
                         bNext.Visible = false;
-                        Click = false;
+                        clicker = false;
                         break;
                     }
                 }
@@ -154,7 +154,7 @@ namespace SmartLearn
 
         private void bShowQA_Click(object sender, EventArgs e)
         {
-            if (Click == false) 
+            if (clicker == false) 
             { 
             if (tQA.Text == Deck.GetList(Deck.GetCurrent()).GetQuestion()) 
                 { 
@@ -162,7 +162,7 @@ namespace SmartLearn
                     bShowQA.Text = "Показать вопрос";
                     LevelDown.Visible = true;
                     LevelUp.Visible = true;
-                    Click = true;
+                    clicker = true;
                 }
             }
             else

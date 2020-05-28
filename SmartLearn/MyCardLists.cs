@@ -19,11 +19,9 @@ namespace SmartLearn
 {
     public partial class MyCardLists : MetroForm
     {
-        private SQLiteConnection DB;
         CardList Deck;
         List <string> NameTable;
         DataBase db;
-        string result;
 
         public MyCardLists()
         {
@@ -159,16 +157,6 @@ namespace SmartLearn
         private void metroLink1_Click(object sender, EventArgs e)
         {
            
-        }
-
-        void PrintPageHandler(object sender, PrintPageEventArgs e) // обработчик событий
-        {
-            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
-        }
-
-        void TitlePageHandler(object sender, PrintPageEventArgs e) // обработчик событий
-        {
-            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
         }
 
         private void metroLink1_Click_1(object sender, EventArgs e)

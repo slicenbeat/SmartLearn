@@ -65,7 +65,7 @@
             // trackLongBreak
             // 
             this.trackLongBreak.BackColor = System.Drawing.Color.Transparent;
-            this.trackLongBreak.Location = new System.Drawing.Point(279, 163);
+            this.trackLongBreak.Location = new System.Drawing.Point(279, 167);
             this.trackLongBreak.Maximum = 60;
             this.trackLongBreak.Minimum = 15;
             this.trackLongBreak.Name = "trackLongBreak";
@@ -124,7 +124,7 @@
             this.bStartPomodoroForm.Name = "bStartPomodoroForm";
             this.bStartPomodoroForm.Size = new System.Drawing.Size(75, 26);
             this.bStartPomodoroForm.TabIndex = 7;
-            this.bStartPomodoroForm.Text = "Старт";
+            this.bStartPomodoroForm.Text = "Сохранить";
             this.bStartPomodoroForm.UseSelectable = true;
             this.bStartPomodoroForm.Click += new System.EventHandler(this.metroButton1_Click);
             // 

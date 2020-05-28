@@ -54,7 +54,7 @@
             this.bStartPomodoro.FontWeight = MetroFramework.MetroButtonWeight.Light;
             this.bStartPomodoro.Location = new System.Drawing.Point(185, 34);
             this.bStartPomodoro.Name = "bStartPomodoro";
-            this.bStartPomodoro.Size = new System.Drawing.Size(58, 23);
+            this.bStartPomodoro.Size = new System.Drawing.Size(69, 23);
             this.bStartPomodoro.TabIndex = 1;
             this.bStartPomodoro.TabStop = false;
             this.bStartPomodoro.Text = "Старт";
@@ -66,10 +66,10 @@
             this.bStopPomodoro.FontWeight = MetroFramework.MetroButtonWeight.Light;
             this.bStopPomodoro.Location = new System.Drawing.Point(185, 63);
             this.bStopPomodoro.Name = "bStopPomodoro";
-            this.bStopPomodoro.Size = new System.Drawing.Size(58, 23);
+            this.bStopPomodoro.Size = new System.Drawing.Size(69, 23);
             this.bStopPomodoro.TabIndex = 2;
             this.bStopPomodoro.TabStop = false;
-            this.bStopPomodoro.Text = "Стоп";
+            this.bStopPomodoro.Text = "Пауза";
             this.bStopPomodoro.UseSelectable = true;
             this.bStopPomodoro.Click += new System.EventHandler(this.bStopPomodoro_Click);
             // 
@@ -78,7 +78,7 @@
             this.bResetPomodoro.FontWeight = MetroFramework.MetroButtonWeight.Light;
             this.bResetPomodoro.Location = new System.Drawing.Point(185, 92);
             this.bResetPomodoro.Name = "bResetPomodoro";
-            this.bResetPomodoro.Size = new System.Drawing.Size(58, 23);
+            this.bResetPomodoro.Size = new System.Drawing.Size(69, 23);
             this.bResetPomodoro.TabIndex = 3;
             this.bResetPomodoro.TabStop = false;
             this.bResetPomodoro.Text = "Сброс";
@@ -113,6 +113,7 @@
             this.MaximumSize = new System.Drawing.Size(266, 135);
             this.MinimumSize = new System.Drawing.Size(266, 135);
             this.Name = "PomodoroForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PomodoroForm_FormClosing);
             this.Load += new System.EventHandler(this.PomodoroForm_Load);
             this.Resize += new System.EventHandler(this.PomodoroForm_Resize);
             this.ResumeLayout(false);

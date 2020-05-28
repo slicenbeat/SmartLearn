@@ -61,12 +61,11 @@ namespace SmartLearn.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Bitmap Мои_колоды {
+        internal static System.IO.UnmanagedMemoryStream notify_sound {
             get {
-                object obj = ResourceManager.GetObject("Мои колоды", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("notify_sound", resourceCulture);
             }
         }
     }
