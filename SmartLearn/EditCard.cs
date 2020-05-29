@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using MetroFramework.Forms;
-using System.Data.SQLite;
 using System.Windows.Forms;
 
 namespace SmartLearn

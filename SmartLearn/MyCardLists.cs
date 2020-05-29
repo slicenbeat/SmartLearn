@@ -1,19 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
-using MetroFramework.Components;
-using MaterialSkin;
-using MaterialSkin.Controls;
-using MaterialSkin.Animations;
-using System.Data.SQLite;
-using System.Drawing.Printing;
+using System.Diagnostics;
 using System.IO;
 
 namespace SmartLearn
@@ -179,22 +168,30 @@ namespace SmartLearn
                     MessageBox.Show("Для экспорта колоды в ней должно быть не менее 5 карт.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                 {
-                    ExportDeck.FileName = Deck.GetName();
-                    string path;
-                    if (ExportDeck.ShowDialog() == DialogResult.OK)
+                    String result = "";
+                    for (int i = 0; i < Deck.GetSizeofList(); i++)
                     {
-                        path = ExportDeck.FileName;
-                        string result = "";
-                        for (int i = 0; i < Deck.GetSizeofList(); i++)
+                        result += "Вопрос: " + Deck.GetList(i).GetQuestion() + "\n" + "Ответ: " + Deck.GetList(i).GetAnswer() + "\n\n";
+                    }
+                    System.IO.File.WriteAllText(Deck.GetName()+".txt", result);
+                    using (PrintDialog PrintDialog = new PrintDialog())
+                    {
+                        if (PrintDialog.ShowDialog() == DialogResult.OK)
                         {
-                            result += "Вопрос: " + Deck.GetList(i).GetQuestion() + "\n" + "Ответ: " + Deck.GetList(i).GetAnswer() + "\n\n";
+                            ProcessStartInfo info = new ProcessStartInfo(Deck.GetName() + ".txt");
+                            info.Arguments = "\"" + PrintDialog.PrinterSettings.PrinterName + "\"";
+                            info.CreateNoWindow = true;
+                            info.WindowStyle = ProcessWindowStyle.Hidden;
+                            info.UseShellExecute = true;
+                            info.Verb = "printto";
+                            List<Process> l = new List<Process>();
+                            l.Add(Process.Start(info));
+                            while (true)
+                            {
+                                if (l[0].HasExited) break;
+                            }
+                            File.Delete(Deck.GetName() + ".txt");
                         }
-                        using (StreamWriter writer = new StreamWriter(path, false, Encoding.GetEncoding(1251)))
-                        {
-                            writer.WriteLine(result);
-                            writer.Close();
-                        }
-
                     }
                 }
             }
