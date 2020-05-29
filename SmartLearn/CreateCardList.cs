@@ -30,6 +30,7 @@ namespace SmartLearn
 
         }
 
+        //Создание колоды
         private void bCreateCardList_Click(object sender, EventArgs e)
         {
             string S = NameOfCardList.Text;

@@ -16,6 +16,7 @@ namespace SmartLearn
             this.index = i;
         }
 
+        //Предварительное заполенение полей с вопросами и ответами
         private void EditCard_Load(object sender, EventArgs e)
         {
             tQuestion.StyleManager = this.StyleManager;
@@ -28,6 +29,7 @@ namespace SmartLearn
             tAnswer.Text = this.Deck.GetList(index).GetAnswer();
         }
 
+        //Обработка события по нажатию кнопки «Сохранить»
         private void bEditCard_Click(object sender, EventArgs e)
         {
             bool flag1 = true;
@@ -58,12 +60,10 @@ namespace SmartLearn
                 if (!flag1)
                 {
                     MessageBox.Show("Поля вопроса и ответа не могут быть пустыми.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 else if (!flag2)
                 {
                     MessageBox.Show("Не могут существовать карточки с одинаковыми вопросами", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tQuestion.Clear();
                     tAnswer.Clear();
                 }
                 else if (!flag3)
@@ -71,8 +71,6 @@ namespace SmartLearn
                     MessageBox.Show("Вы превысили ограничение по символам\nОграничение для вопроса: 100 (у вас "
                         + tQuestion.Text.Length + ")\nОграничение для ответа: 1000 (у вас "
                         + tAnswer.Text.Length + ")", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tQuestion.Clear();
-                    tAnswer.Clear();
                 }
             }
 

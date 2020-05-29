@@ -20,6 +20,8 @@ namespace SmartLearn
             InitializeComponent();
         }
 
+
+        //Предварительная заполнение cListQA списком карточек
         private void EditCardList_Load(object sender, EventArgs e)
         {
             cListQA.StyleManager = this.StyleManager;
@@ -38,7 +40,7 @@ namespace SmartLearn
                 cListQA.SelectedIndex = 0;
             }
         }
-
+        //Обработка добавления карточки
         private void metroButton1_Click(object sender, EventArgs e)
         {
             AddCard addcard = new AddCard(Deck);
@@ -53,6 +55,7 @@ namespace SmartLearn
 
         }
 
+        //Обработка удаления карточки
         private void bDeleteCard_Click(object sender, EventArgs e)
         {
             try
@@ -69,6 +72,7 @@ namespace SmartLearn
 
         }
 
+        //Обработка закрытия окна
         private void EditCardList_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (Delete == true)
@@ -78,6 +82,7 @@ namespace SmartLearn
             }
         }
 
+        //Обработка открытия карточки для редактирования
         private void ChangeCard_Click_1(object sender, EventArgs e)
         {
 

@@ -18,7 +18,7 @@ namespace SmartLearn
             InitializeComponent();
         }
 
-
+        //Создание или открытие БД-файла
         private void MyCardLists_Load(object sender, EventArgs e)
         {
             bDeleteCardList.StyleManager = this.StyleManager;
@@ -46,26 +46,11 @@ namespace SmartLearn
             }
         }
 
-        private void AddCardList_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void CardListComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
        
-
-        private void bImportCardList_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bExportCardList_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void bNewCardList_Click(object sender, EventArgs e)
         {
@@ -76,6 +61,7 @@ namespace SmartLearn
             MyCardLists_Load(sender, e);
         }
 
+        //Редактирование колоды
         private void bEditCardList_Click(object sender, EventArgs e)
         {
             try
@@ -99,7 +85,8 @@ namespace SmartLearn
                 MessageBox.Show("Выберите колоду, с которой вы будете работать.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        
+        //Удаление колоды
         private void bDeleteCardList_Click(object sender, EventArgs e)
         {
             try
@@ -119,7 +106,8 @@ namespace SmartLearn
                 MessageBox.Show("Выберите колоду, с которой вы будете работать.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        
+        //Изучение колоды
         private void bLearnCardList_Click(object sender, EventArgs e)
         {
             try
@@ -147,15 +135,12 @@ namespace SmartLearn
             }
         }
 
+        //Обработка закрытия окна 
         private void MyCardLists_FormClosing(object sender, FormClosingEventArgs e)
         {
         }
-
-        private void metroLink1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+        
+        //Печать колоды
         private void metroLink1_Click_1(object sender, EventArgs e)
         {
             if (CardListComboBox.Text == "")
