@@ -143,6 +143,9 @@ namespace SmartLearn
         //Печать колоды
         private void metroLink1_Click_1(object sender, EventArgs e)
         {
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var path_to_txt = Path.Combine(appDataPath, "Print.txt");
+
             if (CardListComboBox.Text == "")
                 MessageBox.Show("Выберите колоду, с которой вы будете работать.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
@@ -158,12 +161,12 @@ namespace SmartLearn
                     {
                         result += "Вопрос: " + Deck.GetList(i).GetQuestion() + "\n" + "Ответ: " + Deck.GetList(i).GetAnswer() + "\n\n";
                     }
-                    System.IO.File.WriteAllText(Deck.GetName()+".txt", result);
+                    File.WriteAllText(path_to_txt, result);
                     using (PrintDialog PrintDialog = new PrintDialog())
                     {
                         if (PrintDialog.ShowDialog() == DialogResult.OK)
                         {
-                            ProcessStartInfo info = new ProcessStartInfo(Deck.GetName() + ".txt");
+                            ProcessStartInfo info = new ProcessStartInfo(path_to_txt);
                             info.Arguments = "\"" + PrintDialog.PrinterSettings.PrinterName + "\"";
                             info.CreateNoWindow = true;
                             info.WindowStyle = ProcessWindowStyle.Hidden;
@@ -175,7 +178,8 @@ namespace SmartLearn
                             {
                                 if (l[0].HasExited) break;
                             }
-                            File.Delete(Deck.GetName() + ".txt");
+                            File.Delete(path_to_txt);
+                            File.Create(path_to_txt);
                         }
                     }
                 }
