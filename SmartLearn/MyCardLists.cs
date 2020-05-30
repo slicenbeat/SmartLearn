@@ -180,8 +180,7 @@ namespace SmartLearn
                             {
                                 if (l[0].HasExited) break;
                             }
-                            File.Delete(path_to_txt);
-                            File.Create(path_to_txt);
+                            l.Clear();
                         }
                     }
                 }
