@@ -46,7 +46,9 @@ namespace SmartLearn
                 tQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
                 First = Deck.GetList(Deck.GetCurrent());
                 LevelLabel.Text = "Уровень карточки: " + Deck.GetList(Deck.GetCurrent()).GetLevel().ToString();
-                StreamWriter writer = new StreamWriter("NameOfLastDeck.txt");
+                var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                var path_to_txt = Path.Combine(appDataPath, "SmartLearnCompany\\SmartLearn", "NameOfLastDeck.txt");
+                StreamWriter writer = new StreamWriter(path_to_txt);
                 writer.Write(this.Deck.GetName());
                 writer.Close();
             }
