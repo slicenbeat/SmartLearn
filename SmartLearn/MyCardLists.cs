@@ -26,6 +26,8 @@ namespace SmartLearn
             bLearnCardList.StyleManager = this.StyleManager;
             CardListComboBox.StyleManager = this.StyleManager;
             bNewCardList.StyleManager = this.StyleManager;
+            metroLink1.StyleManager = this.StyleManager;
+
             NameTable = new List<string>();
             db = new DataBase();
             try 
