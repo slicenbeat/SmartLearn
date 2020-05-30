@@ -18,9 +18,13 @@ namespace SmartLearn
             metroTabPage4.StyleManager = this.StyleManager;
             metroTabPage1.StyleManager = this.StyleManager;
             metroLabel1.StyleManager = this.StyleManager;
+            metroTabPage5.StyleManager = this.StyleManager;
+            metroTabPage6.StyleManager = this.StyleManager;
             metroLabel2.StyleManager = this.StyleManager;
             metroLabel3.StyleManager = this.StyleManager;
             metroLabel4.StyleManager = this.StyleManager;
+            metroLabel5.StyleManager = this.StyleManager;
+            metroLabel6.StyleManager = this.StyleManager;
         }
 
         private void metroTabPage1_Click(object sender, EventArgs e)
@@ -34,6 +38,11 @@ namespace SmartLearn
         }
 
         private void metroLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTabPage3_Click(object sender, EventArgs e)
         {
 
         }

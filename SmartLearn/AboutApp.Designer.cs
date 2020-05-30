@@ -73,8 +73,8 @@
             this.TextAboutApp.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.TextAboutApp.Lines = new string[] {
         "",
-        "SmartLearn — это программа для улучшения запоминания информации, основанная на ме" +
-            "тоде интервальных повторений. Бесплатная и с открытым исходным кодом.",
+        "SmartLearn — это программа для продвинутого обучения.  Бесплатная и с открытым ис" +
+            "ходным кодом.",
         "",
         "Над приложением работали: Дамир Иваев, Данил Шеренков, Алексей Альгашев, Вероника" +
             " Прудовская"};
@@ -93,7 +93,9 @@
             this.TextAboutApp.Size = new System.Drawing.Size(530, 220);
             this.TextAboutApp.TabIndex = 11;
             this.TextAboutApp.TabStop = false;
-            this.TextAboutApp.Text = resources.GetString("TextAboutApp.Text");
+            this.TextAboutApp.Text = "\r\nSmartLearn — это программа для продвинутого обучения.  Бесплатная и с открытым " +
+    "исходным кодом.\r\n\r\nНад приложением работали: Дамир Иваев, Данил Шеренков, Алексе" +
+    "й Альгашев, Вероника Прудовская";
             this.TextAboutApp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TextAboutApp.UseSelectable = true;
             this.TextAboutApp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));

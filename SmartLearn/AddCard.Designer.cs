@@ -42,9 +42,9 @@
             // 
             // 
             this.tQuestion.CustomButton.Image = null;
-            this.tQuestion.CustomButton.Location = new System.Drawing.Point(284, 1);
+            this.tQuestion.CustomButton.Location = new System.Drawing.Point(378, 1);
             this.tQuestion.CustomButton.Name = "";
-            this.tQuestion.CustomButton.Size = new System.Drawing.Size(16, 17);
+            this.tQuestion.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tQuestion.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tQuestion.CustomButton.TabIndex = 1;
             this.tQuestion.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -66,6 +66,7 @@
             this.tQuestion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tQuestion.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.tQuestion.Click += new System.EventHandler(this.tQuestion_Click);
+            this.tQuestion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tQuestion_KeyDown);
             // 
             // tAnswer
             // 
@@ -73,9 +74,9 @@
             // 
             // 
             this.tAnswer.CustomButton.Image = null;
-            this.tAnswer.CustomButton.Location = new System.Drawing.Point(284, 1);
+            this.tAnswer.CustomButton.Location = new System.Drawing.Point(378, 1);
             this.tAnswer.CustomButton.Name = "";
-            this.tAnswer.CustomButton.Size = new System.Drawing.Size(16, 17);
+            this.tAnswer.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tAnswer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tAnswer.CustomButton.TabIndex = 1;
             this.tAnswer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -96,9 +97,11 @@
             this.tAnswer.UseSelectable = true;
             this.tAnswer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tAnswer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tAnswer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tAnswer_KeyDown);
             // 
             // bCreateCard
             // 
+            this.bCreateCard.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.bCreateCard.Location = new System.Drawing.Point(420, 155);
             this.bCreateCard.Name = "bCreateCard";
             this.bCreateCard.Size = new System.Drawing.Size(113, 23);
@@ -107,6 +110,7 @@
             this.bCreateCard.Text = "Добавить";
             this.bCreateCard.UseSelectable = true;
             this.bCreateCard.Click += new System.EventHandler(this.bAddCard_Click);
+            this.bCreateCard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bCreateCard_KeyDown);
             // 
             // lQuestion
             // 

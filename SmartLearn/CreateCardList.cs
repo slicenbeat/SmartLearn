@@ -69,5 +69,18 @@ namespace SmartLearn
         {
     
         }
+
+        private void bCreateCardList_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void NameOfCardList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bCreateCardList.PerformClick();
+            }
+        }
     }
 }

@@ -40,9 +40,9 @@
             // 
             // 
             this.NameOfCardList.CustomButton.Image = null;
-            this.NameOfCardList.CustomButton.Location = new System.Drawing.Point(209, 1);
+            this.NameOfCardList.CustomButton.Location = new System.Drawing.Point(279, 1);
             this.NameOfCardList.CustomButton.Name = "";
-            this.NameOfCardList.CustomButton.Size = new System.Drawing.Size(17, 19);
+            this.NameOfCardList.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.NameOfCardList.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.NameOfCardList.CustomButton.TabIndex = 1;
             this.NameOfCardList.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -64,6 +64,7 @@
             this.NameOfCardList.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.NameOfCardList.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.NameOfCardList.Click += new System.EventHandler(this.NameOfCardList_Click);
+            this.NameOfCardList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NameOfCardList_KeyDown);
             // 
             // lNameCardList
             // 
@@ -87,6 +88,7 @@
             this.bCreateCardList.Text = "Создать";
             this.bCreateCardList.UseSelectable = true;
             this.bCreateCardList.Click += new System.EventHandler(this.bCreateCardList_Click);
+            this.bCreateCardList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bCreateCardList_KeyDown);
             // 
             // CreateCardList
             // 

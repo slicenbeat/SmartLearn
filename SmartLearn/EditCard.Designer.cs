@@ -58,6 +58,7 @@
             // 
             // bEditCard
             // 
+            this.bEditCard.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.bEditCard.Location = new System.Drawing.Point(418, 161);
             this.bEditCard.Name = "bEditCard";
             this.bEditCard.Size = new System.Drawing.Size(113, 23);
@@ -66,6 +67,7 @@
             this.bEditCard.Text = "Сохранить";
             this.bEditCard.UseSelectable = true;
             this.bEditCard.Click += new System.EventHandler(this.bEditCard_Click);
+            this.bEditCard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bEditCard_KeyDown);
             // 
             // tAnswer
             // 
@@ -96,6 +98,7 @@
             this.tAnswer.UseSelectable = true;
             this.tAnswer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tAnswer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tAnswer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tAnswer_KeyDown);
             // 
             // tQuestion
             // 
@@ -126,6 +129,7 @@
             this.tQuestion.UseSelectable = true;
             this.tQuestion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tQuestion.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tQuestion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tQuestion_KeyDown);
             // 
             // EditCard
             // 

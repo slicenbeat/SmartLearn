@@ -90,5 +90,26 @@ namespace SmartLearn
         {
 
         }
+
+        private void bEditCard_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void tAnswer_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bEditCard.PerformClick();
+            }
+        }
+
+        private void tQuestion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bEditCard.PerformClick();
+            }
+        }
     }
 }
