@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.Data;
+using System.Data.SQLite;
 using System.IO;
 
 namespace SmartLearn
@@ -103,7 +103,7 @@ namespace SmartLearn
             CMD.ExecuteNonQuery();
         }
 
-        public void DeleteCard(CardList Deck)       // Удаление колоды
+        public void UpdateCardList(CardList Deck)       // Удаление колоды
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var dbPath = Path.Combine(appDataPath, "SmartLearn", "DB.db");

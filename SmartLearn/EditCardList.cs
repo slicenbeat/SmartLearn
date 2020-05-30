@@ -78,7 +78,7 @@ namespace SmartLearn
             if (Delete == true)
             {
                 DB = new DataBase();
-                DB.DeleteCard(Deck);
+                DB.UpdateCardList(Deck);
             }
         }
 

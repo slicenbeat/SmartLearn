@@ -105,7 +105,7 @@ namespace SmartLearn
             if (Change == true)
             {
                 db = new DataBase();
-                db.DeleteCard(Deck);
+                db.UpdateCardList(Deck);
             }
         }
 
@@ -135,7 +135,7 @@ namespace SmartLearn
 
         private void LevelLabel_Click(object sender, EventArgs e)
         {
-
+                                                                                                        `
         }
 
         private void tQA_Click(object sender, EventArgs e)
