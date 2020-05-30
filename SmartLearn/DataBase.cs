@@ -2,20 +2,17 @@
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Data;
-using System.IO;
 
 namespace SmartLearn
 {
     class DataBase
     {
         SQLiteConnection DB;
+
         public void LoadCardList(CardList D)        // Перенос имнофрмации из бд в объект CardList D
         {
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
-            DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
-
             D.SetCurrent(1);
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
             CMD.CommandText = "SELECT Count(*) From " + '\u0022' + D.GetName() + '\u0022';      // Количество строк в таблице бд
@@ -40,10 +37,7 @@ namespace SmartLearn
 
         public void UpdateCard(CardList d, string q, string ans, int index)     // Изменение строки в бд
         {
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
-            DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
-
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             using (SQLiteConnection con = new SQLiteConnection("Data Source=DB.db; Version=3"))
             {
@@ -59,10 +53,7 @@ namespace SmartLearn
 
         public void DeleteCardList(List <string> NameTable, string CurrentName, int index)      // Удаление колоды
         {
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
-            DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
-
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
             CMD.CommandText = " DROP TABLE '" + CurrentName + "'; ";        // Удаление колоды с именем CurrentName
@@ -87,10 +78,7 @@ namespace SmartLearn
 
         public void InsertCard(CardList D, DateTime t, string q, string ans)        // Добавление карты
         {
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
-            DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
-
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             string name = D.GetName();
             SQLiteCommand CMD = DB.CreateCommand();
@@ -105,10 +93,7 @@ namespace SmartLearn
 
         public void DeleteCard(CardList Deck)       // Удаление колоды
         {
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
-            DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
-
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
             CMD.CommandText = " DROP TABLE '" + Deck.GetName() + "'; ";         // Удаление колоды
@@ -134,9 +119,7 @@ namespace SmartLearn
 
         public void LoadNamesOfCardLists(List <string> NameTable)       // Добавление имен колоды в лист
         {
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
-            DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
             CMD.CommandText = "SELECT Count(*) From Name";      // Получили количество строк колоды с именами
@@ -159,10 +142,7 @@ namespace SmartLearn
 
         public void CreateCardList(string S)        // Создание новой колоды
         {
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
-            DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
-
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
             CMD.CommandText = "insert into Name(NameTable) values('" + S + "')";        // Добавление имени новой колоды в колоду с именами
@@ -176,10 +156,7 @@ namespace SmartLearn
 
         public string GetCountCardList(CardList deck)       // Вернуть количество строк в колоде
         {
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
-            DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
-
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
             CMD.CommandText = "SELECT Count(*) From " + '\u0022' + deck.GetName() + '\u0022';
@@ -189,10 +166,7 @@ namespace SmartLearn
 
         public void CreateNameTable()
         {
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
-            DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
-
+            DB = new SQLiteConnection("Data Source=DB.db; Version=3");
             DB.Open();
             SQLiteCommand CMD1 = DB.CreateCommand();
             // Создание новой таблицы с именами

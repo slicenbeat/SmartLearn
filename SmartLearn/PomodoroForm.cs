@@ -130,7 +130,7 @@ namespace SmartLearn
         {
             var text = !breaking ? "Сделай перерыв. Выпей стакан воды или посмотри в окно." : "Перерыв окончен, возвращайся к работе";
             var title = "Соообщение от Помидорки";
-            SoundPlayer simpleSound = new SoundPlayer("notify_sound.wav");
+            SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.notify_sound);
             simpleSound.Play();
             MessageBox.Show(text, title);
         }
