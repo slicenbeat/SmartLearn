@@ -128,6 +128,7 @@ namespace SmartLearn
         //Функция уведомления пользователя
         private void Notify()
         {
+            WindowState = FormWindowState.Maximized;
             var text = !breaking ? "Сделай перерыв. Выпей стакан воды или посмотри в окно." : "Перерыв окончен, возвращайся к работе";
             var title = "Соообщение от Помидорки";
             SoundPlayer simpleSound = new SoundPlayer("notify_sound.wav");
