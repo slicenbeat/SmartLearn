@@ -109,6 +109,7 @@
             this.Controls.Add(this.bStopPomodoro);
             this.Controls.Add(this.bStartPomodoro);
             this.Controls.Add(this.lTimeNow);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(266, 135);
             this.MinimumSize = new System.Drawing.Size(266, 135);

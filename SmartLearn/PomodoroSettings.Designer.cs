@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PomodoroSettings));
             this.trackPomodoroLength = new MetroFramework.Controls.MetroTrackBar();
             this.trackShortBreak = new MetroFramework.Controls.MetroTrackBar();
             this.trackLongBreak = new MetroFramework.Controls.MetroTrackBar();
@@ -142,6 +143,7 @@
             this.Controls.Add(this.trackShortBreak);
             this.Controls.Add(this.trackPomodoroLength);
             this.DoubleBuffered = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(464, 266);
             this.MinimizeBox = false;

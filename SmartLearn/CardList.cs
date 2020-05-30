@@ -8,7 +8,6 @@ namespace SmartLearn
         public List<Card> Cards;
         int current;
         string Name;
-        Random rand = new Random();
 
         public int GetCurrent() { return this.current; }
         public void SetCurrent(int c) { this.current = c; }
@@ -47,44 +46,6 @@ namespace SmartLearn
                 c = Cards[current];
             }
             return c;
-        }
-
-        public Card GetPrev()
-        {
-            Card c;
-            if (current == 0)
-            {
-                current = Cards.Count - 1;
-                c = Cards[current];
-            }
-            else
-            {
-                current--;
-                c = Cards[current];
-            }
-            return c;
-        }
-        
-        public Card GetNextRandom()
-        {
-            int i = rand.Next() % Cards.Count;
-            this.current = i;
-            return Cards[i];
-        }
-
-        public bool IsStart(Card card)
-        {
-            return (Cards.IndexOf(card) == 0);
-        }
-
-        public bool IsLast(Card card)
-        {
-            return (Cards.IndexOf(card) == Cards.Count-1);
-        }
-
-        public void Reset()
-        {
-            current = 0;
         }
 
         public void Delete(int i)
