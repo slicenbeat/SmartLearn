@@ -63,13 +63,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9700947AEE1048D8A38B81D1F62C8850"
+        "MsmKey" = "8:_8A7EBF85D92A427D90D0B7768A6BC18C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A26DFC1CA3154FFFAEDD256AD45CDBDC"
+        "MsmKey" = "8:_9700947AEE1048D8A38B81D1F62C8850"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -395,12 +395,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9700947AEE1048D8A38B81D1F62C8850"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8A7EBF85D92A427D90D0B7768A6BC18C"
             {
-            "SourcePath" = "8:..\\favicon.ico"
-            "TargetName" = "8:favicon.ico"
+            "SourcePath" = "8:..\\DB.db"
+            "TargetName" = "8:DB.db"
             "Tag" = "8:"
-            "Folder" = "8:_CFA33D2AAE7A49DD93FFC0E0A8CB8190"
+            "Folder" = "8:_B1B354B2B6C740FB83323F44235D50AC"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -415,12 +415,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A26DFC1CA3154FFFAEDD256AD45CDBDC"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9700947AEE1048D8A38B81D1F62C8850"
             {
-            "SourcePath" = "8:..\\SmartLearn\\bin\\Debug\\DB.db"
-            "TargetName" = "8:DB.db"
+            "SourcePath" = "8:..\\favicon.ico"
+            "TargetName" = "8:favicon.ico"
             "Tag" = "8:"
-            "Folder" = "8:_B1B354B2B6C740FB83323F44235D50AC"
+            "Folder" = "8:_CFA33D2AAE7A49DD93FFC0E0A8CB8190"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -625,7 +625,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SmartLearn"
         "ProductCode" = "8:{59F397F2-1FB4-48F9-8562-7590E501C270}"
-        "PackageCode" = "8:{14B222FD-DE7C-4896-8526-038BE750EB58}"
+        "PackageCode" = "8:{87FC9157-7E12-4E64-89E5-F342FE9E8FE8}"
         "UpgradeCode" = "8:{AEFC0B43-4865-4A47-BE2A-33190132350D}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
