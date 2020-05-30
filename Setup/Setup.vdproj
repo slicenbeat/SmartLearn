@@ -202,6 +202,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -412,7 +420,7 @@
             "SourcePath" = "8:..\\SmartLearn\\bin\\Debug\\DB.db"
             "TargetName" = "8:DB.db"
             "Tag" = "8:"
-            "Folder" = "8:_E6B0A5D06737473A88CBB9D19611CCF8"
+            "Folder" = "8:_B1B354B2B6C740FB83323F44235D50AC"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -503,7 +511,7 @@
             "SourcePath" = "8:..\\SmartLearn\\bin\\Debug\\NameOfLastDeck.txt"
             "TargetName" = "8:NameOfLastDeck.txt"
             "Tag" = "8:"
-            "Folder" = "8:_E6B0A5D06737473A88CBB9D19611CCF8"
+            "Folder" = "8:_B1B354B2B6C740FB83323F44235D50AC"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -523,7 +531,7 @@
             "SourcePath" = "8:..\\..\\Print.txt"
             "TargetName" = "8:Print.txt"
             "Tag" = "8:"
-            "Folder" = "8:_E6B0A5D06737473A88CBB9D19611CCF8"
+            "Folder" = "8:_B1B354B2B6C740FB83323F44235D50AC"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -587,6 +595,17 @@
             "Property" = "8:AppDataFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B1B354B2B6C740FB83323F44235D50AC"
+                    {
+                    "Name" = "8:SmartLearn"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_BDDEBBB5B3184217A0AC13E1661B7E1C"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -606,7 +625,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SmartLearn"
         "ProductCode" = "8:{59F397F2-1FB4-48F9-8562-7590E501C270}"
-        "PackageCode" = "8:{100DCF5A-37B5-47CD-9728-F52BBF9E048E}"
+        "PackageCode" = "8:{14B222FD-DE7C-4896-8526-038BE750EB58}"
         "UpgradeCode" = "8:{AEFC0B43-4865-4A47-BE2A-33190132350D}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

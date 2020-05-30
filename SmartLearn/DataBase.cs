@@ -12,7 +12,7 @@ namespace SmartLearn
         public void LoadCardList(CardList D)        // Перенос имнофрмации из бд в объект CardList D
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
+            var dbPath = Path.Combine(appDataPath,"SmartLearn", "DB.db");
             DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
 
             D.SetCurrent(1);
@@ -41,7 +41,7 @@ namespace SmartLearn
         public void UpdateCard(CardList d, string q, string ans, int index)     // Изменение строки в бд
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
+            var dbPath = Path.Combine(appDataPath, "SmartLearn", "DB.db");
             DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
 
             DB.Open();
@@ -60,7 +60,7 @@ namespace SmartLearn
         public void DeleteCardList(List <string> NameTable, string CurrentName, int index)      // Удаление колоды
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
+            var dbPath = Path.Combine(appDataPath, "SmartLearn", "DB.db");
             DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
 
             DB.Open();
@@ -88,7 +88,7 @@ namespace SmartLearn
         public void InsertCard(CardList D, DateTime t, string q, string ans)        // Добавление карты
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
+            var dbPath = Path.Combine(appDataPath, "SmartLearn", "DB.db");
             DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
 
             DB.Open();
@@ -106,7 +106,7 @@ namespace SmartLearn
         public void DeleteCard(CardList Deck)       // Удаление колоды
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
+            var dbPath = Path.Combine(appDataPath, "SmartLearn", "DB.db");
             DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
 
             DB.Open();
@@ -135,7 +135,7 @@ namespace SmartLearn
         public void LoadNamesOfCardLists(List <string> NameTable)       // Добавление имен колоды в лист
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
+            var dbPath = Path.Combine(appDataPath, "SmartLearn", "DB.db");
             DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
             DB.Open();
             SQLiteCommand CMD = DB.CreateCommand();
@@ -160,7 +160,7 @@ namespace SmartLearn
         public void CreateCardList(string S)        // Создание новой колоды
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
+            var dbPath = Path.Combine(appDataPath, "SmartLearn", "DB.db");
             DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
 
             DB.Open();
@@ -177,7 +177,7 @@ namespace SmartLearn
         public string GetCountCardList(CardList deck)       // Вернуть количество строк в колоде
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
+            var dbPath = Path.Combine(appDataPath, "SmartLearn", "DB.db");
             DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
 
             DB.Open();
@@ -190,7 +190,7 @@ namespace SmartLearn
         public void CreateNameTable()
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var dbPath = Path.Combine(appDataPath, "DB.db");
+            var dbPath = Path.Combine(appDataPath, "SmartLearn", "DB.db");
             DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
 
             DB.Open();

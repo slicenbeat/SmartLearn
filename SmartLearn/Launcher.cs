@@ -46,7 +46,7 @@ namespace SmartLearn
         private void LearningButton_Click(object sender, EventArgs e)
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var path_to_txt = Path.Combine(appDataPath, "NameOfLastDeck.txt");
+            var path_to_txt = Path.Combine(appDataPath, "SmartLearn", "NameOfLastDeck.txt");
 
             StreamReader read = new StreamReader(path_to_txt);
             string name;

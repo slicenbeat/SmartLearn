@@ -146,7 +146,7 @@ namespace SmartLearn
         private void metroLink1_Click_1(object sender, EventArgs e)
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var path_to_txt = Path.Combine(appDataPath, "Print.txt");
+            var path_to_txt = Path.Combine(appDataPath, "SmartLearn", "Print.txt");
 
             if (CardListComboBox.Text == "")
                 MessageBox.Show("Выберите колоду, с которой вы будете работать.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
