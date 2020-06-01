@@ -87,6 +87,7 @@
             // 
             // notifyPomodoro
             // 
+            this.notifyPomodoro.BalloonTipTitle = "SmartLearn";
             this.notifyPomodoro.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyPomodoro.Icon")));
             this.notifyPomodoro.Text = "notify";
             this.notifyPomodoro.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyPomodoro_MouseDoubleClick);
@@ -94,6 +95,7 @@
             // lStatus
             // 
             this.lStatus.AutoSize = true;
+            this.lStatus.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lStatus.Location = new System.Drawing.Point(12, 19);
             this.lStatus.Name = "lStatus";
             this.lStatus.Size = new System.Drawing.Size(0, 0);
@@ -114,6 +116,7 @@
             this.MaximumSize = new System.Drawing.Size(266, 135);
             this.MinimumSize = new System.Drawing.Size(266, 135);
             this.Name = "PomodoroForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PomodoroForm_FormClosing);
             this.Load += new System.EventHandler(this.PomodoroForm_Load);
             this.Resize += new System.EventHandler(this.PomodoroForm_Resize);

@@ -22,7 +22,6 @@ namespace SmartLearn
         {
             InitializeComponent();
             this.Deck = new CardList(name);
-            //db.LoadCardList(Deck);
         }
 
         private void ReviewForm_Load(object sender, EventArgs e)
@@ -85,7 +84,6 @@ namespace SmartLearn
                     {
                         tQA.Text = Deck.GetList(Deck.GetCurrent()).GetQuestion();
                         LevelLabel.Text = "Уровень карточки: " + Deck.GetList(Deck.GetCurrent()).GetLevel().ToString();
-                        //bQA.Enabled = true;
                         bNext.Visible = false;
                         clicker = false;
                         break;
@@ -135,7 +133,7 @@ namespace SmartLearn
 
         private void LevelLabel_Click(object sender, EventArgs e)
         {
-                                                                                                        `
+                                                                                                        
         }
 
         private void tQA_Click(object sender, EventArgs e)

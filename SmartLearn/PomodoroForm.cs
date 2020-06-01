@@ -8,27 +8,19 @@ namespace SmartLearn
 {
     public partial class PomodoroForm : MetroForm
     {
-        Timer PomodoroTimer = new Timer();
-        int count_of_pomodoro = 0;
-        int time_keep;
-        int number_of_pomodoro;
-        int next_break;
-        bool breaking = true;
-        PomodoroSettings Settings;
-
-        public PomodoroForm()
+        Pomodoro pomodoro;
+        PomodoroSettings pomodoroSettings;
+        public PomodoroForm(PomodoroSettings pomodoroSettings)
         {
             InitializeComponent();
+            this.pomodoroSettings = pomodoroSettings;
+            this.pomodoro = pomodoroSettings.pomodoro;
         }
 
         private void PomodoroForm_Load(object sender, EventArgs e)
         {
-            //Задаем интервал в 1 секунду
-            PomodoroTimer.Interval = 1000;
-            //каждую секунду вызываем TimeEventProcessor
-            PomodoroTimer.Tick += TimeEventProcessor;
-
-            //Устнановка темы формы
+            pomodoro.pomodoro_timer.Tick += TimeEventProcessor;
+            //Установка темы формы
             bResetPomodoro.StyleManager = this.StyleManager;
             bStartPomodoro.StyleManager = this.StyleManager;
             bStopPomodoro.StyleManager = this.StyleManager;
@@ -36,17 +28,6 @@ namespace SmartLearn
             lStatus.StyleManager = this.StyleManager;
 
             notifyPomodoro.Text = "Помидорка";
-            
-            //Создаем объект формы настроек помидорки и настраиваем стиль
-            Settings = new PomodoroSettings();
-            Settings.StyleManager = this.StyleManager;
-
-            //Вызываем окно настроек модально
-            Settings.ShowDialog();
-
-            //время следующего перерыва получаем из объекта формы настроек
-            next_break = Settings.PomodoroTimer * 60;
-
             lTimeNow.Text = @"0:00";
             lStatus.Text = "«Старт», чтобы начать";
         }
@@ -54,82 +35,22 @@ namespace SmartLearn
         //Функция ежесекундной проверки
         private void TimeEventProcessor (object obj, EventArgs args)
         {
-            //Увеличиваем на 1 текущее время
-            time_keep += 1;
-            
-            //Вызываем функции для обновления Label с текущим временем
-            UpdateTimerLabel();
-            
-            //Вызываем функцию для сравнения текущего времени и времени перерыва
-            PomodoroCheck();
-        }
-
-        //Функция обновления Label, хранящий текущее время
-        private void UpdateTimerLabel()
-        {
-            var minutes = time_keep / 60;
-            var seconds = time_keep % 60;
-
-            var timer_string = seconds < 10 ? $"{minutes}:0{seconds}" : $"{minutes}:{seconds}";
-            lTimeNow.Text = timer_string;
-        }
-
-        //Функция проверки готовности помидорки
-        private void PomodoroCheck()
-        {
-            //Если текущее время не равно времени следующего перерыва или следующей помидорки, выходим из функции
-            if (time_keep != next_break) return;
-
-            //иначе помидорку останавливаем и сбрасываем время
-            PomodoroTimer.Stop();
-            time_keep = 0;
-            UpdateTimerLabel();
-            //стартуем
-            PomodoroTimer.Start();
-
-            //если настало время для перерыва. иначе время для перерыва закончилось
-            if (breaking)
-            {
-                //увеличиваем количество помидорок и проверяем, какой отдых пользователь заслужил
-                number_of_pomodoro += 1;
-                count_of_pomodoro += 1;
-                if (number_of_pomodoro < 4)
-                {
-                    next_break = Settings.ShortBreak * 60;
-                    notifyPomodoro.Text = "Отдыхай! Короткий перерыв";
-                }
-                else
-                {
-                    next_break = Settings.LongBreak * 60;
-                    notifyPomodoro.Text = "Отдыхай! Длинный перерыв";
-                    number_of_pomodoro = 0;
-                }
-                lStatus.Text = "Отдыхай! Ты заслужил :–)";
-                //флаг отдыха сбрасываем
-                breaking = false;
-            }
-            //устанавливаем время для работы
-            else
-            {
-                lStatus.Text = "Работай!";
-                notifyPomodoro.Text = "За работу!";
-
-                next_break = Settings.PomodoroTimer * 60;
-                breaking = true;
-
-            }
-
-            //если пользователь оставил чекбокс включенным, то вызываем функцию уведомления
-            if (Settings.Notify)
+            pomodoro.UpdateTimeKeep();
+            lTimeNow.Text = pomodoro.UpdateTimerLabel();
+            if (pomodoro.PomodoroCheck())
             {
                 Notify();
             }
+            notifyPomodoro.Text = pomodoro.GetNotifyPomodoro();
+            lStatus.Text = pomodoro.GetStatus();
+
         }
+
         //Функция уведомления пользователя
         private void Notify()
         {
-            WindowState = FormWindowState.Maximized;
-            var text = !breaking ? "Сделай перерыв. Выпей стакан воды или посмотри в окно." : "Перерыв окончен, возвращайся к работе";
+            WindowState = FormWindowState.Normal;
+            var text = !pomodoro.GetBreaking() ? "Сделай перерыв. Выпей стакан воды или посмотри в окно." : "Перерыв окончен, возвращайся к работе";
             var title = "Соообщение от Помидорки";
             SoundPlayer simpleSound = new SoundPlayer("notify_sound.wav");
             simpleSound.Play();
@@ -140,9 +61,10 @@ namespace SmartLearn
         {
             bStartPomodoro.Text = "Старт";
             lStatus.Text = "Работай!";
-            notifyPomodoro.Text = "За работу!";
+            notifyPomodoro.Text = "Работай!";
 
-            PomodoroTimer.Start();
+            pomodoro.StartPomodoro();
+
             bResetPomodoro.Enabled = false;
             bStopPomodoro.Enabled = true;
             bStartPomodoro.Enabled = false;
@@ -152,9 +74,8 @@ namespace SmartLearn
         {
             bStartPomodoro.Text = "Продолжить";
             notifyPomodoro.Text = "Помидорка приостановлена";
-            lStatus.Text = "";
-
-            PomodoroTimer.Stop();
+            lStatus.Text = "Помидорка приостановлена";
+            pomodoro.StopPomodoro();
             bResetPomodoro.Enabled = true;
             bStopPomodoro.Enabled = false;
             bStartPomodoro.Enabled = true;
@@ -166,9 +87,9 @@ namespace SmartLearn
             lStatus.Text = "«Старт», чтобы начать";
             bStartPomodoro.Text = "Старт";
             notifyPomodoro.Text = "Помидорка";
-            time_keep = 0;
-            UpdateTimerLabel();
-            number_of_pomodoro = 0;
+
+            pomodoro.ResetPomodoro();
+            pomodoro.UpdateTimerLabel();
 
         }
         //Функция обработки двойного нажатия на иконку Помидорки в трее
@@ -189,18 +110,11 @@ namespace SmartLearn
 
         private void PomodoroForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (count_of_pomodoro == 0)
+            if (pomodoro.GetMessage() == "")
             {
 
             }
-            else if (count_of_pomodoro > 0 && count_of_pomodoro < 4)
-            {
-                MessageBox.Show("Ты сегодня хорошо поработал! Возвращайся скорее к помидорке :–)", "Молодец!");
-            }
-            else
-            {
-                MessageBox.Show("Ого! Целых " + count_of_pomodoro.ToString() + " помидорок, да тебя не остановить!\nВозвращайся скорее к помидорке :–)", "Молодец!");
-            }
+            else MessageBox.Show(pomodoro.GetMessage(), "Сообщение от Помидорки");
         }
     }
 }

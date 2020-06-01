@@ -130,6 +130,7 @@
     <Compile Include="MyCardLists.Designer.cs">
       <DependentUpon>MyCardLists.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pomodoro.cs" />
     <Compile Include="PomodoroForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using System.Threading;
 
 
 namespace SmartLearn
 {
     public partial class PomodoroSettings : MetroForm
     {
-        public int PomodoroTimer { private set; get; }
-        public int ShortBreak { private set; get; }
-        public int LongBreak { private set; get; }
-        public bool Notify { private set; get; }
+        Thread th;
+        public Pomodoro pomodoro;
+        bool Save;
         public PomodoroSettings()
         {
             InitializeComponent();
@@ -30,10 +30,8 @@ namespace SmartLearn
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            PomodoroTimer = trackPomodoroLength.Value;
-            ShortBreak = trackShortBreak.Value;
-            LongBreak = trackLongBreak.Value;
-            Notify = checkboxNotify.Checked;
+            Save = true;
+            pomodoro = new Pomodoro(trackPomodoroLength.Value, trackShortBreak.Value, trackLongBreak.Value, checkboxNotify.Checked);
             Close();
         }
 
@@ -58,10 +56,12 @@ namespace SmartLearn
 
         private void PomodoroSettings_FormClosing(object sender, FormClosingEventArgs e)
         {
-            PomodoroTimer = trackPomodoroLength.Value;
-            ShortBreak = trackShortBreak.Value;
-            LongBreak = trackLongBreak.Value;
-            Notify = checkboxNotify.Checked;
+            if (Save) { }
+            else 
+            {
+                pomodoro = new Pomodoro(trackPomodoroLength.Value, trackShortBreak.Value, trackLongBreak.Value, checkboxNotify.Checked);
+            }
+
         }
 
         private void PomodoroSettings_DragOver(object sender, DragEventArgs e)
