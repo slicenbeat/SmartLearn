@@ -22,7 +22,7 @@ namespace SmartLearn
         int count_of_pomodoro; //количество помидоров
         string status; //статус помидорки
 
-        public int time_keep; //текущее время
+        int time_keep; //текущее время
 
         string notify_pomodoro; //уведомление
 
