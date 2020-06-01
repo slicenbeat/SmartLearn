@@ -45,7 +45,7 @@ namespace SmartLearn
             DB = new SQLiteConnection("Data Source=" + dbPath + "; Version=3");
 
             DB.Open();
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=DB.db; Version=3"))
+            using (SQLiteConnection con = new SQLiteConnection("Data Source=" + dbPath + "; Version=3"))
             {
                 string name = d.GetName();
                 SQLiteCommand CMD = DB.CreateCommand();
