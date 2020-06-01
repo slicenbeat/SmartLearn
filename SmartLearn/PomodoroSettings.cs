@@ -68,5 +68,10 @@ namespace SmartLearn
         {
 
         }
+
+        private void checkboxNotify_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

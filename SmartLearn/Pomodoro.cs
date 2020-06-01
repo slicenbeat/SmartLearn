@@ -45,39 +45,39 @@ namespace SmartLearn
             this.notify_pomodoro = "Работай!";
         }
 
-        public void ResetPomodoro()
+        public void ResetPomodoro()//сброс помидорки
         {
             time_keep = 0;
             number_of_pomodoro = 0;
-        } //
+        } 
 
-        public void StartPomodoro()
+        public void StartPomodoro() //запустить помидорку
         {
             pomodoro_timer.Start();
         }
-        public void StopPomodoro()
+        public void StopPomodoro()//остановить помидорку
         {
             pomodoro_timer.Stop();
         }
         public string GetNotifyPomodoro()
         {
             return notify_pomodoro;
-        }
+        }//получить текущее уведомление для программы, свернутой в трей 
 
         public string GetStatus()
         {
             return status;
-        }
+        } //текущий статус помидорки
 
         public bool GetBreaking()
         {
             return breaking;
-        }
+        } //получить состояние для отдыха
 
         public void UpdateTimeKeep()
         {
             time_keep += 1;
-        }
+        } //обновить текущее время
 
         public string UpdateTimerLabel()
         {
@@ -85,7 +85,7 @@ namespace SmartLearn
             var seconds = time_keep % 60;
             var timer_string = seconds < 10 ? $"{minutes}:0{seconds}" : $"{minutes}:{seconds}";
             return timer_string;
-        }
+        } //обновить надпись о текущем времени
 
         public bool PomodoroCheck()
         {
@@ -128,7 +128,7 @@ namespace SmartLearn
                 breaking = true;
             }
             return notify;
-        }
+        } // метод проверки помидорки
         public string GetMessage()
         {
             if (count_of_pomodoro == 0)
@@ -143,6 +143,6 @@ namespace SmartLearn
             {
                 return "Ого! Целых " + count_of_pomodoro.ToString() + " помидорок, да тебя не остановить!\nВозвращайся скорее к помидорке :–)";
             }
-        }
+        } //метод получения сообщения перед выходом
     }
 }

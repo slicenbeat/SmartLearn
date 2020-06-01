@@ -84,6 +84,7 @@
             this.checkboxNotify.TabIndex = 3;
             this.checkboxNotify.Text = "Напомни";
             this.checkboxNotify.UseSelectable = true;
+            this.checkboxNotify.CheckedChanged += new System.EventHandler(this.checkboxNotify_CheckedChanged);
             // 
             // lPomodoroLength
             // 
