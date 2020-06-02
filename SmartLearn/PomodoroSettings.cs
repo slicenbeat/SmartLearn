@@ -8,7 +8,6 @@ namespace SmartLearn
 {
     public partial class PomodoroSettings : MetroForm
     {
-        Thread th;
         public Pomodoro pomodoro;
         bool Save;
         public PomodoroSettings()

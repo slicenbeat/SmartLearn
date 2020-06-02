@@ -104,6 +104,7 @@ namespace SmartLearn
             {
                 //увеличиваем количество помидорок и проверяем, какой отдых пользователь заслужил
                 number_of_pomodoro += 1;
+                count_of_pomodoro += 1;
                 if (number_of_pomodoro % 4 != 0)
                 {
                     next_break_or_work = short_break;
